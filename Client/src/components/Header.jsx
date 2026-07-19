@@ -15,8 +15,7 @@ const Header = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
-    setIsMenuOpen(false); // Mobile menu close karo
-  };
+    setIsMenuOpen(false); 
 
   const handleNavigation = () => {
     setIsMenuOpen(false); // Navigation ke baad mobile menu close karo
@@ -179,4 +178,5 @@ const MobileNavItem = ({ to, icon, label, onClick }) => (
   </Link>
 );
 
+}
 export default Header;
