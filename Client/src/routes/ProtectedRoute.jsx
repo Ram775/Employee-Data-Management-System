@@ -1,21 +1,24 @@
-import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
-import { jwtDecode } from 'jwt-decode';
+import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 const ProtectedRoute = () => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
 
   if (!token) return <Navigate to="/login" replace />;
 
   try {
     const decoded = jwtDecode(token);
+    const loggedInUser = decoded.role; // Logged-in user ka username store karo
+    console.log(loggedInUser);
+    
     // Sirf admin access check
-    if (decoded.role !== 'admin') {
+    if (decoded.role !== "admin" && decoded.role !== "superadmin") {
       return <Navigate to="/unauthorized" replace />;
     }
     return <Outlet />;
   } catch (error) {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     return <Navigate to="/login" replace />;
   }
 };

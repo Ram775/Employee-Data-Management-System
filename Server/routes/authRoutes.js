@@ -1,43 +1,77 @@
 const express = require("express");
-const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 const connectDB = require("../db");
+const sendOTP = require("../utils/sendOTP");
 
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
   try {
     const db = await connectDB();
-
+    console.log(req.body);
     const { email, password } = req.body;
 
-    const user = await db.collection("users").findOne({ email });
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Email and Password are required",
+      });
+    }
 
-    if (!user || user.password !== password) {
+    // User Find
+    const result = await db.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
+
+    if (result.rows.length === 0) {
       return res.status(401).json({
+        success: false,
         message: "Invalid Credentials",
       });
     }
 
-    const token = jwt.sign(
-      {
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-      },
-      process.env.JWT_SECRET,
-      {
-        expiresIn: "1h",
-      },
+    const user = result.rows[0];
+    console.log("Entered Password:", password);
+    console.log("DB Hash:", user.password);
+
+    // Password Verify
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid Credentials",
+      });
+    }
+
+    // Generate OTP
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+
+    // OTP Expiry (5 Minutes)
+    const otpExpiry = new Date(Date.now() + 5 * 60 * 1000);
+
+    // Save OTP
+    await db.query(
+      `UPDATE users
+       SET otp = $1,
+           otp_expiry = $2
+       WHERE email = $3`,
+      [otp, otpExpiry, email],
     );
 
+    // Send Email
+    await sendOTP(email, otp);
+
     return res.status(200).json({
-      message: "Login Successful",
-      token,
+      success: true,
+      message: "OTP sent to your email.",
     });
   } catch (err) {
-    res.status(500).json({
-      error: err.message,
+    console.error(err);
+
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
     });
   }
 });

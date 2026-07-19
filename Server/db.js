@@ -1,20 +1,28 @@
-const { MongoClient } = require("mongodb");
-const uri = "mongodb://localhost:27017";
+require("dotenv").config();
 
-const client = new MongoClient(uri);
+const { Pool } = require("pg");
 
-let dbConnection;
+let pool;
 
 async function connectDB() {
-  if (dbConnection) return dbConnection;
+  if (pool) return pool;
 
   try {
-    await client.connect();
-    console.log("MongoDB Connected Successfully");
-    dbConnection = client.db("EmployeeManagement");
-    return dbConnection;
+    pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    });
+
+    // Test Connection
+    await pool.query("SELECT NOW()");
+
+    console.log("✅ Supabase Connected Successfully");
+
+    return pool;
   } catch (err) {
-    console.error("Database connection failed:", err);
+    console.error("❌ Database connection failed:", err);
     throw err;
   }
 }

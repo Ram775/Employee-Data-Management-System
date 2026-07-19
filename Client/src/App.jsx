@@ -8,12 +8,15 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import Unauthorized from "./components/Unauthorized";
 import EmployeeForm from "./pages/EmployeeForm";
 import EmployeeList from "./pages/EmployeeList";
+import ForgotPassword from "./pages/ForgotPassword";
+import RegistrationForm from "./pages/RegistrationForm"
 
 function App() {
   return (
     <Routes>
       {/* Public Route */}
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/unauthorized" element={<Unauthorized />} />
 
       {/* Protected Routes (Layout ke andar) */}
@@ -22,12 +25,14 @@ function App() {
           <Route index element={<AdminDashboard />} /> {/* Default page */}
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="employee-form" element={<EmployeeForm />} />
+          <Route path="employee-form/:id" element={<EmployeeForm />} />
+          <Route path="create-user" element={<RegistrationForm />} />
           <Route path="employee-list" element={<EmployeeList />} />
         </Route>
       </Route>
 
       {/* Redirect unknown routes */}
-      <Route path="*" element={<Navigate to="/login" />} />
+      <Route path="*" element={<Navigate to="/unauthorized" />} />
     </Routes>
   );
 }
