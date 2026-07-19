@@ -28,7 +28,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo - Responsive text */}
           <div className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-indigo-600 truncate">
-            Employee Management
+            Employee Data Management System 
           </div>
 
           {/* Desktop Navigation - Hidden on mobile */}

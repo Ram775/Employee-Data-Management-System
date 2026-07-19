@@ -1,6 +1,6 @@
 const express = require("express");
 const connectDB = require("../db");
-const sendOTP = require("../utils/sendOTP");
+const sendOTP = require("../utils/sendOtp");
 
 const router = express.Router();
 
