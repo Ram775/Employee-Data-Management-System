@@ -15,7 +15,8 @@ const Header = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
-    setIsMenuOpen(false); 
+    setIsMenuOpen(false); // Mobile menu close karo
+  };
 
   const handleNavigation = () => {
     setIsMenuOpen(false); // Navigation ke baad mobile menu close karo
@@ -27,7 +28,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo - Responsive text */}
           <div className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-indigo-600 truncate">
-            Employee Data Management System 
+            Employee Management System
           </div>
 
           {/* Desktop Navigation - Hidden on mobile */}
@@ -178,5 +179,4 @@ const MobileNavItem = ({ to, icon, label, onClick }) => (
   </Link>
 );
 
-}
 export default Header;
