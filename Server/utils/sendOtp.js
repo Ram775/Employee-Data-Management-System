@@ -1,11 +1,9 @@
 const { google } = require("googleapis");
-const nodemailer = require("nodemailer");
 
-const OAuth2 = google.auth.OAuth2;
-
-const oauth2Client = new OAuth2(
+const oauth2Client = new google.auth.OAuth2(
   process.env.GMAIL_CLIENT_ID,
   process.env.GMAIL_CLIENT_SECRET,
+  "http://localhost",
 );
 
 oauth2Client.setCredentials({
@@ -14,26 +12,13 @@ oauth2Client.setCredentials({
 
 async function sendOTP(email, otp) {
   try {
-    const accessToken = await oauth2Client.getAccessToken();
-
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        type: "OAuth2",
-        user: process.env.GMAIL_USER,
-        clientId: process.env.GMAIL_CLIENT_ID,
-        clientSecret: process.env.GMAIL_CLIENT_SECRET,
-        refreshToken: process.env.GMAIL_REFRESH_TOKEN,
-        accessToken: accessToken.token,
-      },
+    const gmail = google.gmail({
+      version: "v1",
+      auth: oauth2Client,
     });
 
-    await transporter.sendMail({
-      from: `"Employee Management System" <${process.env.GMAIL_USER}>`,
-      to: email,
-      subject: "🔐 Secure Login OTP - Employee Management System",
-      html: `
-      <!DOCTYPE html>
+    const html = `
+ <!DOCTYPE html>
       <html>
       <head>
         <meta charset="UTF-8">
@@ -122,13 +107,40 @@ async function sendOTP(email, otp) {
         </table>
       </body>
       </html>
-    `,
+`;
+
+    const messageParts = [
+      `From: Employee Management System <${process.env.GMAIL_USER}>`,
+      `To: ${email}`,
+      "Content-Type: text/html; charset=UTF-8",
+      "MIME-Version: 1.0",
+      "Subject: =?UTF-8?B?" +
+        Buffer.from(
+          "🔐 Secure Login OTP - Employee Management System",
+        ).toString("base64") +
+        "?=",
+      "",
+      html,
+    ];
+    const rawMessage = Buffer.from(messageParts.join("\n"))
+      .toString("base64")
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=+$/, "");
+
+    const response = await gmail.users.messages.send({
+      userId: "me",
+      requestBody: {
+        raw: rawMessage,
+      },
     });
 
-    console.log("OTP sent successfully");
+    console.log("✅ OTP Sent Successfully");
+    console.log("Message ID:", response.data.id);
+
     return true;
   } catch (err) {
-    console.error("Email Error:", err);
+    console.error("Email Error:", err.response?.data || err);
     throw err;
   }
 }

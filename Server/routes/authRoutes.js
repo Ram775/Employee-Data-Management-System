@@ -8,7 +8,7 @@ const router = express.Router();
 router.post("/login", async (req, res) => {
   try {
     const db = await connectDB();
-    
+
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -31,7 +31,7 @@ router.post("/login", async (req, res) => {
     }
 
     const user = result.rows[0];
-    console.log("Entered Password:", password);
+
     console.log("DB Hash:", user.password);
 
     // Password Verify
