@@ -44,7 +44,7 @@ const AdminDashboard = () => {
           joinDate: "January 2020",
           avatar:
             profile_image ||
-            "https://ui-avatars.com/api/?name=Suresh+Kushwah&size=200&background=6366f1&color=fff&bold=true",
+            "https://i.pinimg.com/1200x/2d/93/14/2d9314606ed1f1487bb5308fd0f58df6.jpg",
         });
 
         const response = await employeeService.getCount();
