@@ -1,181 +1,95 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { LayoutDashboard, User, Users, LogOut, Menu, X } from "lucide-react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { LayoutDashboard, User, Users, LogOut, Menu, X, ShieldCheck } from "lucide-react";
 import { jwtDecode } from "jwt-decode";
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const token = localStorage.getItem("token");
-  const decoded = jwtDecode(token);
-  const loggedInUser = decoded.role;
-  console.log("Logged-in user role:", loggedInUser);
+  const decoded = token ? jwtDecode(token) : null;
+  const loggedInUser = decoded?.role;
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
-    setIsMenuOpen(false); // Mobile menu close karo
+    setIsMenuOpen(false);
   };
 
-  const handleNavigation = () => {
-    setIsMenuOpen(false); // Navigation ke baad mobile menu close karo
-  };
+  // Helper to check if link is active
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+    <header className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-lg border-b border-gray-200/50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo - Responsive text */}
-          <div className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-indigo-600 truncate">
-            Employee Management System
+          
+          {/* Logo */}
+          <div className="flex items-center gap-2 font-bold text-xl text-indigo-600">
+            <div className="bg-indigo-600 p-1.5 rounded-lg text-white">
+              <ShieldCheck size={20} />
+            </div>
+            EMS Portal
           </div>
 
-          {/* Desktop Navigation - Hidden on mobile */}
-          <nav className="hidden md:flex space-x-6 lg:space-x-8">
-            <NavItem
-              to="/dashboard"
-              icon={<LayoutDashboard size={18} />}
-              label="Dashboard"
-            />
-            <NavItem
-              to="/employee-form"
-              icon={<User size={18} />}
-              label="Employee Form"
-            />
-
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-1">
+            <NavLink to="/dashboard" active={isActive("/dashboard")}>Dashboard</NavLink>
+            <NavLink to="/employee-form" active={isActive("/employee-form")}>Add Employee</NavLink>
             {loggedInUser === "superadmin" && (
-              <NavItem
-                to="/create-User"
-                icon={<User size={18} />}
-                label="Create User"
-              />
+              <NavLink to="/create-User" active={isActive("/create-User")}>Admin Tools</NavLink>
             )}
-
-            <NavItem
-              to="/employee-list"
-              icon={<Users size={18} />}
-              label="Employee List"
-            />
+            <NavLink to="/employee-list" active={isActive("/employee-list")}>Directory</NavLink>
           </nav>
 
-          {/* Desktop Logout Button - Hidden on mobile */}
+          {/* Logout */}
           <button
             onClick={handleLogout}
-            className="hidden md:flex items-center gap-2 text-red-600 hover:text-red-700 font-medium transition-colors text-sm lg:text-base"
+            className="hidden md:flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 rounded-full text-sm font-semibold transition-all duration-300"
           >
-            <LogOut size={18} />
-            <span>Logout</span>
+            <LogOut size={16} /> Logout
           </button>
 
-          {/* Mobile Menu Toggle Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-gray-600" />
-            ) : (
-              <Menu className="w-6 h-6 text-gray-600" />
-            )}
+          {/* Mobile Toggle */}
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-gray-600">
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
-        {/* Mobile Menu - Overlay */}
-        {isMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <div
-              className="fixed inset-0 bg-black/50 z-40 md:hidden"
-              onClick={() => setIsMenuOpen(false)}
-            ></div>
-
-            {/* Mobile Menu Panel */}
-            <div className="absolute left-0 right-0 top-16 bg-white border-b border-gray-200 shadow-lg z-50 md:hidden animate-slideDown">
-              <nav className="flex flex-col p-4 space-y-2">
-                <MobileNavItem
-                  to="/dashboard"
-                  icon={<LayoutDashboard size={20} />}
-                  label="Dashboard"
-                  onClick={handleNavigation}
-                />
-                <MobileNavItem
-                  to="/employee-form"
-                  icon={<User size={20} />}
-                  label="Employee Form"
-                  onClick={handleNavigation}
-                />
-                {loggedInUser === "superadmin" && (
-                  <MobileNavItem
-                    to="/create-User"
-                    icon={<User size={20} />}
-                    label="Create User"
-                    onClick={handleNavigation}
-                  />
-                )}
-
-                <MobileNavItem
-                  to="/employee-list"
-                  icon={<Users size={20} />}
-                  label="Employee List"
-                  onClick={handleNavigation}
-                />
-
-                {/* Mobile Logout Button */}
-                <button
-                  onClick={handleLogout}
-                  className="flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition-colors font-medium"
-                >
-                  <LogOut size={20} />
-                  <span>Logout</span>
-                </button>
-              </nav>
-            </div>
-          </>
-        )}
       </div>
 
-      {/* CSS for animations */}
-      <style>{`
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-slideDown {
-          animation: slideDown 0.3s ease-out;
-        }
-      `}</style>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute w-full bg-white border-b border-gray-200 p-4 space-y-2 animate-in slide-in-from-top-5">
+          <MobileLink to="/dashboard" onClick={() => setIsMenuOpen(false)}>Dashboard</MobileLink>
+          <MobileLink to="/employee-form" onClick={() => setIsMenuOpen(false)}>Add Employee</MobileLink>
+          <MobileLink to="/employee-list" onClick={() => setIsMenuOpen(false)}>Directory</MobileLink>
+          <button onClick={handleLogout} className="w-full flex items-center gap-2 px-4 py-3 text-red-600 font-medium">
+            <LogOut size={20} /> Logout
+          </button>
+        </div>
+      )}
     </header>
   );
 };
 
-// Desktop NavItem
-const NavItem = ({ to, icon, label }) => (
+// Component: Desktop Nav Link
+const NavLink = ({ to, children, active }) => (
   <Link
     to={to}
-    className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 transition-colors font-medium text-sm lg:text-base whitespace-nowrap"
+    className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
+      active ? "text-indigo-600 bg-indigo-50" : "text-gray-600 hover:text-indigo-600 hover:bg-gray-50"
+    }`}
   >
-    {icon}
-    <span>{label}</span>
+    {children}
   </Link>
 );
 
-// Mobile NavItem
-const MobileNavItem = ({ to, icon, label, onClick }) => (
-  <Link
-    to={to}
-    onClick={onClick}
-    className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-colors font-medium"
-  >
-    {icon}
-    <span>{label}</span>
+// Component: Mobile Nav Link
+const MobileLink = ({ to, children, onClick }) => (
+  <Link to={to} onClick={onClick} className="block px-4 py-3 text-gray-700 font-medium hover:bg-indigo-50 rounded-lg">
+    {children}
   </Link>
 );
 

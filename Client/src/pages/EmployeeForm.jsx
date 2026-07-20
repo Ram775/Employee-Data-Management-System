@@ -19,9 +19,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const EmployeeForm = () => {
-  const { id } = useParams(); // Get ID from URL
+  const { id } = useParams();
   const navigate = useNavigate();
-  const isEditMode = !!id; // Check if we're in edit mode
+  const isEditMode = !!id;
 
   const [formData, setFormData] = useState({
     epfNo: "",
@@ -35,10 +35,9 @@ const EmployeeForm = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [loading, setLoading] = useState(isEditMode); // Loading if edit mode
+  const [loading, setLoading] = useState(isEditMode);
   const [error, setError] = useState(null);
 
-  // Fetch employee data if in edit mode
   useEffect(() => {
     if (isEditMode) {
       fetchEmployeeData();
@@ -48,21 +47,10 @@ const EmployeeForm = () => {
   const fetchEmployeeData = async () => {
     try {
       setLoading(true);
-      setError(null);
-
-      // Get all employees and find the one with matching ID
       const response = await employeeService.getAll();
-
-      let employees = [];
-      if (response?.data?.data && Array.isArray(response.data.data)) {
-        employees = response.data.data;
-      } else if (response?.data && Array.isArray(response.data)) {
-        employees = response.data;
-      } else if (Array.isArray(response)) {
-        employees = response;
-      }
-
-      // Find employee by ID (first column is UUID)
+      let employees = Array.isArray(response)
+        ? response
+        : response?.data?.data || response?.data || [];
       const employee = employees.find((emp) => emp[0] === id);
 
       if (employee) {
@@ -76,225 +64,175 @@ const EmployeeForm = () => {
           livingDate: employee[7] || "",
           exitDate: employee[8] || "",
         });
-        toast.info("Employee data loaded for editing");
       } else {
         setError("Employee not found");
-        toast.error("Employee not found with ID: ");
       }
     } catch (err) {
-      console.error("Error fetching employee:", err);
-      setError("Failed to load employee data");
-      toast.error("Failed to load employee data");
+      setError("Failed to load data");
     } finally {
       setLoading(false);
     }
   };
 
+  const validateInput = (name, value) => {
+    // Numeric fields: Only allow digits
+    if (["epfNo", "uan", "ppoNo"].includes(name)) {
+      return /^[0-9]*$/.test(value);
+    }
+    // Text fields: Allow letters, spaces, and dots
+    if (["name", "fatherName", "designation"].includes(name)) {
+      return /^[a-zA-Z\s.]*$/.test(value);
+    }
+    return true;
+  };
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    if (validateInput(name, value)) {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setError(null);
-
     try {
-      if (isEditMode) {
-        // Update existing employee
-        await employeeService.update(id, formData);
-        toast.success("Employee updated successfully!");
-      } else {
-        // Create new employee
-        await employeeService.create(formData);
-        toast.success("Employee added successfully!");
-      }
+      if (isEditMode) await employeeService.update(id, formData);
+      else await employeeService.create(formData);
 
-      // Reset form
-      setFormData({
-        epfNo: "",
-        uan: "",
-        ppoNo: "",
-        name: "",
-        fatherName: "",
-        designation: "",
-        livingDate: "",
-        exitDate: "",
-      });
-
-      // Navigate back to employee list
+      toast.success(
+        isEditMode ? "Updated successfully!" : "Added successfully!",
+      );
       navigate("/employee-list");
     } catch (error) {
-      console.error("Submit error:", error);
-      const errorMsg = error.response?.data?.error || "Failed to submit data";
-      setError(errorMsg);
-      toast.error(
-        isEditMode ? "Failed to update employee" : "Failed to add employee",
-      );
+      toast.error("Operation failed");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Field configurations
   const fieldConfigs = [
-    { label: "EPF Account No.", name: "epfNo", icon: Key },
-    { label: "UAN", name: "uan", icon: FileText },
-    { label: "PPO No.", name: "ppoNo", icon: UserCheck },
-    { label: "Employee Name", name: "name", icon: User },
-    { label: "Father's Name", name: "fatherName", icon: UserCircle },
-    { label: "Designation", name: "designation", icon: Briefcase },
+    {
+      label: "EPF Account No.",
+      name: "epfNo",
+      icon: Key,
+      placeholder: "e.g., 100012345678",
+    },
+    {
+      label: "UAN",
+      name: "uan",
+      icon: FileText,
+      placeholder: "e.g., 100123456789",
+    },
+    {
+      label: "PPO No.",
+      name: "ppoNo",
+      icon: UserCheck,
+      placeholder: "e.g., MP12345678",
+    },
+    {
+      label: "Employee Name",
+      name: "name",
+      icon: User,
+      placeholder: "e.g., Rajesh Kumar",
+    },
+    {
+      label: "Father's Name",
+      name: "fatherName",
+      icon: UserCircle,
+      placeholder: "e.g., Suresh Singh",
+    },
+    {
+      label: "Designation",
+      name: "designation",
+      icon: Briefcase,
+      placeholder: "e.g., Senior Clerk",
+    },
   ];
 
-  // Show loading state
-  if (loading) {
+  if (loading)
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto" />
-          <p className="mt-4 text-gray-600">Loading employee data...</p>
-        </div>
+        <Loader2 className="w-12 h-12 animate-spin text-blue-500" />
       </div>
     );
-  }
 
   return (
-    <div className="md:px-6 flex items-center justify-center  py-4">
-      <div className="w-full  bg-white shadow-xl rounded-xl sm:rounded-2xl p-4 md:p-8 lg:p-10 border border-slate-100 transition-all duration-300">
-        {/* Header Section */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 sm:mb-8">
-          <div className="flex items-center gap-3 sm:gap-4">
-            <div className="p-2.5 sm:p-3 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl text-white shadow-lg shadow-blue-600/20">
-              <Building2 size={20} />
-            </div>
-            <div>
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
-                {isEditMode ? "Edit Employee" : "Employee Work Sheet"}
-              </h2>
-              <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-                {isEditMode
-                  ? `Editing employee with ID: ${id?.substring(0, 8)}...`
-                  : "M.P. Road Transport Corp."}
-              </p>
-            </div>
-          </div>
-
-          {/* Back Button */}
+    <div className="md:px-6 flex items-center justify-center py-4">
+      <div className="w-full bg-white shadow-xl rounded-xl p-4 md:p-10 border border-slate-100">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-2xl font-bold text-gray-800">
+            {isEditMode ? "Edit Employee" : "Employee Work Sheet"}
+          </h2>
           <button
             onClick={() => navigate("/employee-list")}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200"
           >
-            <ArrowLeft size={16} />
-            Back to List
+            <ArrowLeft size={16} /> Back
           </button>
         </div>
 
-        {/* Error Display */}
-        {error && (
-          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
-            {error}
-          </div>
-        )}
-
-        {/* Edit Mode Indicator */}
-        {isEditMode && (
-          <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg flex items-center gap-2 text-blue-700 text-sm">
-            <Edit3 size={16} />
-            <span>
-              You are editing employee:{" "}
-              <strong>{formData.name || "..."}</strong>
-            </span>
-          </div>
-        )}
-
-        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
-            {/* Standard Text Inputs */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {fieldConfigs.map((field) => (
               <div key={field.name} className="space-y-1.5">
-                <label className="block text-xs sm:text-sm font-medium text-gray-600">
-                  {field.label}
-                  <span className="text-red-500 ml-1">*</span>
+                <label className="block text-sm font-medium text-gray-600">
+                  {field.label} *
                 </label>
-                <div className="relative group">
-                  <field.icon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
+                <div className="relative">
+                  <field.icon className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                   <input
                     name={field.name}
                     required
                     value={formData[field.name]}
                     onChange={handleChange}
-                    className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2 sm:py-2.5 text-sm sm:text-base bg-gray-50 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200 hover:bg-white"
-                    placeholder={`Enter ${field.label.toLowerCase()}`}
+                    placeholder={field.placeholder}
+                    className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                   />
                 </div>
               </div>
             ))}
 
-            {/* Living Date */}
             <div className="space-y-1.5">
-              <label className="block text-xs sm:text-sm font-medium text-gray-600">
-                Living Date
-                <span className="text-red-500 ml-1">*</span>
+              <label className="block text-sm font-medium text-gray-600">
+                Living Date *
               </label>
-              <div className="relative group">
-                <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
-                <input
-                  type="date"
-                  name="livingDate"
-                  required
-                  value={formData.livingDate}
-                  onChange={handleChange}
-                  className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2 sm:py-2.5 text-sm sm:text-base bg-gray-50 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200 hover:bg-white"
-                />
-              </div>
+              <input
+                type="date"
+                name="livingDate"
+                required
+                value={formData.livingDate}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-lg"
+              />
             </div>
-
-            {/* Exit Date */}
             <div className="space-y-1.5">
-              <label className="block text-xs sm:text-sm font-medium text-gray-600">
-                Exit Date
-                <span className="text-red-500 ml-1">*</span>
+              <label className="block text-sm font-medium text-gray-600">
+                Exit Date *
               </label>
-              <div className="relative group">
-                <LogOut className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
-                <input
-                  type="date"
-                  name="exitDate"
-                  required
-                  value={formData.exitDate}
-                  onChange={handleChange}
-                  className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2 sm:py-2.5 text-sm sm:text-base bg-gray-50 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200 hover:bg-white"
-                />
-              </div>
+              <input
+                type="date"
+                name="exitDate"
+                required
+                value={formData.exitDate}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-lg"
+              />
             </div>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-2.5 sm:py-3 md:py-3.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg sm:rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 disabled:opacity-70 disabled:cursor-not-allowed transform hover:scale-[1.01]"
+            className="w-full py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 flex justify-center items-center gap-2"
           >
             {isSubmitting ? (
-              <>
-                <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
-                <span>{isEditMode ? "Updating..." : "Submitting..."}</span>
-              </>
+              <Loader2 className="animate-spin" />
             ) : (
-              <>
-                <Send className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span>{isEditMode ? "Update Employee" : "Submit Details"}</span>
-              </>
+              <Send size={20} />
             )}
+            {isEditMode ? "Update Details" : "Submit Details"}
           </button>
-
-          {/* Footer Info */}
-          <p className="text-center text-xs text-gray-400 mt-2">
-            {isEditMode
-              ? "Update the employee information. All fields are required."
-              : "All fields are required. Please verify before submitting."}
-          </p>
         </form>
       </div>
     </div>
