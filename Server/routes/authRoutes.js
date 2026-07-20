@@ -8,7 +8,7 @@ const router = express.Router();
 router.post("/login", async (req, res) => {
   try {
     const db = await connectDB();
-    console.log(req.body);
+    
     const { email, password } = req.body;
 
     if (!email || !password) {

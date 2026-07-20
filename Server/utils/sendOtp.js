@@ -1,22 +1,38 @@
+const { google } = require("googleapis");
 const nodemailer = require("nodemailer");
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-  connectionTimeout: 60000,
-  greetingTimeout: 60000,
-  socketTimeout: 60000,
+const OAuth2 = google.auth.OAuth2;
+
+const oauth2Client = new OAuth2(
+  process.env.GMAIL_CLIENT_ID,
+  process.env.GMAIL_CLIENT_SECRET,
+);
+
+oauth2Client.setCredentials({
+  refresh_token: process.env.GMAIL_REFRESH_TOKEN,
 });
 
-const sendOTP = async (email, otp) => {
-  await transporter.sendMail({
-    from: `"Employee Management System" <${process.env.EMAIL_USER}>`,
-    to: email,
-    subject: "🔐 Secure Login OTP - Employee Management System",
-    html: `
+async function sendOTP(email, otp) {
+  try {
+    const accessToken = await oauth2Client.getAccessToken();
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        type: "OAuth2",
+        user: process.env.GMAIL_USER,
+        clientId: process.env.GMAIL_CLIENT_ID,
+        clientSecret: process.env.GMAIL_CLIENT_SECRET,
+        refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+        accessToken: accessToken.token,
+      },
+    });
+
+    await transporter.sendMail({
+      from: `"Employee Management System" <${process.env.GMAIL_USER}>`,
+      to: email,
+      subject: "🔐 Secure Login OTP - Employee Management System",
+      html: `
       <!DOCTYPE html>
       <html>
       <head>
@@ -107,7 +123,14 @@ const sendOTP = async (email, otp) => {
       </body>
       </html>
     `,
-  });
-};
+    });
+
+    console.log("OTP sent successfully");
+    return true;
+  } catch (err) {
+    console.error("Email Error:", err);
+    throw err;
+  }
+}
 
 module.exports = sendOTP;
