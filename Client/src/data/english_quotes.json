@@ -2399,5 +2399,4809 @@
     "category": "Life",
     "quote": "🌺 Life is not measured by the number of breaths we take, but by the moments that take our breath away.",
     "author": "Unknown"
+  },
+
+  {
+    "id": 401,
+    "category": "Inspirational",
+    "quote": "💪 The best time to start was yesterday. The next best time is now.",
+    "author": "Unknown"
+  },
+  {
+    "id": 402,
+    "category": "Inspirational",
+    "quote": "🌟 You are never too old to set another goal or to dream a new dream.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "id": 403,
+    "category": "Inspirational",
+    "quote": "🔥 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 404,
+    "category": "Inspirational",
+    "quote": "💪 It's not about how bad you want it. It's about how hard you're willing to work for it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 405,
+    "category": "Inspirational",
+    "quote": "🌟 Your time is limited, so don't waste it living someone else's life.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 406,
+    "category": "Inspirational",
+    "quote": "🔥 The question isn't who is going to let me; it's who is going to stop me.",
+    "author": "Ayn Rand"
+  },
+  {
+    "id": 407,
+    "category": "Inspirational",
+    "quote": "💪 If you can dream it, you can do it.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 408,
+    "category": "Inspirational",
+    "quote": "🌟 Be so good they can't ignore you.",
+    "author": "Steve Martin"
+  },
+  {
+    "id": 409,
+    "category": "Inspirational",
+    "quote": "🔥 The difference between who you are and who you want to be is what you do.",
+    "author": "Unknown"
+  },
+  {
+    "id": 410,
+    "category": "Inspirational",
+    "quote": "💪 It's not the load that breaks you down, it's the way you carry it.",
+    "author": "Lou Holtz"
+  },
+  {
+    "id": 411,
+    "category": "Inspirational",
+    "quote": "🌟 The only impossible journey is the one you never begin.",
+    "author": "Tony Robbins"
+  },
+  {
+    "id": 412,
+    "category": "Inspirational",
+    "quote": "🔥 Start where you are. Use what you have. Do what you can.",
+    "author": "Arthur Ashe"
+  },
+  {
+    "id": 413,
+    "category": "Inspirational",
+    "quote": "💪 The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 414,
+    "category": "Inspirational",
+    "quote": "🌟 You don't have to be great to start, but you have to start to be great.",
+    "author": "Zig Ziglar"
+  },
+  {
+    "id": 415,
+    "category": "Inspirational",
+    "quote": "🔥 If you want to achieve greatness, stop asking for permission.",
+    "author": "Unknown"
+  },
+  {
+    "id": 416,
+    "category": "Inspirational",
+    "quote": "💪 Don't be pushed around by the problems in your life. Be pushed by your dreams.",
+    "author": "Unknown"
+  },
+  {
+    "id": 417,
+    "category": "Inspirational",
+    "quote": "🌟 The best revenge is massive success.",
+    "author": "Frank Sinatra"
+  },
+  {
+    "id": 418,
+    "category": "Inspirational",
+    "quote": "🔥 Everything you've ever wanted is on the other side of fear.",
+    "author": "George Addair"
+  },
+  {
+    "id": 419,
+    "category": "Inspirational",
+    "quote": "💪 Opportunities don't happen. You create them.",
+    "author": "Chris Grosser"
+  },
+  {
+    "id": 420,
+    "category": "Inspirational",
+    "quote": "🌟 The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 421,
+    "category": "Inspirational",
+    "quote": "🔥 Success is not the key to happiness. Happiness is the key to success.",
+    "author": "Albert Schweitzer"
+  },
+  {
+    "id": 422,
+    "category": "Inspirational",
+    "quote": "💪 The only way to do great work is to love what you do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 423,
+    "category": "Inspirational",
+    "quote": "🌟 Believe you can and you're halfway there.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 424,
+    "category": "Inspirational",
+    "quote": "🔥 It does not matter how slowly you go as long as you do not stop.",
+    "author": "Confucius"
+  },
+  {
+    "id": 425,
+    "category": "Inspirational",
+    "quote": "💪 The future belongs to those who believe in the beauty of their dreams.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "id": 426,
+    "category": "Inspirational",
+    "quote": "🌟 You miss 100% of the shots you don't take.",
+    "author": "Wayne Gretzky"
+  },
+  {
+    "id": 427,
+    "category": "Inspirational",
+    "quote": "🔥 Success is walking from failure to failure with no loss of enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 428,
+    "category": "Inspirational",
+    "quote": "💪 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 429,
+    "category": "Inspirational",
+    "quote": "🌟 It always seems impossible until it's done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 430,
+    "category": "Inspirational",
+    "quote": "🔥 Don't watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 431,
+    "category": "Life",
+    "quote": "🌅 Life is what happens when you're busy making other plans.",
+    "author": "John Lennon"
+  },
+  {
+    "id": 432,
+    "category": "Life",
+    "quote": "🌺 In the end, it's not the years in your life that count. It's the life in your years.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 433,
+    "category": "Life",
+    "quote": "🌈 The purpose of our lives is to be happy.",
+    "author": "Dalai Lama"
+  },
+  {
+    "id": 434,
+    "category": "Life",
+    "quote": "🌅 Life is really simple, but we insist on making it complicated.",
+    "author": "Confucius"
+  },
+  {
+    "id": 435,
+    "category": "Life",
+    "quote": "🌺 Get busy living or get busy dying.",
+    "author": "Stephen King"
+  },
+  {
+    "id": 436,
+    "category": "Life",
+    "quote": "🌈 The good life is a process, not a state of being.",
+    "author": "Carl Rogers"
+  },
+  {
+    "id": 437,
+    "category": "Life",
+    "quote": "🌅 Life isn't about finding yourself. Life is about creating yourself.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "id": 438,
+    "category": "Life",
+    "quote": "🌺 To live is the rarest thing in the world. Most people exist, that is all.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "id": 439,
+    "category": "Life",
+    "quote": "🌈 Life is a journey, not a destination.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 440,
+    "category": "Life",
+    "quote": "🌅 Life is like riding a bicycle. To keep your balance, you must keep moving.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 441,
+    "category": "Life",
+    "quote": "🌺 Life is short, and it's up to you to make it sweet.",
+    "author": "Unknown"
+  },
+  {
+    "id": 442,
+    "category": "Life",
+    "quote": "🌈 Life is a dream for the wise, a game for the fool, a comedy for the rich, a tragedy for the poor.",
+    "author": "Sholom Aleichem"
+  },
+  {
+    "id": 443,
+    "category": "Life",
+    "quote": "🌅 Life is a flower of which love is the honey.",
+    "author": "Victor Hugo"
+  },
+  {
+    "id": 444,
+    "category": "Life",
+    "quote": "🌺 Life is what we make it, always has been, always will be.",
+    "author": "Grandma Moses"
+  },
+  {
+    "id": 445,
+    "category": "Life",
+    "quote": "🌈 Life is a daring adventure or nothing at all.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 446,
+    "category": "Life",
+    "quote": "🌅 Life is a wonderful journey. Enjoy the ride.",
+    "author": "Unknown"
+  },
+  {
+    "id": 447,
+    "category": "Life",
+    "quote": "🌺 Life is a gift, and it offers us the privilege, opportunity, and responsibility to give something back.",
+    "author": "Tony Robbins"
+  },
+  {
+    "id": 448,
+    "category": "Life",
+    "quote": "🌈 The biggest adventure you can take is to live the life of your dreams.",
+    "author": "Oprah Winfrey"
+  },
+  {
+    "id": 449,
+    "category": "Life",
+    "quote": "🌅 Life is like a camera. Focus on what's important. Capture the good times. Develop from the negatives.",
+    "author": "Unknown"
+  },
+  {
+    "id": 450,
+    "category": "Life",
+    "quote": "🌺 Life is a balance of holding on and letting go.",
+    "author": "Rumi"
+  },
+  {
+    "id": 451,
+    "category": "Love",
+    "quote": "❤️ The best thing to hold onto in life is each other.",
+    "author": "Audrey Hepburn"
+  },
+  {
+    "id": 452,
+    "category": "Love",
+    "quote": "💖 Love all, trust a few, do wrong to none.",
+    "author": "William Shakespeare"
+  },
+  {
+    "id": 453,
+    "category": "Love",
+    "quote": "💕 Where there is love there is life.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "id": 454,
+    "category": "Love",
+    "quote": "❤️ The only thing we never get enough of is love.",
+    "author": "Henry Miller"
+  },
+  {
+    "id": 455,
+    "category": "Love",
+    "quote": "💖 Love is composed of a single soul inhabiting two bodies.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 456,
+    "category": "Love",
+    "quote": "💕 To love is nothing. To be loved is something. But to love and be loved, that's everything.",
+    "author": "Unknown"
+  },
+  {
+    "id": 457,
+    "category": "Love",
+    "quote": "❤️ Love is a game that two can play and both win.",
+    "author": "Eva Gabor"
+  },
+  {
+    "id": 458,
+    "category": "Love",
+    "quote": "💖 Love is the master key that opens the gates of happiness.",
+    "author": "Oliver Wendell Holmes"
+  },
+  {
+    "id": 459,
+    "category": "Love",
+    "quote": "💕 Love is not about how many days, months, or years you've been together. Love is about how much you love each other every day.",
+    "author": "Unknown"
+  },
+  {
+    "id": 460,
+    "category": "Love",
+    "quote": "❤️ Love is a friendship set to music.",
+    "author": "Joseph Campbell"
+  },
+  {
+    "id": 461,
+    "category": "Love",
+    "quote": "💖 Love is when the other person's happiness is more important than your own.",
+    "author": "H. Jackson Brown Jr."
+  },
+  {
+    "id": 462,
+    "category": "Love",
+    "quote": "💕 The greatest happiness of life is the conviction that we are loved.",
+    "author": "Victor Hugo"
+  },
+  {
+    "id": 463,
+    "category": "Love",
+    "quote": "❤️ Love is not about possession. It's all about appreciation.",
+    "author": "Unknown"
+  },
+  {
+    "id": 464,
+    "category": "Love",
+    "quote": "💖 To be brave is to love someone unconditionally, without expecting anything in return.",
+    "author": "Unknown"
+  },
+  {
+    "id": 465,
+    "category": "Love",
+    "quote": "💕 Love is a promise; love is a souvenir, once given never forgotten.",
+    "author": "Unknown"
+  },
+  {
+    "id": 466,
+    "category": "Love",
+    "quote": "❤️ Love does not dominate; it cultivates.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "id": 467,
+    "category": "Love",
+    "quote": "💖 Love is a beautiful thing. When you find it, hold onto it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 468,
+    "category": "Love",
+    "quote": "💕 Love is the answer, and you know that for sure.",
+    "author": "John Lennon"
+  },
+  {
+    "id": 469,
+    "category": "Love",
+    "quote": "❤️ The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 470,
+    "category": "Love",
+    "quote": "💖 Love is the only force capable of transforming an enemy into a friend.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "id": 471,
+    "category": "Success",
+    "quote": "🏆 Success is not the key to happiness. Happiness is the key to success.",
+    "author": "Albert Schweitzer"
+  },
+  {
+    "id": 472,
+    "category": "Success",
+    "quote": "🎯 Success usually comes to those who are too busy to be looking for it.",
+    "author": "Henry David Thoreau"
+  },
+  {
+    "id": 473,
+    "category": "Success",
+    "quote": "🚀 Try not to become a man of success, but rather try to become a man of value.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 474,
+    "category": "Success",
+    "quote": "🏆 Success is how high you bounce when you hit bottom.",
+    "author": "George S. Patton"
+  },
+  {
+    "id": 475,
+    "category": "Success",
+    "quote": "🎯 The road to success and the road to failure are almost exactly the same.",
+    "author": "Colin R. Davis"
+  },
+  {
+    "id": 476,
+    "category": "Success",
+    "quote": "🚀 Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "id": 477,
+    "category": "Success",
+    "quote": "🏆 Success is a state of mind. If you want success, start thinking of yourself as a success.",
+    "author": "Dr. Joyce Brothers"
+  },
+  {
+    "id": 478,
+    "category": "Success",
+    "quote": "🎯 Success is not measured by what you accomplish, but by the opposition you have encountered.",
+    "author": "Orison Swett Marden"
+  },
+  {
+    "id": 479,
+    "category": "Success",
+    "quote": "🚀 Success is the sum of small efforts, repeated day in and day out.",
+    "author": "Robert Collier"
+  },
+  {
+    "id": 480,
+    "category": "Success",
+    "quote": "🏆 Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 481,
+    "category": "Success",
+    "quote": "🎯 The secret of success is to be ready when your opportunity comes.",
+    "author": "Benjamin Disraeli"
+  },
+  {
+    "id": 482,
+    "category": "Success",
+    "quote": "🚀 Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "id": 483,
+    "category": "Success",
+    "quote": "🏆 Success is the result of perfection, hard work, learning from failure, loyalty, and persistence.",
+    "author": "Colin Powell"
+  },
+  {
+    "id": 484,
+    "category": "Success",
+    "quote": "🎯 Success is getting what you want. Happiness is wanting what you get.",
+    "author": "Dale Carnegie"
+  },
+  {
+    "id": 485,
+    "category": "Success",
+    "quote": "🚀 The key to success is to focus on goals, not obstacles.",
+    "author": "Unknown"
+  },
+  {
+    "id": 486,
+    "category": "Success",
+    "quote": "🏆 Success is a journey, not a destination.",
+    "author": "Arthur Ashe"
+  },
+  {
+    "id": 487,
+    "category": "Success",
+    "quote": "🎯 Success is walking from failure to failure with no loss of enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 488,
+    "category": "Success",
+    "quote": "🚀 The successful warrior is the average man, with laser-like focus.",
+    "author": "Bruce Lee"
+  },
+  {
+    "id": 489,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to go from one failure to another with no loss of enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 490,
+    "category": "Success",
+    "quote": "🎯 Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 491,
+    "category": "Friendship",
+    "quote": "🤝 A friend is someone who knows all about you and still loves you.",
+    "author": "Elbert Hubbard"
+  },
+  {
+    "id": 492,
+    "category": "Friendship",
+    "quote": "👫 Friendship is born at that moment when one person says to another, 'What! You too? I thought I was the only one.'",
+    "author": "C.S. Lewis"
+  },
+  {
+    "id": 493,
+    "category": "Friendship",
+    "quote": "💫 A true friend is the greatest of all blessings.",
+    "author": "Unknown"
+  },
+  {
+    "id": 494,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only cement that will ever hold the world together.",
+    "author": "Woodrow Wilson"
+  },
+  {
+    "id": 495,
+    "category": "Friendship",
+    "quote": "👫 A real friend is one who walks in when the rest of the world walks out.",
+    "author": "Walter Winchell"
+  },
+  {
+    "id": 496,
+    "category": "Friendship",
+    "quote": "💫 Friendship is the golden thread that ties the heart of all the world.",
+    "author": "John Evelyn"
+  },
+  {
+    "id": 497,
+    "category": "Friendship",
+    "quote": "🤝 True friendship comes when the silence between two people is comfortable.",
+    "author": "Unknown"
+  },
+  {
+    "id": 498,
+    "category": "Friendship",
+    "quote": "👫 A friend is someone who gives you total freedom to be yourself.",
+    "author": "Jim Morrison"
+  },
+  {
+    "id": 499,
+    "category": "Friendship",
+    "quote": "💫 Friendship is a sheltering tree.",
+    "author": "Samuel Taylor Coleridge"
+  },
+  {
+    "id": 500,
+    "category": "Friendship",
+    "quote": "🤝 The greatest gift of life is friendship, and I have received it.",
+    "author": "Hubert H. Humphrey"
+  },
+  {
+    "id": 501,
+    "category": "Friendship",
+    "quote": "👫 A true friend never gets in your way unless you happen to be going down.",
+    "author": "Arnold H. Glasow"
+  },
+  {
+    "id": 502,
+    "category": "Friendship",
+    "quote": "💫 The only way to have a friend is to be one.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 503,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the wine of life.",
+    "author": "Edward Young"
+  },
+  {
+    "id": 504,
+    "category": "Friendship",
+    "quote": "👫 Good friends are like stars. You don't always see them, but you know they're always there.",
+    "author": "Unknown"
+  },
+  {
+    "id": 505,
+    "category": "Friendship",
+    "quote": "💫 A friend is one that knows you as you are, understands where you have been, accepts what you have become, and still, gently allows you to grow.",
+    "author": "William Shakespeare"
+  },
+  {
+    "id": 506,
+    "category": "Friendship",
+    "quote": "🤝 True friendship multiplies the good in life and divides its evils.",
+    "author": "Unknown"
+  },
+  {
+    "id": 507,
+    "category": "Friendship",
+    "quote": "👫 In the end, we will remember not the words of our enemies, but the silence of our friends.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "id": 508,
+    "category": "Friendship",
+    "quote": "💫 Friendship is the hardest thing in the world to explain. It's not something you learn in school.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "id": 509,
+    "category": "Friendship",
+    "quote": "🤝 A friend is someone who understands your past, believes in your future, and accepts you just the way you are.",
+    "author": "Unknown"
+  },
+  {
+    "id": 510,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the only flower that blooms in all seasons.",
+    "author": "Unknown"
+  },
+  {
+    "id": 511,
+    "category": "Positive",
+    "quote": "😊 Keep your face to the sunshine and you cannot see a shadow.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 512,
+    "category": "Positive",
+    "quote": "✨ Positive anything is better than negative nothing.",
+    "author": "Elbert Hubbard"
+  },
+  {
+    "id": 513,
+    "category": "Positive",
+    "quote": "🌻 What you think, you become. What you feel, you attract. What you imagine, you create.",
+    "author": "Buddha"
+  },
+  {
+    "id": 514,
+    "category": "Positive",
+    "quote": "😊 A positive attitude causes a chain reaction of positive thoughts, events, and outcomes.",
+    "author": "Unknown"
+  },
+  {
+    "id": 515,
+    "category": "Positive",
+    "quote": "✨ Stay positive and happy. Work hard and don't give up hope.",
+    "author": "Unknown"
+  },
+  {
+    "id": 516,
+    "category": "Positive",
+    "quote": "🌻 Optimism is a happiness magnet. If you stay positive, good things and good people will be drawn to you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 517,
+    "category": "Positive",
+    "quote": "😊 The only place where your dream becomes impossible is in your own thinking.",
+    "author": "Unknown"
+  },
+  {
+    "id": 518,
+    "category": "Positive",
+    "quote": "✨ Positive thinking is more than just a tagline. It changes the way we behave.",
+    "author": "Unknown"
+  },
+  {
+    "id": 519,
+    "category": "Positive",
+    "quote": "🌻 Smile more. Positive thinking will let you do everything better.",
+    "author": "Unknown"
+  },
+  {
+    "id": 520,
+    "category": "Positive",
+    "quote": "😊 Once you replace negative thoughts with positive ones, you'll start having positive results.",
+    "author": "Willie Nelson"
+  },
+  {
+    "id": 521,
+    "category": "Positive",
+    "quote": "✨ Positive thinking is not about ignoring the negative, but about finding the good in every situation.",
+    "author": "Unknown"
+  },
+  {
+    "id": 522,
+    "category": "Positive",
+    "quote": "🌻 The mind is everything. What you think you become.",
+    "author": "Buddha"
+  },
+  {
+    "id": 523,
+    "category": "Positive",
+    "quote": "😊 With the new day comes new strength and new thoughts.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "id": 524,
+    "category": "Positive",
+    "quote": "✨ Optimism is the faith that leads to achievement.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 525,
+    "category": "Positive",
+    "quote": "🌻 A smile is the prettiest thing you can wear.",
+    "author": "Unknown"
+  },
+  {
+    "id": 526,
+    "category": "Positive",
+    "quote": "😊 Choose to be optimistic, it feels better.",
+    "author": "Dalai Lama"
+  },
+  {
+    "id": 527,
+    "category": "Positive",
+    "quote": "✨ Your smile will give you a positive countenance that will make people feel comfortable around you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 528,
+    "category": "Positive",
+    "quote": "🌻 A positive mindset is a powerful thing. It can change your entire day.",
+    "author": "Unknown"
+  },
+  {
+    "id": 529,
+    "category": "Positive",
+    "quote": "😊 Life is 10% what happens to us and 90% how we react to it.",
+    "author": "Charles R. Swindoll"
+  },
+  {
+    "id": 530,
+    "category": "Positive",
+    "quote": "✨ Smile, it's the key that fits the lock of everybody's heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 531,
+    "category": "Inspirational",
+    "quote": "💪 It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change.",
+    "author": "Charles Darwin"
+  },
+  {
+    "id": 532,
+    "category": "Inspirational",
+    "quote": "🌟 The best preparation for tomorrow is doing your best today.",
+    "author": "H. Jackson Brown Jr."
+  },
+  {
+    "id": 533,
+    "category": "Inspirational",
+    "quote": "🔥 To be successful, you have to have your heart in your business and your business in your heart.",
+    "author": "Thomas Watson Sr."
+  },
+  {
+    "id": 534,
+    "category": "Inspirational",
+    "quote": "💪 The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will.",
+    "author": "Vince Lombardi"
+  },
+  {
+    "id": 535,
+    "category": "Inspirational",
+    "quote": "🌟 The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it.",
+    "author": "Jordan Belfort"
+  },
+  {
+    "id": 536,
+    "category": "Inspirational",
+    "quote": "🔥 Success is not for the chosen few. It's for the few who choose it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 537,
+    "category": "Inspirational",
+    "quote": "💪 The road to success is always under construction.",
+    "author": "Lily Tomlin"
+  },
+  {
+    "id": 538,
+    "category": "Inspirational",
+    "quote": "🌟 Success is the result of what you do after you've done what you were supposed to do.",
+    "author": "Unknown"
+  },
+  {
+    "id": 539,
+    "category": "Inspirational",
+    "quote": "🔥 The starting point of all achievement is desire.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "id": 540,
+    "category": "Inspirational",
+    "quote": "💪 The only place where success comes before work is in the dictionary.",
+    "author": "Vidal Sassoon"
+  },
+  {
+    "id": 541,
+    "category": "Life",
+    "quote": "🌅 Life is a series of natural and spontaneous changes. Don't resist them; that only creates sorrow.",
+    "author": "Lao Tzu"
+  },
+  {
+    "id": 542,
+    "category": "Life",
+    "quote": "🌺 Life is like a coin. You can spend it any way you wish, but you only spend it once.",
+    "author": "Unknown"
+  },
+  {
+    "id": 543,
+    "category": "Life",
+    "quote": "🌈 Life is a beautiful journey. Enjoy every moment of it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 544,
+    "category": "Life",
+    "quote": "🌅 Life is a combination of magic and pasta.",
+    "author": "Federico Fellini"
+  },
+  {
+    "id": 545,
+    "category": "Life",
+    "quote": "🌺 Life is like a book. Some chapters are sad, some are happy, and some are exciting. But if you never turn the page, you will never know what the next chapter holds.",
+    "author": "Unknown"
+  },
+  {
+    "id": 546,
+    "category": "Life",
+    "quote": "🌈 Life is not a problem to be solved, but a mystery to be lived.",
+    "author": "Unknown"
+  },
+  {
+    "id": 547,
+    "category": "Life",
+    "quote": "🌅 Life is like a box of chocolates. You never know what you're gonna get.",
+    "author": "Forrest Gump"
+  },
+  {
+    "id": 548,
+    "category": "Life",
+    "quote": "🌺 Life is like a game of chess. To win, you have to make a move.",
+    "author": "Unknown"
+  },
+  {
+    "id": 549,
+    "category": "Life",
+    "quote": "🌈 Life is a journey that must be traveled no matter how bad the roads and accommodations.",
+    "author": "Oliver Goldsmith"
+  },
+  {
+    "id": 550,
+    "category": "Life",
+    "quote": "🌅 Life is a grand adventure or nothing at all.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 551,
+    "category": "Love",
+    "quote": "❤️ Love is the greatest refreshment in life.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "id": 552,
+    "category": "Love",
+    "quote": "💖 The art of love is largely the art of persistence.",
+    "author": "Albert Ellis"
+  },
+  {
+    "id": 553,
+    "category": "Love",
+    "quote": "💕 To love and be loved is to feel the sun from both sides.",
+    "author": "David Viscott"
+  },
+  {
+    "id": 554,
+    "category": "Love",
+    "quote": "❤️ The only thing more unthinkable than leaving was staying; the only thing more impossible than staying was leaving.",
+    "author": "Elizabeth Gilbert"
+  },
+  {
+    "id": 555,
+    "category": "Love",
+    "quote": "💖 Love is not about how many times you say 'I love you,' but how much you prove that it's true.",
+    "author": "Unknown"
+  },
+  {
+    "id": 556,
+    "category": "Love",
+    "quote": "💕 Love is the bridge between two hearts, the key that unlocks the door to happiness.",
+    "author": "Unknown"
+  },
+  {
+    "id": 557,
+    "category": "Love",
+    "quote": "❤️ Love is the only thing that can fill the emptiness of a heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 558,
+    "category": "Love",
+    "quote": "💖 Love is not just looking at each other, it's looking in the same direction.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "id": 559,
+    "category": "Love",
+    "quote": "💕 Love is a temporary madness. It erupts like volcanoes and then subsides.",
+    "author": "Unknown"
+  },
+  {
+    "id": 560,
+    "category": "Love",
+    "quote": "❤️ Love is the poetry of the heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 561,
+    "category": "Success",
+    "quote": "🏆 Success is not just about making money. It's about making a difference.",
+    "author": "Unknown"
+  },
+  {
+    "id": 562,
+    "category": "Success",
+    "quote": "🎯 Success is not measured by the position you hold, but by the obstacles you overcome.",
+    "author": "Booker T. Washington"
+  },
+  {
+    "id": 563,
+    "category": "Success",
+    "quote": "🚀 Success is not the result of spontaneous combustion. You must set yourself on fire.",
+    "author": "Arnold H. Glasow"
+  },
+  {
+    "id": 564,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to go from failure to failure without losing your enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 565,
+    "category": "Success",
+    "quote": "🎯 The secret of success is to be like a duck—calm and unruffled on the surface but paddling like the devil underneath.",
+    "author": "Unknown"
+  },
+  {
+    "id": 566,
+    "category": "Success",
+    "quote": "🚀 Success is the sum of small efforts, repeated day in and day out.",
+    "author": "Robert Collier"
+  },
+  {
+    "id": 567,
+    "category": "Success",
+    "quote": "🏆 Success is about creating value, not just accumulating wealth.",
+    "author": "Unknown"
+  },
+  {
+    "id": 568,
+    "category": "Success",
+    "quote": "🎯 Success is the progressive realization of a worthy goal or ideal.",
+    "author": "Earl Nightingale"
+  },
+  {
+    "id": 569,
+    "category": "Success",
+    "quote": "🚀 Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "id": 570,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to live your life the way you want to live it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 571,
+    "category": "Friendship",
+    "quote": "🤝 A friend is one who believes in you when you have ceased to believe in yourself.",
+    "author": "Unknown"
+  },
+  {
+    "id": 572,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the most beautiful relationship in the world.",
+    "author": "Unknown"
+  },
+  {
+    "id": 573,
+    "category": "Friendship",
+    "quote": "💫 A true friend is someone who is there for you when they would rather be anywhere else.",
+    "author": "Unknown"
+  },
+  {
+    "id": 574,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only flower that blooms in all seasons.",
+    "author": "Unknown"
+  },
+  {
+    "id": 575,
+    "category": "Friendship",
+    "quote": "👫 The language of friendship is not words but meanings.",
+    "author": "Henry David Thoreau"
+  },
+  {
+    "id": 576,
+    "category": "Friendship",
+    "quote": "💫 Friendship is the hardest thing in the world to explain. It's not something you learn in school.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "id": 577,
+    "category": "Friendship",
+    "quote": "🤝 A friend is someone who knows the song in your heart and can sing it back to you when you have forgotten the words.",
+    "author": "Unknown"
+  },
+  {
+    "id": 578,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the golden thread that ties the heart of all the world.",
+    "author": "John Evelyn"
+  },
+  {
+    "id": 579,
+    "category": "Friendship",
+    "quote": "💫 The best mirror is an old friend.",
+    "author": "George Herbert"
+  },
+  {
+    "id": 580,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only cement that will ever hold the world together.",
+    "author": "Woodrow Wilson"
+  },
+  {
+    "id": 581,
+    "category": "Positive",
+    "quote": "😊 Positive thoughts are like a magnet. They attract more positive thoughts.",
+    "author": "Unknown"
+  },
+  {
+    "id": 582,
+    "category": "Positive",
+    "quote": "✨ A positive attitude is a person's passport to a better tomorrow.",
+    "author": "Unknown"
+  },
+  {
+    "id": 583,
+    "category": "Positive",
+    "quote": "🌻 Optimism is the most important quality for success.",
+    "author": "Unknown"
+  },
+  {
+    "id": 584,
+    "category": "Positive",
+    "quote": "😊 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 585,
+    "category": "Positive",
+    "quote": "✨ A smile is the most beautiful curve on a woman's body.",
+    "author": "Unknown"
+  },
+  {
+    "id": 586,
+    "category": "Positive",
+    "quote": "🌻 Your smile is your logo, your personality is your business card, and the way you make others feel is your trademark.",
+    "author": "Unknown"
+  },
+  {
+    "id": 587,
+    "category": "Positive",
+    "quote": "😊 A positive mind finds opportunity in everything.",
+    "author": "Unknown"
+  },
+  {
+    "id": 588,
+    "category": "Positive",
+    "quote": "✨ The power of positive thinking is the power to change your life.",
+    "author": "Unknown"
+  },
+  {
+    "id": 589,
+    "category": "Positive",
+    "quote": "🌻 Keep your face to the sunshine and you cannot see a shadow.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 590,
+    "category": "Positive",
+    "quote": "😊 Smile, it's the key that fits the lock of everybody's heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 591,
+    "category": "Inspirational",
+    "quote": "💪 Be not afraid of growing slowly; be afraid only of standing still.",
+    "author": "Chinese Proverb"
+  },
+  {
+    "id": 592,
+    "category": "Inspirational",
+    "quote": "🌟 The only way to have a friend is to be one.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 593,
+    "category": "Inspirational",
+    "quote": "🔥 Do not go where the path may lead, go instead where there is no path and leave a trail.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 594,
+    "category": "Inspirational",
+    "quote": "💪 The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 595,
+    "category": "Inspirational",
+    "quote": "🌟 The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 596,
+    "category": "Inspirational",
+    "quote": "🔥 Don't be afraid to give up the good to go for the great.",
+    "author": "John D. Rockefeller"
+  },
+  {
+    "id": 597,
+    "category": "Inspirational",
+    "quote": "💪 People who are crazy enough to think they can change the world are the ones who do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 598,
+    "category": "Inspirational",
+    "quote": "🌟 The only thing we have to fear is fear itself.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 599,
+    "category": "Inspirational",
+    "quote": "🔥 What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 600,
+    "category": "Inspirational",
+    "quote": "💪 The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+    "author": "Helen Keller"
+  },
+
+  {
+    "id": 601,
+    "category": "Inspirational",
+    "quote": "💪 The only person you are destined to become is the person you decide to be.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 602,
+    "category": "Inspirational",
+    "quote": "🌟 It's not whether you get knocked down, it's whether you get up.",
+    "author": "Vince Lombardi"
+  },
+  {
+    "id": 603,
+    "category": "Inspirational",
+    "quote": "🔥 Your limitation—it's only your imagination.",
+    "author": "Unknown"
+  },
+  {
+    "id": 604,
+    "category": "Inspirational",
+    "quote": "💪 Push yourself, because no one else is going to do it for you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 605,
+    "category": "Inspirational",
+    "quote": "🌟 Great things never come from comfort zones.",
+    "author": "Unknown"
+  },
+  {
+    "id": 606,
+    "category": "Inspirational",
+    "quote": "🔥 Dream it. Wish it. Do it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 607,
+    "category": "Inspirational",
+    "quote": "💪 Success doesn't just find you. You have to go out and get it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 608,
+    "category": "Inspirational",
+    "quote": "🌟 The harder you work for something, the greater you'll feel when you achieve it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 609,
+    "category": "Inspirational",
+    "quote": "🔥 Dream bigger. Do bigger.",
+    "author": "Unknown"
+  },
+  {
+    "id": 610,
+    "category": "Inspirational",
+    "quote": "💪 Your time is limited, so don't waste it living someone else's life.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 611,
+    "category": "Inspirational",
+    "quote": "🌟 The question isn't who is going to let me; it's who is going to stop me.",
+    "author": "Ayn Rand"
+  },
+  {
+    "id": 612,
+    "category": "Inspirational",
+    "quote": "🔥 If you can dream it, you can do it.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 613,
+    "category": "Inspirational",
+    "quote": "💪 Be so good they can't ignore you.",
+    "author": "Steve Martin"
+  },
+  {
+    "id": 614,
+    "category": "Inspirational",
+    "quote": "🌟 The difference between who you are and who you want to be is what you do.",
+    "author": "Unknown"
+  },
+  {
+    "id": 615,
+    "category": "Inspirational",
+    "quote": "🔥 It's not the load that breaks you down, it's the way you carry it.",
+    "author": "Lou Holtz"
+  },
+  {
+    "id": 616,
+    "category": "Inspirational",
+    "quote": "💪 The best time to start was yesterday. The next best time is now.",
+    "author": "Unknown"
+  },
+  {
+    "id": 617,
+    "category": "Inspirational",
+    "quote": "🌟 You are never too old to set another goal or to dream a new dream.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "id": 618,
+    "category": "Inspirational",
+    "quote": "🔥 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 619,
+    "category": "Inspirational",
+    "quote": "💪 It's not about how bad you want it. It's about how hard you're willing to work for it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 620,
+    "category": "Inspirational",
+    "quote": "🌟 The only impossible journey is the one you never begin.",
+    "author": "Tony Robbins"
+  },
+  {
+    "id": 621,
+    "category": "Inspirational",
+    "quote": "🔥 Start where you are. Use what you have. Do what you can.",
+    "author": "Arthur Ashe"
+  },
+  {
+    "id": 622,
+    "category": "Inspirational",
+    "quote": "💪 The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 623,
+    "category": "Inspirational",
+    "quote": "🌟 You don't have to be great to start, but you have to start to be great.",
+    "author": "Zig Ziglar"
+  },
+  {
+    "id": 624,
+    "category": "Inspirational",
+    "quote": "🔥 If you want to achieve greatness, stop asking for permission.",
+    "author": "Unknown"
+  },
+  {
+    "id": 625,
+    "category": "Inspirational",
+    "quote": "💪 Don't be pushed around by the problems in your life. Be pushed by your dreams.",
+    "author": "Unknown"
+  },
+  {
+    "id": 626,
+    "category": "Inspirational",
+    "quote": "🌟 The best revenge is massive success.",
+    "author": "Frank Sinatra"
+  },
+  {
+    "id": 627,
+    "category": "Inspirational",
+    "quote": "🔥 Everything you've ever wanted is on the other side of fear.",
+    "author": "George Addair"
+  },
+  {
+    "id": 628,
+    "category": "Inspirational",
+    "quote": "💪 Opportunities don't happen. You create them.",
+    "author": "Chris Grosser"
+  },
+  {
+    "id": 629,
+    "category": "Inspirational",
+    "quote": "🌟 The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 630,
+    "category": "Inspirational",
+    "quote": "🔥 Success is not the key to happiness. Happiness is the key to success.",
+    "author": "Albert Schweitzer"
+  },
+  {
+    "id": 631,
+    "category": "Life",
+    "quote": "🌅 Life is a series of natural and spontaneous changes. Don't resist them; that only creates sorrow.",
+    "author": "Lao Tzu"
+  },
+  {
+    "id": 632,
+    "category": "Life",
+    "quote": "🌺 Life is like a coin. You can spend it any way you wish, but you only spend it once.",
+    "author": "Unknown"
+  },
+  {
+    "id": 633,
+    "category": "Life",
+    "quote": "🌈 Life is a beautiful journey. Enjoy every moment of it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 634,
+    "category": "Life",
+    "quote": "🌅 Life is a combination of magic and pasta.",
+    "author": "Federico Fellini"
+  },
+  {
+    "id": 635,
+    "category": "Life",
+    "quote": "🌺 Life is like a book. Some chapters are sad, some are happy, and some are exciting. But if you never turn the page, you will never know what the next chapter holds.",
+    "author": "Unknown"
+  },
+  {
+    "id": 636,
+    "category": "Life",
+    "quote": "🌈 Life is not a problem to be solved, but a mystery to be lived.",
+    "author": "Unknown"
+  },
+  {
+    "id": 637,
+    "category": "Life",
+    "quote": "🌅 Life is like a box of chocolates. You never know what you're gonna get.",
+    "author": "Forrest Gump"
+  },
+  {
+    "id": 638,
+    "category": "Life",
+    "quote": "🌺 Life is like a game of chess. To win, you have to make a move.",
+    "author": "Unknown"
+  },
+  {
+    "id": 639,
+    "category": "Life",
+    "quote": "🌈 Life is a journey that must be traveled no matter how bad the roads and accommodations.",
+    "author": "Oliver Goldsmith"
+  },
+  {
+    "id": 640,
+    "category": "Life",
+    "quote": "🌅 Life is a grand adventure or nothing at all.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 641,
+    "category": "Life",
+    "quote": "🌺 Life is not about waiting for the storm to pass. It's about learning to dance in the rain.",
+    "author": "Vivian Greene"
+  },
+  {
+    "id": 642,
+    "category": "Life",
+    "quote": "🌈 Life is a series of choices. You can choose to be happy or unhappy. Choose wisely.",
+    "author": "Unknown"
+  },
+  {
+    "id": 643,
+    "category": "Life",
+    "quote": "🌅 Life is a song - sing it. Life is a game - play it. Life is a challenge - meet it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 644,
+    "category": "Life",
+    "quote": "🌺 Life is a canvas, and you are the painter. Paint a beautiful picture.",
+    "author": "Unknown"
+  },
+  {
+    "id": 645,
+    "category": "Life",
+    "quote": "🌈 Life is not a problem to be solved, but a reality to be experienced.",
+    "author": "Soren Kierkegaard"
+  },
+  {
+    "id": 646,
+    "category": "Life",
+    "quote": "🌅 The purpose of life is a life of purpose.",
+    "author": "Robert Byrne"
+  },
+  {
+    "id": 647,
+    "category": "Life",
+    "quote": "🌺 Life is a beautiful struggle.",
+    "author": "Unknown"
+  },
+  {
+    "id": 648,
+    "category": "Life",
+    "quote": "🌈 Life is not measured by the number of breaths we take, but by the moments that take our breath away.",
+    "author": "Unknown"
+  },
+  {
+    "id": 649,
+    "category": "Life",
+    "quote": "🌅 Life is a journey. Enjoy the ride.",
+    "author": "Unknown"
+  },
+  {
+    "id": 650,
+    "category": "Life",
+    "quote": "🌺 Life is like a coin. You can spend it any way you wish, but you only spend it once.",
+    "author": "Unknown"
+  },
+  {
+    "id": 651,
+    "category": "Love",
+    "quote": "❤️ Love is the greatest refreshment in life.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "id": 652,
+    "category": "Love",
+    "quote": "💖 The art of love is largely the art of persistence.",
+    "author": "Albert Ellis"
+  },
+  {
+    "id": 653,
+    "category": "Love",
+    "quote": "💕 To love and be loved is to feel the sun from both sides.",
+    "author": "David Viscott"
+  },
+  {
+    "id": 654,
+    "category": "Love",
+    "quote": "❤️ The only thing more unthinkable than leaving was staying; the only thing more impossible than staying was leaving.",
+    "author": "Elizabeth Gilbert"
+  },
+  {
+    "id": 655,
+    "category": "Love",
+    "quote": "💖 Love is not about how many times you say 'I love you,' but how much you prove that it's true.",
+    "author": "Unknown"
+  },
+  {
+    "id": 656,
+    "category": "Love",
+    "quote": "💕 Love is the bridge between two hearts, the key that unlocks the door to happiness.",
+    "author": "Unknown"
+  },
+  {
+    "id": 657,
+    "category": "Love",
+    "quote": "❤️ Love is the only thing that can fill the emptiness of a heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 658,
+    "category": "Love",
+    "quote": "💖 Love is not just looking at each other, it's looking in the same direction.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "id": 659,
+    "category": "Love",
+    "quote": "💕 Love is a temporary madness. It erupts like volcanoes and then subsides.",
+    "author": "Unknown"
+  },
+  {
+    "id": 660,
+    "category": "Love",
+    "quote": "❤️ Love is the poetry of the heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 661,
+    "category": "Love",
+    "quote": "💖 Love is the most beautiful thing in the world.",
+    "author": "Unknown"
+  },
+  {
+    "id": 662,
+    "category": "Love",
+    "quote": "💕 Love is the only thing that makes life worth living.",
+    "author": "Unknown"
+  },
+  {
+    "id": 663,
+    "category": "Love",
+    "quote": "❤️ Love is the key to happiness.",
+    "author": "Unknown"
+  },
+  {
+    "id": 664,
+    "category": "Love",
+    "quote": "💖 Love is the beginning of everything.",
+    "author": "Unknown"
+  },
+  {
+    "id": 665,
+    "category": "Love",
+    "quote": "💕 Love is the light that guides us through the darkness.",
+    "author": "Unknown"
+  },
+  {
+    "id": 666,
+    "category": "Love",
+    "quote": "❤️ Love is the music of the heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 667,
+    "category": "Success",
+    "quote": "🏆 Success is not just about making money. It's about making a difference.",
+    "author": "Unknown"
+  },
+  {
+    "id": 668,
+    "category": "Success",
+    "quote": "🎯 Success is not measured by the position you hold, but by the obstacles you overcome.",
+    "author": "Booker T. Washington"
+  },
+  {
+    "id": 669,
+    "category": "Success",
+    "quote": "🚀 Success is not the result of spontaneous combustion. You must set yourself on fire.",
+    "author": "Arnold H. Glasow"
+  },
+  {
+    "id": 670,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to go from failure to failure without losing your enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 671,
+    "category": "Success",
+    "quote": "🎯 The secret of success is to be like a duck—calm and unruffled on the surface but paddling like the devil underneath.",
+    "author": "Unknown"
+  },
+  {
+    "id": 672,
+    "category": "Success",
+    "quote": "🚀 Success is the sum of small efforts, repeated day in and day out.",
+    "author": "Robert Collier"
+  },
+  {
+    "id": 673,
+    "category": "Success",
+    "quote": "🏆 Success is about creating value, not just accumulating wealth.",
+    "author": "Unknown"
+  },
+  {
+    "id": 674,
+    "category": "Success",
+    "quote": "🎯 Success is the progressive realization of a worthy goal or ideal.",
+    "author": "Earl Nightingale"
+  },
+  {
+    "id": 675,
+    "category": "Success",
+    "quote": "🚀 Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "id": 676,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to live your life the way you want to live it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 677,
+    "category": "Success",
+    "quote": "🎯 Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 678,
+    "category": "Success",
+    "quote": "🚀 Success is a journey, not a destination.",
+    "author": "Arthur Ashe"
+  },
+  {
+    "id": 679,
+    "category": "Success",
+    "quote": "🏆 Success is walking from failure to failure with no loss of enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 680,
+    "category": "Success",
+    "quote": "🎯 The successful warrior is the average man, with laser-like focus.",
+    "author": "Bruce Lee"
+  },
+  {
+    "id": 681,
+    "category": "Success",
+    "quote": "🚀 Success is the ability to go from one failure to another with no loss of enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 682,
+    "category": "Success",
+    "quote": "🏆 Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 683,
+    "category": "Friendship",
+    "quote": "🤝 A friend is one who believes in you when you have ceased to believe in yourself.",
+    "author": "Unknown"
+  },
+  {
+    "id": 684,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the most beautiful relationship in the world.",
+    "author": "Unknown"
+  },
+  {
+    "id": 685,
+    "category": "Friendship",
+    "quote": "💫 A true friend is someone who is there for you when they would rather be anywhere else.",
+    "author": "Unknown"
+  },
+  {
+    "id": 686,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only flower that blooms in all seasons.",
+    "author": "Unknown"
+  },
+  {
+    "id": 687,
+    "category": "Friendship",
+    "quote": "👫 The language of friendship is not words but meanings.",
+    "author": "Henry David Thoreau"
+  },
+  {
+    "id": 688,
+    "category": "Friendship",
+    "quote": "💫 Friendship is the hardest thing in the world to explain. It's not something you learn in school.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "id": 689,
+    "category": "Friendship",
+    "quote": "🤝 A friend is someone who knows the song in your heart and can sing it back to you when you have forgotten the words.",
+    "author": "Unknown"
+  },
+  {
+    "id": 690,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the golden thread that ties the heart of all the world.",
+    "author": "John Evelyn"
+  },
+  {
+    "id": 691,
+    "category": "Friendship",
+    "quote": "💫 The best mirror is an old friend.",
+    "author": "George Herbert"
+  },
+  {
+    "id": 692,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only cement that will ever hold the world together.",
+    "author": "Woodrow Wilson"
+  },
+  {
+    "id": 693,
+    "category": "Friendship",
+    "quote": "👫 A friend is someone who understands your past, believes in your future, and accepts you just the way you are.",
+    "author": "Unknown"
+  },
+  {
+    "id": 694,
+    "category": "Friendship",
+    "quote": "💫 Friendship is a sheltering tree.",
+    "author": "Samuel Taylor Coleridge"
+  },
+  {
+    "id": 695,
+    "category": "Friendship",
+    "quote": "🤝 The greatest gift of life is friendship, and I have received it.",
+    "author": "Hubert H. Humphrey"
+  },
+  {
+    "id": 696,
+    "category": "Friendship",
+    "quote": "👫 A true friend never gets in your way unless you happen to be going down.",
+    "author": "Arnold H. Glasow"
+  },
+  {
+    "id": 697,
+    "category": "Friendship",
+    "quote": "💫 The only way to have a friend is to be one.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 698,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the wine of life.",
+    "author": "Edward Young"
+  },
+  {
+    "id": 699,
+    "category": "Friendship",
+    "quote": "👫 Good friends are like stars. You don't always see them, but you know they're always there.",
+    "author": "Unknown"
+  },
+  {
+    "id": 700,
+    "category": "Friendship",
+    "quote": "💫 A friend is one that knows you as you are, understands where you have been, accepts what you have become, and still, gently allows you to grow.",
+    "author": "William Shakespeare"
+  },
+  {
+    "id": 701,
+    "category": "Positive",
+    "quote": "😊 Positive thoughts are like a magnet. They attract more positive thoughts.",
+    "author": "Unknown"
+  },
+  {
+    "id": 702,
+    "category": "Positive",
+    "quote": "✨ A positive attitude is a person's passport to a better tomorrow.",
+    "author": "Unknown"
+  },
+  {
+    "id": 703,
+    "category": "Positive",
+    "quote": "🌻 Optimism is the most important quality for success.",
+    "author": "Unknown"
+  },
+  {
+    "id": 704,
+    "category": "Positive",
+    "quote": "😊 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 705,
+    "category": "Positive",
+    "quote": "✨ A smile is the most beautiful curve on a woman's body.",
+    "author": "Unknown"
+  },
+  {
+    "id": 706,
+    "category": "Positive",
+    "quote": "🌻 Your smile is your logo, your personality is your business card, and the way you make others feel is your trademark.",
+    "author": "Unknown"
+  },
+  {
+    "id": 707,
+    "category": "Positive",
+    "quote": "😊 A positive mind finds opportunity in everything.",
+    "author": "Unknown"
+  },
+  {
+    "id": 708,
+    "category": "Positive",
+    "quote": "✨ The power of positive thinking is the power to change your life.",
+    "author": "Unknown"
+  },
+  {
+    "id": 709,
+    "category": "Positive",
+    "quote": "🌻 Keep your face to the sunshine and you cannot see a shadow.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 710,
+    "category": "Positive",
+    "quote": "😊 Smile, it's the key that fits the lock of everybody's heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 711,
+    "category": "Positive",
+    "quote": "✨ Positive thinking is not about ignoring the negative, but about finding the good in every situation.",
+    "author": "Unknown"
+  },
+  {
+    "id": 712,
+    "category": "Positive",
+    "quote": "🌻 The mind is everything. What you think you become.",
+    "author": "Buddha"
+  },
+  {
+    "id": 713,
+    "category": "Positive",
+    "quote": "😊 With the new day comes new strength and new thoughts.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "id": 714,
+    "category": "Positive",
+    "quote": "✨ Optimism is the faith that leads to achievement.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 715,
+    "category": "Positive",
+    "quote": "🌻 A smile is the prettiest thing you can wear.",
+    "author": "Unknown"
+  },
+  {
+    "id": 716,
+    "category": "Positive",
+    "quote": "😊 Choose to be optimistic, it feels better.",
+    "author": "Dalai Lama"
+  },
+  {
+    "id": 717,
+    "category": "Positive",
+    "quote": "✨ Your smile will give you a positive countenance that will make people feel comfortable around you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 718,
+    "category": "Positive",
+    "quote": "🌻 A positive mindset is a powerful thing. It can change your entire day.",
+    "author": "Unknown"
+  },
+  {
+    "id": 719,
+    "category": "Positive",
+    "quote": "😊 Life is 10% what happens to us and 90% how we react to it.",
+    "author": "Charles R. Swindoll"
+  },
+  {
+    "id": 720,
+    "category": "Positive",
+    "quote": "✨ Smile, it's the key that fits the lock of everybody's heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 721,
+    "category": "Inspirational",
+    "quote": "💪 Be not afraid of growing slowly; be afraid only of standing still.",
+    "author": "Chinese Proverb"
+  },
+  {
+    "id": 722,
+    "category": "Inspirational",
+    "quote": "🌟 The only way to have a friend is to be one.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 723,
+    "category": "Inspirational",
+    "quote": "🔥 Do not go where the path may lead, go instead where there is no path and leave a trail.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 724,
+    "category": "Inspirational",
+    "quote": "💪 The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 725,
+    "category": "Inspirational",
+    "quote": "🌟 The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 726,
+    "category": "Inspirational",
+    "quote": "🔥 Don't be afraid to give up the good to go for the great.",
+    "author": "John D. Rockefeller"
+  },
+  {
+    "id": 727,
+    "category": "Inspirational",
+    "quote": "💪 People who are crazy enough to think they can change the world are the ones who do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 728,
+    "category": "Inspirational",
+    "quote": "🌟 The only thing we have to fear is fear itself.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 729,
+    "category": "Inspirational",
+    "quote": "🔥 What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 730,
+    "category": "Inspirational",
+    "quote": "💪 The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 731,
+    "category": "Inspirational",
+    "quote": "🌟 The only person you are destined to become is the person you decide to be.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 732,
+    "category": "Inspirational",
+    "quote": "🔥 It's not whether you get knocked down, it's whether you get up.",
+    "author": "Vince Lombardi"
+  },
+  {
+    "id": 733,
+    "category": "Inspirational",
+    "quote": "💪 Your limitation—it's only your imagination.",
+    "author": "Unknown"
+  },
+  {
+    "id": 734,
+    "category": "Inspirational",
+    "quote": "🌟 Push yourself, because no one else is going to do it for you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 735,
+    "category": "Inspirational",
+    "quote": "🔥 Great things never come from comfort zones.",
+    "author": "Unknown"
+  },
+  {
+    "id": 736,
+    "category": "Inspirational",
+    "quote": "💪 Dream it. Wish it. Do it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 737,
+    "category": "Inspirational",
+    "quote": "🌟 Success doesn't just find you. You have to go out and get it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 738,
+    "category": "Inspirational",
+    "quote": "🔥 The harder you work for something, the greater you'll feel when you achieve it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 739,
+    "category": "Inspirational",
+    "quote": "💪 Dream bigger. Do bigger.",
+    "author": "Unknown"
+  },
+  {
+    "id": 740,
+    "category": "Inspirational",
+    "quote": "🌟 Your time is limited, so don't waste it living someone else's life.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 741,
+    "category": "Life",
+    "quote": "🌅 Life is a series of natural and spontaneous changes. Don't resist them; that only creates sorrow.",
+    "author": "Lao Tzu"
+  },
+  {
+    "id": 742,
+    "category": "Life",
+    "quote": "🌺 Life is like a coin. You can spend it any way you wish, but you only spend it once.",
+    "author": "Unknown"
+  },
+  {
+    "id": 743,
+    "category": "Life",
+    "quote": "🌈 Life is a beautiful journey. Enjoy every moment of it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 744,
+    "category": "Life",
+    "quote": "🌅 Life is a combination of magic and pasta.",
+    "author": "Federico Fellini"
+  },
+  {
+    "id": 745,
+    "category": "Life",
+    "quote": "🌺 Life is like a book. Some chapters are sad, some are happy, and some are exciting. But if you never turn the page, you will never know what the next chapter holds.",
+    "author": "Unknown"
+  },
+  {
+    "id": 746,
+    "category": "Life",
+    "quote": "🌈 Life is not a problem to be solved, but a mystery to be lived.",
+    "author": "Unknown"
+  },
+  {
+    "id": 747,
+    "category": "Life",
+    "quote": "🌅 Life is like a box of chocolates. You never know what you're gonna get.",
+    "author": "Forrest Gump"
+  },
+  {
+    "id": 748,
+    "category": "Life",
+    "quote": "🌺 Life is like a game of chess. To win, you have to make a move.",
+    "author": "Unknown"
+  },
+  {
+    "id": 749,
+    "category": "Life",
+    "quote": "🌈 Life is a journey that must be traveled no matter how bad the roads and accommodations.",
+    "author": "Oliver Goldsmith"
+  },
+  {
+    "id": 750,
+    "category": "Life",
+    "quote": "🌅 Life is a grand adventure or nothing at all.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 751,
+    "category": "Love",
+    "quote": "❤️ Love is the greatest refreshment in life.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "id": 752,
+    "category": "Love",
+    "quote": "💖 The art of love is largely the art of persistence.",
+    "author": "Albert Ellis"
+  },
+  {
+    "id": 753,
+    "category": "Love",
+    "quote": "💕 To love and be loved is to feel the sun from both sides.",
+    "author": "David Viscott"
+  },
+  {
+    "id": 754,
+    "category": "Love",
+    "quote": "❤️ The only thing more unthinkable than leaving was staying; the only thing more impossible than staying was leaving.",
+    "author": "Elizabeth Gilbert"
+  },
+  {
+    "id": 755,
+    "category": "Love",
+    "quote": "💖 Love is not about how many times you say 'I love you,' but how much you prove that it's true.",
+    "author": "Unknown"
+  },
+  {
+    "id": 756,
+    "category": "Love",
+    "quote": "💕 Love is the bridge between two hearts, the key that unlocks the door to happiness.",
+    "author": "Unknown"
+  },
+  {
+    "id": 757,
+    "category": "Love",
+    "quote": "❤️ Love is the only thing that can fill the emptiness of a heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 758,
+    "category": "Love",
+    "quote": "💖 Love is not just looking at each other, it's looking in the same direction.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "id": 759,
+    "category": "Love",
+    "quote": "💕 Love is a temporary madness. It erupts like volcanoes and then subsides.",
+    "author": "Unknown"
+  },
+  {
+    "id": 760,
+    "category": "Love",
+    "quote": "❤️ Love is the poetry of the heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 761,
+    "category": "Success",
+    "quote": "🏆 Success is not just about making money. It's about making a difference.",
+    "author": "Unknown"
+  },
+  {
+    "id": 762,
+    "category": "Success",
+    "quote": "🎯 Success is not measured by the position you hold, but by the obstacles you overcome.",
+    "author": "Booker T. Washington"
+  },
+  {
+    "id": 763,
+    "category": "Success",
+    "quote": "🚀 Success is not the result of spontaneous combustion. You must set yourself on fire.",
+    "author": "Arnold H. Glasow"
+  },
+  {
+    "id": 764,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to go from failure to failure without losing your enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 765,
+    "category": "Success",
+    "quote": "🎯 The secret of success is to be like a duck—calm and unruffled on the surface but paddling like the devil underneath.",
+    "author": "Unknown"
+  },
+  {
+    "id": 766,
+    "category": "Success",
+    "quote": "🚀 Success is the sum of small efforts, repeated day in and day out.",
+    "author": "Robert Collier"
+  },
+  {
+    "id": 767,
+    "category": "Success",
+    "quote": "🏆 Success is about creating value, not just accumulating wealth.",
+    "author": "Unknown"
+  },
+  {
+    "id": 768,
+    "category": "Success",
+    "quote": "🎯 Success is the progressive realization of a worthy goal or ideal.",
+    "author": "Earl Nightingale"
+  },
+  {
+    "id": 769,
+    "category": "Success",
+    "quote": "🚀 Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "id": 770,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to live your life the way you want to live it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 771,
+    "category": "Friendship",
+    "quote": "🤝 A friend is one who believes in you when you have ceased to believe in yourself.",
+    "author": "Unknown"
+  },
+  {
+    "id": 772,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the most beautiful relationship in the world.",
+    "author": "Unknown"
+  },
+  {
+    "id": 773,
+    "category": "Friendship",
+    "quote": "💫 A true friend is someone who is there for you when they would rather be anywhere else.",
+    "author": "Unknown"
+  },
+  {
+    "id": 774,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only flower that blooms in all seasons.",
+    "author": "Unknown"
+  },
+  {
+    "id": 775,
+    "category": "Friendship",
+    "quote": "👫 The language of friendship is not words but meanings.",
+    "author": "Henry David Thoreau"
+  },
+  {
+    "id": 776,
+    "category": "Friendship",
+    "quote": "💫 Friendship is the hardest thing in the world to explain. It's not something you learn in school.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "id": 777,
+    "category": "Friendship",
+    "quote": "🤝 A friend is someone who knows the song in your heart and can sing it back to you when you have forgotten the words.",
+    "author": "Unknown"
+  },
+  {
+    "id": 778,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the golden thread that ties the heart of all the world.",
+    "author": "John Evelyn"
+  },
+  {
+    "id": 779,
+    "category": "Friendship",
+    "quote": "💫 The best mirror is an old friend.",
+    "author": "George Herbert"
+  },
+  {
+    "id": 780,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only cement that will ever hold the world together.",
+    "author": "Woodrow Wilson"
+  },
+  {
+    "id": 781,
+    "category": "Positive",
+    "quote": "😊 Positive thoughts are like a magnet. They attract more positive thoughts.",
+    "author": "Unknown"
+  },
+  {
+    "id": 782,
+    "category": "Positive",
+    "quote": "✨ A positive attitude is a person's passport to a better tomorrow.",
+    "author": "Unknown"
+  },
+  {
+    "id": 783,
+    "category": "Positive",
+    "quote": "🌻 Optimism is the most important quality for success.",
+    "author": "Unknown"
+  },
+  {
+    "id": 784,
+    "category": "Positive",
+    "quote": "😊 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 785,
+    "category": "Positive",
+    "quote": "✨ A smile is the most beautiful curve on a woman's body.",
+    "author": "Unknown"
+  },
+  {
+    "id": 786,
+    "category": "Positive",
+    "quote": "🌻 Your smile is your logo, your personality is your business card, and the way you make others feel is your trademark.",
+    "author": "Unknown"
+  },
+  {
+    "id": 787,
+    "category": "Positive",
+    "quote": "😊 A positive mind finds opportunity in everything.",
+    "author": "Unknown"
+  },
+  {
+    "id": 788,
+    "category": "Positive",
+    "quote": "✨ The power of positive thinking is the power to change your life.",
+    "author": "Unknown"
+  },
+  {
+    "id": 789,
+    "category": "Positive",
+    "quote": "🌻 Keep your face to the sunshine and you cannot see a shadow.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 790,
+    "category": "Positive",
+    "quote": "😊 Smile, it's the key that fits the lock of everybody's heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 791,
+    "category": "Inspirational",
+    "quote": "💪 Be not afraid of growing slowly; be afraid only of standing still.",
+    "author": "Chinese Proverb"
+  },
+  {
+    "id": 792,
+    "category": "Inspirational",
+    "quote": "🌟 The only way to have a friend is to be one.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 793,
+    "category": "Inspirational",
+    "quote": "🔥 Do not go where the path may lead, go instead where there is no path and leave a trail.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 794,
+    "category": "Inspirational",
+    "quote": "💪 The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 795,
+    "category": "Inspirational",
+    "quote": "🌟 The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 796,
+    "category": "Inspirational",
+    "quote": "🔥 Don't be afraid to give up the good to go for the great.",
+    "author": "John D. Rockefeller"
+  },
+  {
+    "id": 797,
+    "category": "Inspirational",
+    "quote": "💪 People who are crazy enough to think they can change the world are the ones who do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 798,
+    "category": "Inspirational",
+    "quote": "🌟 The only thing we have to fear is fear itself.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 799,
+    "category": "Inspirational",
+    "quote": "🔥 What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 800,
+    "category": "Inspirational",
+    "quote": "💪 The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+    "author": "Helen Keller"
+  },
+
+  {
+    "id": 801,
+    "category": "Inspirational",
+    "quote": "💪 Success is not for the chosen few. It's for the few who choose it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 802,
+    "category": "Inspirational",
+    "quote": "🌟 The road to success is always under construction.",
+    "author": "Lily Tomlin"
+  },
+  {
+    "id": 803,
+    "category": "Inspirational",
+    "quote": "🔥 Success is the result of what you do after you've done what you were supposed to do.",
+    "author": "Unknown"
+  },
+  {
+    "id": 804,
+    "category": "Inspirational",
+    "quote": "💪 The starting point of all achievement is desire.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "id": 805,
+    "category": "Inspirational",
+    "quote": "🌟 The only place where success comes before work is in the dictionary.",
+    "author": "Vidal Sassoon"
+  },
+  {
+    "id": 806,
+    "category": "Inspirational",
+    "quote": "🔥 Success is not the key to happiness. Happiness is the key to success.",
+    "author": "Albert Schweitzer"
+  },
+  {
+    "id": 807,
+    "category": "Inspirational",
+    "quote": "💪 The only way to do great work is to love what you do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 808,
+    "category": "Inspirational",
+    "quote": "🌟 Believe you can and you're halfway there.",
+    "author": "Theodore Roosevelt"
+  },
+  {
+    "id": 809,
+    "category": "Inspirational",
+    "quote": "🔥 It does not matter how slowly you go as long as you do not stop.",
+    "author": "Confucius"
+  },
+  {
+    "id": 810,
+    "category": "Inspirational",
+    "quote": "💪 The future belongs to those who believe in the beauty of their dreams.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "id": 811,
+    "category": "Inspirational",
+    "quote": "🌟 You miss 100% of the shots you don't take.",
+    "author": "Wayne Gretzky"
+  },
+  {
+    "id": 812,
+    "category": "Inspirational",
+    "quote": "🔥 Success is walking from failure to failure with no loss of enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 813,
+    "category": "Inspirational",
+    "quote": "💪 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 814,
+    "category": "Inspirational",
+    "quote": "🌟 It always seems impossible until it's done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 815,
+    "category": "Inspirational",
+    "quote": "🔥 Don't watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson"
+  },
+  {
+    "id": 816,
+    "category": "Inspirational",
+    "quote": "💪 The best way to predict the future is to create it.",
+    "author": "Peter Drucker"
+  },
+  {
+    "id": 817,
+    "category": "Inspirational",
+    "quote": "🌟 You are never too old to set another goal or to dream a new dream.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "id": 818,
+    "category": "Inspirational",
+    "quote": "🔥 What you get by achieving your goals is not as important as what you become.",
+    "author": "Zig Ziglar"
+  },
+  {
+    "id": 819,
+    "category": "Inspirational",
+    "quote": "💪 Act as if what you do makes a difference. It does.",
+    "author": "William James"
+  },
+  {
+    "id": 820,
+    "category": "Inspirational",
+    "quote": "🌟 Keep your face always toward the sunshine—and shadows will fall behind you.",
+    "author": "Walt Whitman"
+  },
+  {
+    "id": 821,
+    "category": "Inspirational",
+    "quote": "🔥 Life is 10% what happens to you and 90% how you react to it.",
+    "author": "Charles R. Swindoll"
+  },
+  {
+    "id": 822,
+    "category": "Inspirational",
+    "quote": "💪 The only person you are destined to become is the person you decide to be.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 823,
+    "category": "Inspirational",
+    "quote": "🌟 It's not whether you get knocked down, it's whether you get up.",
+    "author": "Vince Lombardi"
+  },
+  {
+    "id": 824,
+    "category": "Inspirational",
+    "quote": "🔥 Your limitation—it's only your imagination.",
+    "author": "Unknown"
+  },
+  {
+    "id": 825,
+    "category": "Inspirational",
+    "quote": "💪 Push yourself, because no one else is going to do it for you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 826,
+    "category": "Inspirational",
+    "quote": "🌟 Great things never come from comfort zones.",
+    "author": "Unknown"
+  },
+  {
+    "id": 827,
+    "category": "Inspirational",
+    "quote": "🔥 Dream it. Wish it. Do it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 828,
+    "category": "Inspirational",
+    "quote": "💪 Success doesn't just find you. You have to go out and get it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 829,
+    "category": "Inspirational",
+    "quote": "🌟 The harder you work for something, the greater you'll feel when you achieve it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 830,
+    "category": "Inspirational",
+    "quote": "🔥 Dream bigger. Do bigger.",
+    "author": "Unknown"
+  },
+  {
+    "id": 831,
+    "category": "Life",
+    "quote": "🌅 Life is what happens when you're busy making other plans.",
+    "author": "John Lennon"
+  },
+  {
+    "id": 832,
+    "category": "Life",
+    "quote": "🌺 In the end, it's not the years in your life that count. It's the life in your years.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "id": 833,
+    "category": "Life",
+    "quote": "🌈 The purpose of our lives is to be happy.",
+    "author": "Dalai Lama"
+  },
+  {
+    "id": 834,
+    "category": "Life",
+    "quote": "🌅 Life is really simple, but we insist on making it complicated.",
+    "author": "Confucius"
+  },
+  {
+    "id": 835,
+    "category": "Life",
+    "quote": "🌺 Get busy living or get busy dying.",
+    "author": "Stephen King"
+  },
+  {
+    "id": 836,
+    "category": "Life",
+    "quote": "🌈 The good life is a process, not a state of being.",
+    "author": "Carl Rogers"
+  },
+  {
+    "id": 837,
+    "category": "Life",
+    "quote": "🌅 Life isn't about finding yourself. Life is about creating yourself.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "id": 838,
+    "category": "Life",
+    "quote": "🌺 To live is the rarest thing in the world. Most people exist, that is all.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "id": 839,
+    "category": "Life",
+    "quote": "🌈 Life is a journey, not a destination.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 840,
+    "category": "Life",
+    "quote": "🌅 Life is like riding a bicycle. To keep your balance, you must keep moving.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 841,
+    "category": "Life",
+    "quote": "🌺 Life is short, and it's up to you to make it sweet.",
+    "author": "Unknown"
+  },
+  {
+    "id": 842,
+    "category": "Life",
+    "quote": "🌈 Life is a dream for the wise, a game for the fool, a comedy for the rich, a tragedy for the poor.",
+    "author": "Sholom Aleichem"
+  },
+  {
+    "id": 843,
+    "category": "Life",
+    "quote": "🌅 Life is a flower of which love is the honey.",
+    "author": "Victor Hugo"
+  },
+  {
+    "id": 844,
+    "category": "Life",
+    "quote": "🌺 Life is what we make it, always has been, always will be.",
+    "author": "Grandma Moses"
+  },
+  {
+    "id": 845,
+    "category": "Life",
+    "quote": "🌈 Life is a daring adventure or nothing at all.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 846,
+    "category": "Life",
+    "quote": "🌅 Life is a wonderful journey. Enjoy the ride.",
+    "author": "Unknown"
+  },
+  {
+    "id": 847,
+    "category": "Life",
+    "quote": "🌺 Life is a gift, and it offers us the privilege, opportunity, and responsibility to give something back.",
+    "author": "Tony Robbins"
+  },
+  {
+    "id": 848,
+    "category": "Life",
+    "quote": "🌈 The biggest adventure you can take is to live the life of your dreams.",
+    "author": "Oprah Winfrey"
+  },
+  {
+    "id": 849,
+    "category": "Life",
+    "quote": "🌅 Life is like a camera. Focus on what's important. Capture the good times. Develop from the negatives.",
+    "author": "Unknown"
+  },
+  {
+    "id": 850,
+    "category": "Life",
+    "quote": "🌺 Life is a balance of holding on and letting go.",
+    "author": "Rumi"
+  },
+  {
+    "id": 851,
+    "category": "Love",
+    "quote": "❤️ The best thing to hold onto in life is each other.",
+    "author": "Audrey Hepburn"
+  },
+  {
+    "id": 852,
+    "category": "Love",
+    "quote": "💖 Love all, trust a few, do wrong to none.",
+    "author": "William Shakespeare"
+  },
+  {
+    "id": 853,
+    "category": "Love",
+    "quote": "💕 Where there is love there is life.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "id": 854,
+    "category": "Love",
+    "quote": "❤️ The only thing we never get enough of is love.",
+    "author": "Henry Miller"
+  },
+  {
+    "id": 855,
+    "category": "Love",
+    "quote": "💖 Love is composed of a single soul inhabiting two bodies.",
+    "author": "Aristotle"
+  },
+  {
+    "id": 856,
+    "category": "Love",
+    "quote": "💕 To love is nothing. To be loved is something. But to love and be loved, that's everything.",
+    "author": "Unknown"
+  },
+  {
+    "id": 857,
+    "category": "Love",
+    "quote": "❤️ Love is a game that two can play and both win.",
+    "author": "Eva Gabor"
+  },
+  {
+    "id": 858,
+    "category": "Love",
+    "quote": "💖 Love is the master key that opens the gates of happiness.",
+    "author": "Oliver Wendell Holmes"
+  },
+  {
+    "id": 859,
+    "category": "Love",
+    "quote": "💕 Love is not about how many days, months, or years you've been together. Love is about how much you love each other every day.",
+    "author": "Unknown"
+  },
+  {
+    "id": 860,
+    "category": "Love",
+    "quote": "❤️ Love is a friendship set to music.",
+    "author": "Joseph Campbell"
+  },
+  {
+    "id": 861,
+    "category": "Love",
+    "quote": "💖 Love is when the other person's happiness is more important than your own.",
+    "author": "H. Jackson Brown Jr."
+  },
+  {
+    "id": 862,
+    "category": "Love",
+    "quote": "💕 The greatest happiness of life is the conviction that we are loved.",
+    "author": "Victor Hugo"
+  },
+  {
+    "id": 863,
+    "category": "Love",
+    "quote": "❤️ Love is not about possession. It's all about appreciation.",
+    "author": "Unknown"
+  },
+  {
+    "id": 864,
+    "category": "Love",
+    "quote": "💖 To be brave is to love someone unconditionally, without expecting anything in return.",
+    "author": "Unknown"
+  },
+  {
+    "id": 865,
+    "category": "Love",
+    "quote": "💕 Love is a promise; love is a souvenir, once given never forgotten.",
+    "author": "Unknown"
+  },
+  {
+    "id": 866,
+    "category": "Love",
+    "quote": "❤️ Love does not dominate; it cultivates.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "id": 867,
+    "category": "Love",
+    "quote": "💖 Love is a beautiful thing. When you find it, hold onto it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 868,
+    "category": "Love",
+    "quote": "💕 Love is the answer, and you know that for sure.",
+    "author": "John Lennon"
+  },
+  {
+    "id": 869,
+    "category": "Love",
+    "quote": "❤️ The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 870,
+    "category": "Love",
+    "quote": "💖 Love is the only force capable of transforming an enemy into a friend.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "id": 871,
+    "category": "Success",
+    "quote": "🏆 Success is not the key to happiness. Happiness is the key to success.",
+    "author": "Albert Schweitzer"
+  },
+  {
+    "id": 872,
+    "category": "Success",
+    "quote": "🎯 Success usually comes to those who are too busy to be looking for it.",
+    "author": "Henry David Thoreau"
+  },
+  {
+    "id": 873,
+    "category": "Success",
+    "quote": "🚀 Try not to become a man of success, but rather try to become a man of value.",
+    "author": "Albert Einstein"
+  },
+  {
+    "id": 874,
+    "category": "Success",
+    "quote": "🏆 Success is how high you bounce when you hit bottom.",
+    "author": "George S. Patton"
+  },
+  {
+    "id": 875,
+    "category": "Success",
+    "quote": "🎯 The road to success and the road to failure are almost exactly the same.",
+    "author": "Colin R. Davis"
+  },
+  {
+    "id": 876,
+    "category": "Success",
+    "quote": "🚀 Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "id": 877,
+    "category": "Success",
+    "quote": "🏆 Success is a state of mind. If you want success, start thinking of yourself as a success.",
+    "author": "Dr. Joyce Brothers"
+  },
+  {
+    "id": 878,
+    "category": "Success",
+    "quote": "🎯 Success is not measured by what you accomplish, but by the opposition you have encountered.",
+    "author": "Orison Swett Marden"
+  },
+  {
+    "id": 879,
+    "category": "Success",
+    "quote": "🚀 Success is the sum of small efforts, repeated day in and day out.",
+    "author": "Robert Collier"
+  },
+  {
+    "id": 880,
+    "category": "Success",
+    "quote": "🏆 Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 881,
+    "category": "Success",
+    "quote": "🎯 The secret of success is to be ready when your opportunity comes.",
+    "author": "Benjamin Disraeli"
+  },
+  {
+    "id": 882,
+    "category": "Success",
+    "quote": "🚀 Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "id": 883,
+    "category": "Success",
+    "quote": "🏆 Success is the result of perfection, hard work, learning from failure, loyalty, and persistence.",
+    "author": "Colin Powell"
+  },
+  {
+    "id": 884,
+    "category": "Success",
+    "quote": "🎯 Success is getting what you want. Happiness is wanting what you get.",
+    "author": "Dale Carnegie"
+  },
+  {
+    "id": 885,
+    "category": "Success",
+    "quote": "🚀 The key to success is to focus on goals, not obstacles.",
+    "author": "Unknown"
+  },
+  {
+    "id": 886,
+    "category": "Success",
+    "quote": "🏆 Success is a journey, not a destination.",
+    "author": "Arthur Ashe"
+  },
+  {
+    "id": 887,
+    "category": "Success",
+    "quote": "🎯 Success is walking from failure to failure with no loss of enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 888,
+    "category": "Success",
+    "quote": "🚀 The successful warrior is the average man, with laser-like focus.",
+    "author": "Bruce Lee"
+  },
+  {
+    "id": 889,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to go from one failure to another with no loss of enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 890,
+    "category": "Success",
+    "quote": "🎯 Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 891,
+    "category": "Friendship",
+    "quote": "🤝 A friend is someone who knows all about you and still loves you.",
+    "author": "Elbert Hubbard"
+  },
+  {
+    "id": 892,
+    "category": "Friendship",
+    "quote": "👫 Friendship is born at that moment when one person says to another, 'What! You too? I thought I was the only one.'",
+    "author": "C.S. Lewis"
+  },
+  {
+    "id": 893,
+    "category": "Friendship",
+    "quote": "💫 A true friend is the greatest of all blessings.",
+    "author": "Unknown"
+  },
+  {
+    "id": 894,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only cement that will ever hold the world together.",
+    "author": "Woodrow Wilson"
+  },
+  {
+    "id": 895,
+    "category": "Friendship",
+    "quote": "👫 A real friend is one who walks in when the rest of the world walks out.",
+    "author": "Walter Winchell"
+  },
+  {
+    "id": 896,
+    "category": "Friendship",
+    "quote": "💫 Friendship is the golden thread that ties the heart of all the world.",
+    "author": "John Evelyn"
+  },
+  {
+    "id": 897,
+    "category": "Friendship",
+    "quote": "🤝 True friendship comes when the silence between two people is comfortable.",
+    "author": "Unknown"
+  },
+  {
+    "id": 898,
+    "category": "Friendship",
+    "quote": "👫 A friend is someone who gives you total freedom to be yourself.",
+    "author": "Jim Morrison"
+  },
+  {
+    "id": 899,
+    "category": "Friendship",
+    "quote": "💫 Friendship is a sheltering tree.",
+    "author": "Samuel Taylor Coleridge"
+  },
+  {
+    "id": 900,
+    "category": "Friendship",
+    "quote": "🤝 The greatest gift of life is friendship, and I have received it.",
+    "author": "Hubert H. Humphrey"
+  },
+  {
+    "id": 901,
+    "category": "Friendship",
+    "quote": "👫 A true friend never gets in your way unless you happen to be going down.",
+    "author": "Arnold H. Glasow"
+  },
+  {
+    "id": 902,
+    "category": "Friendship",
+    "quote": "💫 The only way to have a friend is to be one.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 903,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the wine of life.",
+    "author": "Edward Young"
+  },
+  {
+    "id": 904,
+    "category": "Friendship",
+    "quote": "👫 Good friends are like stars. You don't always see them, but you know they're always there.",
+    "author": "Unknown"
+  },
+  {
+    "id": 905,
+    "category": "Friendship",
+    "quote": "💫 A friend is one that knows you as you are, understands where you have been, accepts what you have become, and still, gently allows you to grow.",
+    "author": "William Shakespeare"
+  },
+  {
+    "id": 906,
+    "category": "Friendship",
+    "quote": "🤝 True friendship multiplies the good in life and divides its evils.",
+    "author": "Unknown"
+  },
+  {
+    "id": 907,
+    "category": "Friendship",
+    "quote": "👫 In the end, we will remember not the words of our enemies, but the silence of our friends.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "id": 908,
+    "category": "Friendship",
+    "quote": "💫 Friendship is the hardest thing in the world to explain. It's not something you learn in school.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "id": 909,
+    "category": "Friendship",
+    "quote": "🤝 A friend is someone who understands your past, believes in your future, and accepts you just the way you are.",
+    "author": "Unknown"
+  },
+  {
+    "id": 910,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the only flower that blooms in all seasons.",
+    "author": "Unknown"
+  },
+  {
+    "id": 911,
+    "category": "Positive",
+    "quote": "😊 Keep your face to the sunshine and you cannot see a shadow.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 912,
+    "category": "Positive",
+    "quote": "✨ Positive anything is better than negative nothing.",
+    "author": "Elbert Hubbard"
+  },
+  {
+    "id": 913,
+    "category": "Positive",
+    "quote": "🌻 What you think, you become. What you feel, you attract. What you imagine, you create.",
+    "author": "Buddha"
+  },
+  {
+    "id": 914,
+    "category": "Positive",
+    "quote": "😊 A positive attitude causes a chain reaction of positive thoughts, events, and outcomes.",
+    "author": "Unknown"
+  },
+  {
+    "id": 915,
+    "category": "Positive",
+    "quote": "✨ Stay positive and happy. Work hard and don't give up hope.",
+    "author": "Unknown"
+  },
+  {
+    "id": 916,
+    "category": "Positive",
+    "quote": "🌻 Optimism is a happiness magnet. If you stay positive, good things and good people will be drawn to you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 917,
+    "category": "Positive",
+    "quote": "😊 The only place where your dream becomes impossible is in your own thinking.",
+    "author": "Unknown"
+  },
+  {
+    "id": 918,
+    "category": "Positive",
+    "quote": "✨ Positive thinking is more than just a tagline. It changes the way we behave.",
+    "author": "Unknown"
+  },
+  {
+    "id": 919,
+    "category": "Positive",
+    "quote": "🌻 Smile more. Positive thinking will let you do everything better.",
+    "author": "Unknown"
+  },
+  {
+    "id": 920,
+    "category": "Positive",
+    "quote": "😊 Once you replace negative thoughts with positive ones, you'll start having positive results.",
+    "author": "Willie Nelson"
+  },
+  {
+    "id": 921,
+    "category": "Positive",
+    "quote": "✨ Positive thinking is not about ignoring the negative, but about finding the good in every situation.",
+    "author": "Unknown"
+  },
+  {
+    "id": 922,
+    "category": "Positive",
+    "quote": "🌻 The mind is everything. What you think you become.",
+    "author": "Buddha"
+  },
+  {
+    "id": 923,
+    "category": "Positive",
+    "quote": "😊 With the new day comes new strength and new thoughts.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "id": 924,
+    "category": "Positive",
+    "quote": "✨ Optimism is the faith that leads to achievement.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 925,
+    "category": "Positive",
+    "quote": "🌻 A smile is the prettiest thing you can wear.",
+    "author": "Unknown"
+  },
+  {
+    "id": 926,
+    "category": "Positive",
+    "quote": "😊 Choose to be optimistic, it feels better.",
+    "author": "Dalai Lama"
+  },
+  {
+    "id": 927,
+    "category": "Positive",
+    "quote": "✨ Your smile will give you a positive countenance that will make people feel comfortable around you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 928,
+    "category": "Positive",
+    "quote": "🌻 A positive mindset is a powerful thing. It can change your entire day.",
+    "author": "Unknown"
+  },
+  {
+    "id": 929,
+    "category": "Positive",
+    "quote": "😊 Life is 10% what happens to us and 90% how we react to it.",
+    "author": "Charles R. Swindoll"
+  },
+  {
+    "id": 930,
+    "category": "Positive",
+    "quote": "✨ Smile, it's the key that fits the lock of everybody's heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 931,
+    "category": "Inspirational",
+    "quote": "💪 It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change.",
+    "author": "Charles Darwin"
+  },
+  {
+    "id": 932,
+    "category": "Inspirational",
+    "quote": "🌟 The best preparation for tomorrow is doing your best today.",
+    "author": "H. Jackson Brown Jr."
+  },
+  {
+    "id": 933,
+    "category": "Inspirational",
+    "quote": "🔥 To be successful, you have to have your heart in your business and your business in your heart.",
+    "author": "Thomas Watson Sr."
+  },
+  {
+    "id": 934,
+    "category": "Inspirational",
+    "quote": "💪 The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will.",
+    "author": "Vince Lombardi"
+  },
+  {
+    "id": 935,
+    "category": "Inspirational",
+    "quote": "🌟 The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it.",
+    "author": "Jordan Belfort"
+  },
+  {
+    "id": 936,
+    "category": "Inspirational",
+    "quote": "🔥 Success is not for the chosen few. It's for the few who choose it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 937,
+    "category": "Inspirational",
+    "quote": "💪 The road to success is always under construction.",
+    "author": "Lily Tomlin"
+  },
+  {
+    "id": 938,
+    "category": "Inspirational",
+    "quote": "🌟 Success is the result of what you do after you've done what you were supposed to do.",
+    "author": "Unknown"
+  },
+  {
+    "id": 939,
+    "category": "Inspirational",
+    "quote": "🔥 The starting point of all achievement is desire.",
+    "author": "Napoleon Hill"
+  },
+  {
+    "id": 940,
+    "category": "Inspirational",
+    "quote": "💪 The only place where success comes before work is in the dictionary.",
+    "author": "Vidal Sassoon"
+  },
+  {
+    "id": 941,
+    "category": "Life",
+    "quote": "🌅 Life is a series of natural and spontaneous changes. Don't resist them; that only creates sorrow.",
+    "author": "Lao Tzu"
+  },
+  {
+    "id": 942,
+    "category": "Life",
+    "quote": "🌺 Life is like a coin. You can spend it any way you wish, but you only spend it once.",
+    "author": "Unknown"
+  },
+  {
+    "id": 943,
+    "category": "Life",
+    "quote": "🌈 Life is a beautiful journey. Enjoy every moment of it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 944,
+    "category": "Life",
+    "quote": "🌅 Life is a combination of magic and pasta.",
+    "author": "Federico Fellini"
+  },
+  {
+    "id": 945,
+    "category": "Life",
+    "quote": "🌺 Life is like a book. Some chapters are sad, some are happy, and some are exciting. But if you never turn the page, you will never know what the next chapter holds.",
+    "author": "Unknown"
+  },
+  {
+    "id": 946,
+    "category": "Life",
+    "quote": "🌈 Life is not a problem to be solved, but a mystery to be lived.",
+    "author": "Unknown"
+  },
+  {
+    "id": 947,
+    "category": "Life",
+    "quote": "🌅 Life is like a box of chocolates. You never know what you're gonna get.",
+    "author": "Forrest Gump"
+  },
+  {
+    "id": 948,
+    "category": "Life",
+    "quote": "🌺 Life is like a game of chess. To win, you have to make a move.",
+    "author": "Unknown"
+  },
+  {
+    "id": 949,
+    "category": "Life",
+    "quote": "🌈 Life is a journey that must be traveled no matter how bad the roads and accommodations.",
+    "author": "Oliver Goldsmith"
+  },
+  {
+    "id": 950,
+    "category": "Life",
+    "quote": "🌅 Life is a grand adventure or nothing at all.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 951,
+    "category": "Love",
+    "quote": "❤️ Love is the greatest refreshment in life.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "id": 952,
+    "category": "Love",
+    "quote": "💖 The art of love is largely the art of persistence.",
+    "author": "Albert Ellis"
+  },
+  {
+    "id": 953,
+    "category": "Love",
+    "quote": "💕 To love and be loved is to feel the sun from both sides.",
+    "author": "David Viscott"
+  },
+  {
+    "id": 954,
+    "category": "Love",
+    "quote": "❤️ The only thing more unthinkable than leaving was staying; the only thing more impossible than staying was leaving.",
+    "author": "Elizabeth Gilbert"
+  },
+  {
+    "id": 955,
+    "category": "Love",
+    "quote": "💖 Love is not about how many times you say 'I love you,' but how much you prove that it's true.",
+    "author": "Unknown"
+  },
+  {
+    "id": 956,
+    "category": "Love",
+    "quote": "💕 Love is the bridge between two hearts, the key that unlocks the door to happiness.",
+    "author": "Unknown"
+  },
+  {
+    "id": 957,
+    "category": "Love",
+    "quote": "❤️ Love is the only thing that can fill the emptiness of a heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 958,
+    "category": "Love",
+    "quote": "💖 Love is not just looking at each other, it's looking in the same direction.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "id": 959,
+    "category": "Love",
+    "quote": "💕 Love is a temporary madness. It erupts like volcanoes and then subsides.",
+    "author": "Unknown"
+  },
+  {
+    "id": 960,
+    "category": "Love",
+    "quote": "❤️ Love is the poetry of the heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 961,
+    "category": "Success",
+    "quote": "🏆 Success is not just about making money. It's about making a difference.",
+    "author": "Unknown"
+  },
+  {
+    "id": 962,
+    "category": "Success",
+    "quote": "🎯 Success is not measured by the position you hold, but by the obstacles you overcome.",
+    "author": "Booker T. Washington"
+  },
+  {
+    "id": 963,
+    "category": "Success",
+    "quote": "🚀 Success is not the result of spontaneous combustion. You must set yourself on fire.",
+    "author": "Arnold H. Glasow"
+  },
+  {
+    "id": 964,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to go from failure to failure without losing your enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 965,
+    "category": "Success",
+    "quote": "🎯 The secret of success is to be like a duck—calm and unruffled on the surface but paddling like the devil underneath.",
+    "author": "Unknown"
+  },
+  {
+    "id": 966,
+    "category": "Success",
+    "quote": "🚀 Success is the sum of small efforts, repeated day in and day out.",
+    "author": "Robert Collier"
+  },
+  {
+    "id": 967,
+    "category": "Success",
+    "quote": "🏆 Success is about creating value, not just accumulating wealth.",
+    "author": "Unknown"
+  },
+  {
+    "id": 968,
+    "category": "Success",
+    "quote": "🎯 Success is the progressive realization of a worthy goal or ideal.",
+    "author": "Earl Nightingale"
+  },
+  {
+    "id": 969,
+    "category": "Success",
+    "quote": "🚀 Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "id": 970,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to live your life the way you want to live it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 971,
+    "category": "Friendship",
+    "quote": "🤝 A friend is one who believes in you when you have ceased to believe in yourself.",
+    "author": "Unknown"
+  },
+  {
+    "id": 972,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the most beautiful relationship in the world.",
+    "author": "Unknown"
+  },
+  {
+    "id": 973,
+    "category": "Friendship",
+    "quote": "💫 A true friend is someone who is there for you when they would rather be anywhere else.",
+    "author": "Unknown"
+  },
+  {
+    "id": 974,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only flower that blooms in all seasons.",
+    "author": "Unknown"
+  },
+  {
+    "id": 975,
+    "category": "Friendship",
+    "quote": "👫 The language of friendship is not words but meanings.",
+    "author": "Henry David Thoreau"
+  },
+  {
+    "id": 976,
+    "category": "Friendship",
+    "quote": "💫 Friendship is the hardest thing in the world to explain. It's not something you learn in school.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "id": 977,
+    "category": "Friendship",
+    "quote": "🤝 A friend is someone who knows the song in your heart and can sing it back to you when you have forgotten the words.",
+    "author": "Unknown"
+  },
+  {
+    "id": 978,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the golden thread that ties the heart of all the world.",
+    "author": "John Evelyn"
+  },
+  {
+    "id": 979,
+    "category": "Friendship",
+    "quote": "💫 The best mirror is an old friend.",
+    "author": "George Herbert"
+  },
+  {
+    "id": 980,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only cement that will ever hold the world together.",
+    "author": "Woodrow Wilson"
+  },
+  {
+    "id": 981,
+    "category": "Positive",
+    "quote": "😊 Positive thoughts are like a magnet. They attract more positive thoughts.",
+    "author": "Unknown"
+  },
+  {
+    "id": 982,
+    "category": "Positive",
+    "quote": "✨ A positive attitude is a person's passport to a better tomorrow.",
+    "author": "Unknown"
+  },
+  {
+    "id": 983,
+    "category": "Positive",
+    "quote": "🌻 Optimism is the most important quality for success.",
+    "author": "Unknown"
+  },
+  {
+    "id": 984,
+    "category": "Positive",
+    "quote": "😊 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 985,
+    "category": "Positive",
+    "quote": "✨ A smile is the most beautiful curve on a woman's body.",
+    "author": "Unknown"
+  },
+  {
+    "id": 986,
+    "category": "Positive",
+    "quote": "🌻 Your smile is your logo, your personality is your business card, and the way you make others feel is your trademark.",
+    "author": "Unknown"
+  },
+  {
+    "id": 987,
+    "category": "Positive",
+    "quote": "😊 A positive mind finds opportunity in everything.",
+    "author": "Unknown"
+  },
+  {
+    "id": 988,
+    "category": "Positive",
+    "quote": "✨ The power of positive thinking is the power to change your life.",
+    "author": "Unknown"
+  },
+  {
+    "id": 989,
+    "category": "Positive",
+    "quote": "🌻 Keep your face to the sunshine and you cannot see a shadow.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 990,
+    "category": "Positive",
+    "quote": "😊 Smile, it's the key that fits the lock of everybody's heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 991,
+    "category": "Inspirational",
+    "quote": "💪 Be not afraid of growing slowly; be afraid only of standing still.",
+    "author": "Chinese Proverb"
+  },
+  {
+    "id": 992,
+    "category": "Inspirational",
+    "quote": "🌟 The only way to have a friend is to be one.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 993,
+    "category": "Inspirational",
+    "quote": "🔥 Do not go where the path may lead, go instead where there is no path and leave a trail.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 994,
+    "category": "Inspirational",
+    "quote": "💪 The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 995,
+    "category": "Inspirational",
+    "quote": "🌟 The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 996,
+    "category": "Inspirational",
+    "quote": "🔥 Don't be afraid to give up the good to go for the great.",
+    "author": "John D. Rockefeller"
+  },
+  {
+    "id": 997,
+    "category": "Inspirational",
+    "quote": "💪 People who are crazy enough to think they can change the world are the ones who do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 998,
+    "category": "Inspirational",
+    "quote": "🌟 The only thing we have to fear is fear itself.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 999,
+    "category": "Inspirational",
+    "quote": "🔥 What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 1000,
+    "category": "Inspirational",
+    "quote": "💪 The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+    "author": "Helen Keller"
+  },
+
+  {
+    "id": 1001,
+    "category": "Inspirational",
+    "quote": "💪 The only person you are destined to become is the person you decide to be.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 1002,
+    "category": "Inspirational",
+    "quote": "🌟 It's not whether you get knocked down, it's whether you get up.",
+    "author": "Vince Lombardi"
+  },
+  {
+    "id": 1003,
+    "category": "Inspirational",
+    "quote": "🔥 Your limitation—it's only your imagination.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1004,
+    "category": "Inspirational",
+    "quote": "💪 Push yourself, because no one else is going to do it for you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1005,
+    "category": "Inspirational",
+    "quote": "🌟 Great things never come from comfort zones.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1006,
+    "category": "Inspirational",
+    "quote": "🔥 Dream it. Wish it. Do it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1007,
+    "category": "Inspirational",
+    "quote": "💪 Success doesn't just find you. You have to go out and get it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1008,
+    "category": "Inspirational",
+    "quote": "🌟 The harder you work for something, the greater you'll feel when you achieve it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1009,
+    "category": "Inspirational",
+    "quote": "🔥 Dream bigger. Do bigger.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1010,
+    "category": "Inspirational",
+    "quote": "💪 Your time is limited, so don't waste it living someone else's life.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 1011,
+    "category": "Inspirational",
+    "quote": "🌟 The question isn't who is going to let me; it's who is going to stop me.",
+    "author": "Ayn Rand"
+  },
+  {
+    "id": 1012,
+    "category": "Inspirational",
+    "quote": "🔥 If you can dream it, you can do it.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 1013,
+    "category": "Inspirational",
+    "quote": "💪 Be so good they can't ignore you.",
+    "author": "Steve Martin"
+  },
+  {
+    "id": 1014,
+    "category": "Inspirational",
+    "quote": "🌟 The difference between who you are and who you want to be is what you do.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1015,
+    "category": "Inspirational",
+    "quote": "🔥 It's not the load that breaks you down, it's the way you carry it.",
+    "author": "Lou Holtz"
+  },
+  {
+    "id": 1016,
+    "category": "Inspirational",
+    "quote": "💪 The best time to start was yesterday. The next best time is now.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1017,
+    "category": "Inspirational",
+    "quote": "🌟 You are never too old to set another goal or to dream a new dream.",
+    "author": "C.S. Lewis"
+  },
+  {
+    "id": 1018,
+    "category": "Inspirational",
+    "quote": "🔥 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 1019,
+    "category": "Inspirational",
+    "quote": "💪 It's not about how bad you want it. It's about how hard you're willing to work for it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1020,
+    "category": "Inspirational",
+    "quote": "🌟 The only impossible journey is the one you never begin.",
+    "author": "Tony Robbins"
+  },
+  {
+    "id": 1021,
+    "category": "Inspirational",
+    "quote": "🔥 Start where you are. Use what you have. Do what you can.",
+    "author": "Arthur Ashe"
+  },
+  {
+    "id": 1022,
+    "category": "Inspirational",
+    "quote": "💪 The secret of getting ahead is getting started.",
+    "author": "Mark Twain"
+  },
+  {
+    "id": 1023,
+    "category": "Inspirational",
+    "quote": "🌟 You don't have to be great to start, but you have to start to be great.",
+    "author": "Zig Ziglar"
+  },
+  {
+    "id": 1024,
+    "category": "Inspirational",
+    "quote": "🔥 If you want to achieve greatness, stop asking for permission.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1025,
+    "category": "Inspirational",
+    "quote": "💪 Don't be pushed around by the problems in your life. Be pushed by your dreams.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1026,
+    "category": "Inspirational",
+    "quote": "🌟 The best revenge is massive success.",
+    "author": "Frank Sinatra"
+  },
+  {
+    "id": 1027,
+    "category": "Inspirational",
+    "quote": "🔥 Everything you've ever wanted is on the other side of fear.",
+    "author": "George Addair"
+  },
+  {
+    "id": 1028,
+    "category": "Inspirational",
+    "quote": "💪 Opportunities don't happen. You create them.",
+    "author": "Chris Grosser"
+  },
+  {
+    "id": 1029,
+    "category": "Inspirational",
+    "quote": "🌟 The only way to achieve the impossible is to believe it is possible.",
+    "author": "Charles Kingsleigh"
+  },
+  {
+    "id": 1030,
+    "category": "Inspirational",
+    "quote": "🔥 Success is not the key to happiness. Happiness is the key to success.",
+    "author": "Albert Schweitzer"
+  },
+  {
+    "id": 1031,
+    "category": "Life",
+    "quote": "🌅 Life is a series of natural and spontaneous changes. Don't resist them; that only creates sorrow.",
+    "author": "Lao Tzu"
+  },
+  {
+    "id": 1032,
+    "category": "Life",
+    "quote": "🌺 Life is like a coin. You can spend it any way you wish, but you only spend it once.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1033,
+    "category": "Life",
+    "quote": "🌈 Life is a beautiful journey. Enjoy every moment of it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1034,
+    "category": "Life",
+    "quote": "🌅 Life is a combination of magic and pasta.",
+    "author": "Federico Fellini"
+  },
+  {
+    "id": 1035,
+    "category": "Life",
+    "quote": "🌺 Life is like a book. Some chapters are sad, some are happy, and some are exciting. But if you never turn the page, you will never know what the next chapter holds.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1036,
+    "category": "Life",
+    "quote": "🌈 Life is not a problem to be solved, but a mystery to be lived.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1037,
+    "category": "Life",
+    "quote": "🌅 Life is like a box of chocolates. You never know what you're gonna get.",
+    "author": "Forrest Gump"
+  },
+  {
+    "id": 1038,
+    "category": "Life",
+    "quote": "🌺 Life is like a game of chess. To win, you have to make a move.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1039,
+    "category": "Life",
+    "quote": "🌈 Life is a journey that must be traveled no matter how bad the roads and accommodations.",
+    "author": "Oliver Goldsmith"
+  },
+  {
+    "id": 1040,
+    "category": "Life",
+    "quote": "🌅 Life is a grand adventure or nothing at all.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 1041,
+    "category": "Life",
+    "quote": "🌺 Life is not about waiting for the storm to pass. It's about learning to dance in the rain.",
+    "author": "Vivian Greene"
+  },
+  {
+    "id": 1042,
+    "category": "Life",
+    "quote": "🌈 Life is a series of choices. You can choose to be happy or unhappy. Choose wisely.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1043,
+    "category": "Life",
+    "quote": "🌅 Life is a song - sing it. Life is a game - play it. Life is a challenge - meet it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1044,
+    "category": "Life",
+    "quote": "🌺 Life is a canvas, and you are the painter. Paint a beautiful picture.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1045,
+    "category": "Life",
+    "quote": "🌈 Life is not a problem to be solved, but a reality to be experienced.",
+    "author": "Soren Kierkegaard"
+  },
+  {
+    "id": 1046,
+    "category": "Life",
+    "quote": "🌅 The purpose of life is a life of purpose.",
+    "author": "Robert Byrne"
+  },
+  {
+    "id": 1047,
+    "category": "Life",
+    "quote": "🌺 Life is a beautiful struggle.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1048,
+    "category": "Life",
+    "quote": "🌈 Life is not measured by the number of breaths we take, but by the moments that take our breath away.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1049,
+    "category": "Life",
+    "quote": "🌅 Life is a journey. Enjoy the ride.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1050,
+    "category": "Life",
+    "quote": "🌺 Life is like a coin. You can spend it any way you wish, but you only spend it once.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1051,
+    "category": "Love",
+    "quote": "❤️ Love is the greatest refreshment in life.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "id": 1052,
+    "category": "Love",
+    "quote": "💖 The art of love is largely the art of persistence.",
+    "author": "Albert Ellis"
+  },
+  {
+    "id": 1053,
+    "category": "Love",
+    "quote": "💕 To love and be loved is to feel the sun from both sides.",
+    "author": "David Viscott"
+  },
+  {
+    "id": 1054,
+    "category": "Love",
+    "quote": "❤️ The only thing more unthinkable than leaving was staying; the only thing more impossible than staying was leaving.",
+    "author": "Elizabeth Gilbert"
+  },
+  {
+    "id": 1055,
+    "category": "Love",
+    "quote": "💖 Love is not about how many times you say 'I love you,' but how much you prove that it's true.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1056,
+    "category": "Love",
+    "quote": "💕 Love is the bridge between two hearts, the key that unlocks the door to happiness.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1057,
+    "category": "Love",
+    "quote": "❤️ Love is the only thing that can fill the emptiness of a heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1058,
+    "category": "Love",
+    "quote": "💖 Love is not just looking at each other, it's looking in the same direction.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "id": 1059,
+    "category": "Love",
+    "quote": "💕 Love is a temporary madness. It erupts like volcanoes and then subsides.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1060,
+    "category": "Love",
+    "quote": "❤️ Love is the poetry of the heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1061,
+    "category": "Love",
+    "quote": "💖 Love is the most beautiful thing in the world.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1062,
+    "category": "Love",
+    "quote": "💕 Love is the only thing that makes life worth living.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1063,
+    "category": "Love",
+    "quote": "❤️ Love is the key to happiness.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1064,
+    "category": "Love",
+    "quote": "💖 Love is the beginning of everything.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1065,
+    "category": "Love",
+    "quote": "💕 Love is the light that guides us through the darkness.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1066,
+    "category": "Love",
+    "quote": "❤️ Love is the music of the heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1067,
+    "category": "Success",
+    "quote": "🏆 Success is not just about making money. It's about making a difference.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1068,
+    "category": "Success",
+    "quote": "🎯 Success is not measured by the position you hold, but by the obstacles you overcome.",
+    "author": "Booker T. Washington"
+  },
+  {
+    "id": 1069,
+    "category": "Success",
+    "quote": "🚀 Success is not the result of spontaneous combustion. You must set yourself on fire.",
+    "author": "Arnold H. Glasow"
+  },
+  {
+    "id": 1070,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to go from failure to failure without losing your enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 1071,
+    "category": "Success",
+    "quote": "🎯 The secret of success is to be like a duck—calm and unruffled on the surface but paddling like the devil underneath.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1072,
+    "category": "Success",
+    "quote": "🚀 Success is the sum of small efforts, repeated day in and day out.",
+    "author": "Robert Collier"
+  },
+  {
+    "id": 1073,
+    "category": "Success",
+    "quote": "🏆 Success is about creating value, not just accumulating wealth.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1074,
+    "category": "Success",
+    "quote": "🎯 Success is the progressive realization of a worthy goal or ideal.",
+    "author": "Earl Nightingale"
+  },
+  {
+    "id": 1075,
+    "category": "Success",
+    "quote": "🚀 Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "id": 1076,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to live your life the way you want to live it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1077,
+    "category": "Success",
+    "quote": "🎯 Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 1078,
+    "category": "Success",
+    "quote": "🚀 Success is a journey, not a destination.",
+    "author": "Arthur Ashe"
+  },
+  {
+    "id": 1079,
+    "category": "Success",
+    "quote": "🏆 Success is walking from failure to failure with no loss of enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 1080,
+    "category": "Success",
+    "quote": "🎯 The successful warrior is the average man, with laser-like focus.",
+    "author": "Bruce Lee"
+  },
+  {
+    "id": 1081,
+    "category": "Friendship",
+    "quote": "🤝 A friend is one who believes in you when you have ceased to believe in yourself.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1082,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the most beautiful relationship in the world.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1083,
+    "category": "Friendship",
+    "quote": "💫 A true friend is someone who is there for you when they would rather be anywhere else.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1084,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only flower that blooms in all seasons.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1085,
+    "category": "Friendship",
+    "quote": "👫 The language of friendship is not words but meanings.",
+    "author": "Henry David Thoreau"
+  },
+  {
+    "id": 1086,
+    "category": "Friendship",
+    "quote": "💫 Friendship is the hardest thing in the world to explain. It's not something you learn in school.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "id": 1087,
+    "category": "Friendship",
+    "quote": "🤝 A friend is someone who knows the song in your heart and can sing it back to you when you have forgotten the words.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1088,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the golden thread that ties the heart of all the world.",
+    "author": "John Evelyn"
+  },
+  {
+    "id": 1089,
+    "category": "Friendship",
+    "quote": "💫 The best mirror is an old friend.",
+    "author": "George Herbert"
+  },
+  {
+    "id": 1090,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only cement that will ever hold the world together.",
+    "author": "Woodrow Wilson"
+  },
+  {
+    "id": 1091,
+    "category": "Friendship",
+    "quote": "👫 A friend is someone who understands your past, believes in your future, and accepts you just the way you are.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1092,
+    "category": "Friendship",
+    "quote": "💫 Friendship is a sheltering tree.",
+    "author": "Samuel Taylor Coleridge"
+  },
+  {
+    "id": 1093,
+    "category": "Friendship",
+    "quote": "🤝 The greatest gift of life is friendship, and I have received it.",
+    "author": "Hubert H. Humphrey"
+  },
+  {
+    "id": 1094,
+    "category": "Friendship",
+    "quote": "👫 A true friend never gets in your way unless you happen to be going down.",
+    "author": "Arnold H. Glasow"
+  },
+  {
+    "id": 1095,
+    "category": "Friendship",
+    "quote": "💫 The only way to have a friend is to be one.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 1096,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the wine of life.",
+    "author": "Edward Young"
+  },
+  {
+    "id": 1097,
+    "category": "Friendship",
+    "quote": "👫 Good friends are like stars. You don't always see them, but you know they're always there.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1098,
+    "category": "Friendship",
+    "quote": "💫 A friend is one that knows you as you are, understands where you have been, accepts what you have become, and still, gently allows you to grow.",
+    "author": "William Shakespeare"
+  },
+  {
+    "id": 1099,
+    "category": "Friendship",
+    "quote": "🤝 True friendship multiplies the good in life and divides its evils.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1100,
+    "category": "Friendship",
+    "quote": "👫 In the end, we will remember not the words of our enemies, but the silence of our friends.",
+    "author": "Martin Luther King Jr."
+  },
+  {
+    "id": 1101,
+    "category": "Positive",
+    "quote": "😊 Positive thoughts are like a magnet. They attract more positive thoughts.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1102,
+    "category": "Positive",
+    "quote": "✨ A positive attitude is a person's passport to a better tomorrow.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1103,
+    "category": "Positive",
+    "quote": "🌻 Optimism is the most important quality for success.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1104,
+    "category": "Positive",
+    "quote": "😊 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 1105,
+    "category": "Positive",
+    "quote": "✨ A smile is the most beautiful curve on a woman's body.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1106,
+    "category": "Positive",
+    "quote": "🌻 Your smile is your logo, your personality is your business card, and the way you make others feel is your trademark.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1107,
+    "category": "Positive",
+    "quote": "😊 A positive mind finds opportunity in everything.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1108,
+    "category": "Positive",
+    "quote": "✨ The power of positive thinking is the power to change your life.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1109,
+    "category": "Positive",
+    "quote": "🌻 Keep your face to the sunshine and you cannot see a shadow.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 1110,
+    "category": "Positive",
+    "quote": "😊 Smile, it's the key that fits the lock of everybody's heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1111,
+    "category": "Positive",
+    "quote": "✨ Positive thinking is not about ignoring the negative, but about finding the good in every situation.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1112,
+    "category": "Positive",
+    "quote": "🌻 The mind is everything. What you think you become.",
+    "author": "Buddha"
+  },
+  {
+    "id": 1113,
+    "category": "Positive",
+    "quote": "😊 With the new day comes new strength and new thoughts.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "id": 1114,
+    "category": "Positive",
+    "quote": "✨ Optimism is the faith that leads to achievement.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 1115,
+    "category": "Positive",
+    "quote": "🌻 A smile is the prettiest thing you can wear.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1116,
+    "category": "Positive",
+    "quote": "😊 Choose to be optimistic, it feels better.",
+    "author": "Dalai Lama"
+  },
+  {
+    "id": 1117,
+    "category": "Positive",
+    "quote": "✨ Your smile will give you a positive countenance that will make people feel comfortable around you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1118,
+    "category": "Positive",
+    "quote": "🌻 A positive mindset is a powerful thing. It can change your entire day.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1119,
+    "category": "Positive",
+    "quote": "😊 Life is 10% what happens to us and 90% how we react to it.",
+    "author": "Charles R. Swindoll"
+  },
+  {
+    "id": 1120,
+    "category": "Positive",
+    "quote": "✨ Smile, it's the key that fits the lock of everybody's heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1121,
+    "category": "Inspirational",
+    "quote": "💪 Be not afraid of growing slowly; be afraid only of standing still.",
+    "author": "Chinese Proverb"
+  },
+  {
+    "id": 1122,
+    "category": "Inspirational",
+    "quote": "🌟 The only way to have a friend is to be one.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 1123,
+    "category": "Inspirational",
+    "quote": "🔥 Do not go where the path may lead, go instead where there is no path and leave a trail.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 1124,
+    "category": "Inspirational",
+    "quote": "💪 The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 1125,
+    "category": "Inspirational",
+    "quote": "🌟 The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 1126,
+    "category": "Inspirational",
+    "quote": "🔥 Don't be afraid to give up the good to go for the great.",
+    "author": "John D. Rockefeller"
+  },
+  {
+    "id": 1127,
+    "category": "Inspirational",
+    "quote": "💪 People who are crazy enough to think they can change the world are the ones who do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 1128,
+    "category": "Inspirational",
+    "quote": "🌟 The only thing we have to fear is fear itself.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 1129,
+    "category": "Inspirational",
+    "quote": "🔥 What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 1130,
+    "category": "Inspirational",
+    "quote": "💪 The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 1131,
+    "category": "Inspirational",
+    "quote": "🌟 The only person you are destined to become is the person you decide to be.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 1132,
+    "category": "Inspirational",
+    "quote": "🔥 It's not whether you get knocked down, it's whether you get up.",
+    "author": "Vince Lombardi"
+  },
+  {
+    "id": 1133,
+    "category": "Inspirational",
+    "quote": "💪 Your limitation—it's only your imagination.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1134,
+    "category": "Inspirational",
+    "quote": "🌟 Push yourself, because no one else is going to do it for you.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1135,
+    "category": "Inspirational",
+    "quote": "🔥 Great things never come from comfort zones.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1136,
+    "category": "Inspirational",
+    "quote": "💪 Dream it. Wish it. Do it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1137,
+    "category": "Inspirational",
+    "quote": "🌟 Success doesn't just find you. You have to go out and get it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1138,
+    "category": "Inspirational",
+    "quote": "🔥 The harder you work for something, the greater you'll feel when you achieve it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1139,
+    "category": "Inspirational",
+    "quote": "💪 Dream bigger. Do bigger.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1140,
+    "category": "Inspirational",
+    "quote": "🌟 Your time is limited, so don't waste it living someone else's life.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 1141,
+    "category": "Life",
+    "quote": "🌅 Life is a series of natural and spontaneous changes. Don't resist them; that only creates sorrow.",
+    "author": "Lao Tzu"
+  },
+  {
+    "id": 1142,
+    "category": "Life",
+    "quote": "🌺 Life is like a coin. You can spend it any way you wish, but you only spend it once.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1143,
+    "category": "Life",
+    "quote": "🌈 Life is a beautiful journey. Enjoy every moment of it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1144,
+    "category": "Life",
+    "quote": "🌅 Life is a combination of magic and pasta.",
+    "author": "Federico Fellini"
+  },
+  {
+    "id": 1145,
+    "category": "Life",
+    "quote": "🌺 Life is like a book. Some chapters are sad, some are happy, and some are exciting. But if you never turn the page, you will never know what the next chapter holds.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1146,
+    "category": "Life",
+    "quote": "🌈 Life is not a problem to be solved, but a mystery to be lived.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1147,
+    "category": "Life",
+    "quote": "🌅 Life is like a box of chocolates. You never know what you're gonna get.",
+    "author": "Forrest Gump"
+  },
+  {
+    "id": 1148,
+    "category": "Life",
+    "quote": "🌺 Life is like a game of chess. To win, you have to make a move.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1149,
+    "category": "Life",
+    "quote": "🌈 Life is a journey that must be traveled no matter how bad the roads and accommodations.",
+    "author": "Oliver Goldsmith"
+  },
+  {
+    "id": 1150,
+    "category": "Life",
+    "quote": "🌅 Life is a grand adventure or nothing at all.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 1151,
+    "category": "Love",
+    "quote": "❤️ Love is the greatest refreshment in life.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "id": 1152,
+    "category": "Love",
+    "quote": "💖 The art of love is largely the art of persistence.",
+    "author": "Albert Ellis"
+  },
+  {
+    "id": 1153,
+    "category": "Love",
+    "quote": "💕 To love and be loved is to feel the sun from both sides.",
+    "author": "David Viscott"
+  },
+  {
+    "id": 1154,
+    "category": "Love",
+    "quote": "❤️ The only thing more unthinkable than leaving was staying; the only thing more impossible than staying was leaving.",
+    "author": "Elizabeth Gilbert"
+  },
+  {
+    "id": 1155,
+    "category": "Love",
+    "quote": "💖 Love is not about how many times you say 'I love you,' but how much you prove that it's true.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1156,
+    "category": "Love",
+    "quote": "💕 Love is the bridge between two hearts, the key that unlocks the door to happiness.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1157,
+    "category": "Love",
+    "quote": "❤️ Love is the only thing that can fill the emptiness of a heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1158,
+    "category": "Love",
+    "quote": "💖 Love is not just looking at each other, it's looking in the same direction.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "id": 1159,
+    "category": "Love",
+    "quote": "💕 Love is a temporary madness. It erupts like volcanoes and then subsides.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1160,
+    "category": "Love",
+    "quote": "❤️ Love is the poetry of the heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1161,
+    "category": "Success",
+    "quote": "🏆 Success is not just about making money. It's about making a difference.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1162,
+    "category": "Success",
+    "quote": "🎯 Success is not measured by the position you hold, but by the obstacles you overcome.",
+    "author": "Booker T. Washington"
+  },
+  {
+    "id": 1163,
+    "category": "Success",
+    "quote": "🚀 Success is not the result of spontaneous combustion. You must set yourself on fire.",
+    "author": "Arnold H. Glasow"
+  },
+  {
+    "id": 1164,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to go from failure to failure without losing your enthusiasm.",
+    "author": "Winston Churchill"
+  },
+  {
+    "id": 1165,
+    "category": "Success",
+    "quote": "🎯 The secret of success is to be like a duck—calm and unruffled on the surface but paddling like the devil underneath.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1166,
+    "category": "Success",
+    "quote": "🚀 Success is the sum of small efforts, repeated day in and day out.",
+    "author": "Robert Collier"
+  },
+  {
+    "id": 1167,
+    "category": "Success",
+    "quote": "🏆 Success is about creating value, not just accumulating wealth.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1168,
+    "category": "Success",
+    "quote": "🎯 Success is the progressive realization of a worthy goal or ideal.",
+    "author": "Earl Nightingale"
+  },
+  {
+    "id": 1169,
+    "category": "Success",
+    "quote": "🚀 Success is not in what you have, but who you are.",
+    "author": "Bo Bennett"
+  },
+  {
+    "id": 1170,
+    "category": "Success",
+    "quote": "🏆 Success is the ability to live your life the way you want to live it.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1171,
+    "category": "Friendship",
+    "quote": "🤝 A friend is one who believes in you when you have ceased to believe in yourself.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1172,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the most beautiful relationship in the world.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1173,
+    "category": "Friendship",
+    "quote": "💫 A true friend is someone who is there for you when they would rather be anywhere else.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1174,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only flower that blooms in all seasons.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1175,
+    "category": "Friendship",
+    "quote": "👫 The language of friendship is not words but meanings.",
+    "author": "Henry David Thoreau"
+  },
+  {
+    "id": 1176,
+    "category": "Friendship",
+    "quote": "💫 Friendship is the hardest thing in the world to explain. It's not something you learn in school.",
+    "author": "Muhammad Ali"
+  },
+  {
+    "id": 1177,
+    "category": "Friendship",
+    "quote": "🤝 A friend is someone who knows the song in your heart and can sing it back to you when you have forgotten the words.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1178,
+    "category": "Friendship",
+    "quote": "👫 Friendship is the golden thread that ties the heart of all the world.",
+    "author": "John Evelyn"
+  },
+  {
+    "id": 1179,
+    "category": "Friendship",
+    "quote": "💫 The best mirror is an old friend.",
+    "author": "George Herbert"
+  },
+  {
+    "id": 1180,
+    "category": "Friendship",
+    "quote": "🤝 Friendship is the only cement that will ever hold the world together.",
+    "author": "Woodrow Wilson"
+  },
+  {
+    "id": 1181,
+    "category": "Positive",
+    "quote": "😊 Positive thoughts are like a magnet. They attract more positive thoughts.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1182,
+    "category": "Positive",
+    "quote": "✨ A positive attitude is a person's passport to a better tomorrow.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1183,
+    "category": "Positive",
+    "quote": "🌻 Optimism is the most important quality for success.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1184,
+    "category": "Positive",
+    "quote": "😊 The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 1185,
+    "category": "Positive",
+    "quote": "✨ A smile is the most beautiful curve on a woman's body.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1186,
+    "category": "Positive",
+    "quote": "🌻 Your smile is your logo, your personality is your business card, and the way you make others feel is your trademark.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1187,
+    "category": "Positive",
+    "quote": "😊 A positive mind finds opportunity in everything.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1188,
+    "category": "Positive",
+    "quote": "✨ The power of positive thinking is the power to change your life.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1189,
+    "category": "Positive",
+    "quote": "🌻 Keep your face to the sunshine and you cannot see a shadow.",
+    "author": "Helen Keller"
+  },
+  {
+    "id": 1190,
+    "category": "Positive",
+    "quote": "😊 Smile, it's the key that fits the lock of everybody's heart.",
+    "author": "Unknown"
+  },
+  {
+    "id": 1191,
+    "category": "Inspirational",
+    "quote": "💪 Be not afraid of growing slowly; be afraid only of standing still.",
+    "author": "Chinese Proverb"
+  },
+  {
+    "id": 1192,
+    "category": "Inspirational",
+    "quote": "🌟 The only way to have a friend is to be one.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 1193,
+    "category": "Inspirational",
+    "quote": "🔥 Do not go where the path may lead, go instead where there is no path and leave a trail.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 1194,
+    "category": "Inspirational",
+    "quote": "💪 The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "id": 1195,
+    "category": "Inspirational",
+    "quote": "🌟 The way to get started is to quit talking and begin doing.",
+    "author": "Walt Disney"
+  },
+  {
+    "id": 1196,
+    "category": "Inspirational",
+    "quote": "🔥 Don't be afraid to give up the good to go for the great.",
+    "author": "John D. Rockefeller"
+  },
+  {
+    "id": 1197,
+    "category": "Inspirational",
+    "quote": "💪 People who are crazy enough to think they can change the world are the ones who do.",
+    "author": "Steve Jobs"
+  },
+  {
+    "id": 1198,
+    "category": "Inspirational",
+    "quote": "🌟 The only thing we have to fear is fear itself.",
+    "author": "Franklin D. Roosevelt"
+  },
+  {
+    "id": 1199,
+    "category": "Inspirational",
+    "quote": "🔥 What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "id": 1200,
+    "category": "Inspirational",
+    "quote": "💪 The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+    "author": "Helen Keller"
   }
 ]

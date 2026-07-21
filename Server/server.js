@@ -13,33 +13,35 @@ const profileRoute = require("./routes/profile");
 const adminRegister = require("./routes/adminRegister");
 
 const app = express();
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin (Postman, mobile apps)
-      if (!origin) return callback(null, true);
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       // Allow requests with no origin (Postman, mobile apps)
+//       if (!origin) return callback(null, true);
 
-      // Allow localhost (development)
-      if (origin.includes("localhost")) {
-        return callback(null, true);
-      }
+//       // Allow localhost (development)
+//       if (origin.includes("localhost")) {
+//         return callback(null, true);
+//       }
 
-      // Allow Vercel deployments (production + preview)
-      if (origin.includes("vercel.app")) {
-        return callback(null, true);
-      }
+//       // Allow Vercel deployments (production + preview)
+//       if (origin.includes("vercel.app")) {
+//         return callback(null, true);
+//       }
 
-      // Allow Netlify deployments
-      if (origin.includes("netlify.app")) {
-        return callback(null, true);
-      }
+//       // Allow Netlify deployments
+//       if (origin.includes("netlify.app")) {
+//         return callback(null, true);
+//       }
 
-      return callback(new Error("Not allowed by CORS"));
-    },
-    credentials: true,
-  }),
-);
+//       return callback(new Error("Not allowed by CORS"));
+//     },
+//     credentials: true,
+//   }),
+// );
 
+app.use(cors());
+app.use
 app.use(express.json());
 
 // Routes

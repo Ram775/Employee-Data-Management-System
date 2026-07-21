@@ -21,6 +21,12 @@ import {
   Square,
   ChevronLeft,
   ChevronRight,
+  MapPin,
+  DollarSign,
+  Award,
+  Heart,
+  Users,
+  Eye,
 } from "lucide-react";
 import employeeService from "../services/employeeService";
 import * as XLSX from "xlsx";
@@ -41,40 +47,62 @@ const EmployeeList = () => {
   const [selectedEmployees, setSelectedEmployees] = useState(new Set());
   const [isDeleting, setIsDeleting] = useState(false);
   const [editingEmployee, setEditingEmployee] = useState(null);
-  const itemsPerPage = 10;
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [showItemsDropdown, setShowItemsDropdown] = useState(false);
+  const [confirmDialog, setConfirmDialog] = useState({
+    isOpen: false,
+    type: "",
+    id: null,
+    index: null,
+    count: 0,
+  });
 
   const navigate = useNavigate();
 
-  // Headers with ID included (but ID will be displayed separately)
+  // Items per page options
+  const itemsPerPageOptions = [10, 25, 50, 100, "All"];
+
+  // Updated headers with all new fields
   const headers = [
     { key: "id", label: "ID", icon: Key },
-    { key: "epf", label: "EPF", icon: Key },
-    { key: "uan", label: "UAN", icon: FileText },
-    { key: "ppo", label: "PPO", icon: UserCheck },
+    { key: "formNo", label: "Form No.", icon: FileText },
     { key: "name", label: "Name", icon: User },
-    { key: "father", label: "Father", icon: UserCircle },
+    { key: "fatherName", label: "Father's Name", icon: UserCircle },
     { key: "designation", label: "Designation", icon: Briefcase },
-    { key: "livingDate", label: "Living Date", icon: Calendar },
-    { key: "exitDate", label: "Exit Date", icon: LogOut },
+    { key: "depotName", label: "Depot", icon: MapPin },
+    { key: "exitDate", label: "Exit Date", icon: Calendar },
+    { key: "lastBasicPay", label: "Basic Pay", icon: DollarSign },
+    { key: "exgratiaAmount", label: "Exgratia", icon: Award },
+    { key: "gratuityAmount", label: "Gratuity", icon: Award },
+    {
+      key: "leaveEncashmentAmount",
+      label: "Leave Encashment",
+      icon: DollarSign,
+    },
+    { key: "nominee", label: "Nominee", icon: Users },
+    { key: "relation", label: "Relation", icon: Heart },
   ];
 
-  // Mobile card fields (excluding ID)
-  const cardFields = [
-    { key: "epf", label: "EPF", icon: Key },
-    { key: "uan", label: "UAN", icon: FileText },
-    { key: "ppo", label: "PPO", icon: UserCheck },
+  // ALL fields for mobile view (including ID and all others)
+  const mobileFields = [
+    { key: "formNo", label: "Form No.", icon: FileText },
     { key: "name", label: "Name", icon: User },
-    { key: "father", label: "Father", icon: UserCircle },
+    { key: "fatherName", label: "Father's Name", icon: UserCircle },
     { key: "designation", label: "Designation", icon: Briefcase },
-    { key: "livingDate", label: "Living Date", icon: Calendar },
-    { key: "exitDate", label: "Exit Date", icon: LogOut },
+    { key: "depotName", label: "Depot", icon: MapPin },
+    { key: "exitDate", label: "Exit Date", icon: Calendar },
+    { key: "lastBasicPay", label: "Basic Pay", icon: DollarSign },
+    { key: "exgratiaAmount", label: "Exgratia", icon: Award },
+    { key: "gratuityAmount", label: "Gratuity", icon: Award },
+    { key: "leaveEncashmentAmount", label: "Leave Encashment", icon: DollarSign },
+    { key: "nominee", label: "Nominee", icon: Users },
+    { key: "relation", label: "Relation", icon: Heart },
   ];
 
   useEffect(() => {
     fetchEmployees();
   }, []);
 
-  // Updated fetchEmployees to handle UUID
   const fetchEmployees = async () => {
     try {
       setLoading(true);
@@ -85,7 +113,6 @@ const EmployeeList = () => {
 
       let employeeData = [];
 
-      // Handle different response structures
       if (res?.data?.data && Array.isArray(res.data.data)) {
         employeeData = res.data.data;
       } else if (res?.data && Array.isArray(res.data)) {
@@ -94,10 +121,10 @@ const EmployeeList = () => {
         employeeData = res;
       }
 
-      // Normalize data - ensure all rows have 9 fields (ID + 8 fields)
+      // Normalize data - ensure all rows have 13 fields
       employeeData = employeeData.map((row) => {
         const normalizedRow = [...row];
-        while (normalizedRow.length < 9) {
+        while (normalizedRow.length < 13) {
           normalizedRow.push("");
         }
         return normalizedRow;
@@ -113,7 +140,24 @@ const EmployeeList = () => {
     }
   };
 
-  // Updated filteredData - handle ID column
+  // Function to highlight search term in text
+  const highlightText = (text, searchTerm) => {
+    if (!searchTerm.trim() || !text) return text;
+    
+    const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    const parts = String(text).split(regex);
+    
+    return parts.map((part, index) => 
+      regex.test(part) ? (
+        <span key={index} className="bg-yellow-300 px-0.5 rounded font-medium">
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+
   const filteredData = useMemo(() => {
     return employees.filter((emp) => {
       if (!searchTerm.trim()) return true;
@@ -125,7 +169,6 @@ const EmployeeList = () => {
             .includes(searchLower),
         );
       }
-      // Find the index of the field (including ID)
       const fieldIndex = headers.findIndex((h) => h.key === filterField);
       return String(emp[fieldIndex] || "")
         .toLowerCase()
@@ -133,7 +176,6 @@ const EmployeeList = () => {
     });
   }, [employees, searchTerm, filterField]);
 
-  // Updated sortedData
   const sortedData = useMemo(() => {
     if (!sortConfig.key) return filteredData;
     const index = headers.findIndex((h) => h.key === sortConfig.key);
@@ -146,18 +188,28 @@ const EmployeeList = () => {
     });
   }, [filteredData, sortConfig]);
 
-  const totalPages = Math.max(1, Math.ceil(sortedData.length / itemsPerPage));
+  // ALWAYS show all filtered data, selection should not hide rows
+  const displayData = filteredData;
+
+  const totalPages = useMemo(() => {
+    if (itemsPerPage === "All") return 1;
+    return Math.max(1, Math.ceil(displayData.length / itemsPerPage));
+  }, [displayData, itemsPerPage]);
 
   useEffect(() => {
     if (currentPage > totalPages) setCurrentPage(totalPages);
   }, [totalPages, currentPage]);
 
-  const paginatedData = sortedData.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage,
-  );
+  const paginatedData = useMemo(() => {
+    if (itemsPerPage === "All") return displayData;
+    return displayData.slice(
+      (currentPage - 1) * itemsPerPage,
+      currentPage * itemsPerPage
+    );
+  }, [displayData, currentPage, itemsPerPage]);
 
   const getOriginalIndex = (pageIndex) => {
+    if (itemsPerPage === "All") return pageIndex;
     return (currentPage - 1) * itemsPerPage + pageIndex;
   };
 
@@ -195,82 +247,99 @@ const EmployeeList = () => {
     setSelectedEmployees(newSelected);
   };
 
-  // Updated handleBulkDelete - using UUID (index 0)
+  // Confirmation Dialog
+  const showConfirmDialog = (type, id = null, index = null) => {
+    setConfirmDialog({
+      isOpen: true,
+      type,
+      id,
+      index,
+      count: type === "bulk" ? selectedEmployees.size : 1,
+    });
+  };
+
+  const handleConfirmDelete = async () => {
+    const { type, id, index, count } = confirmDialog;
+
+    setIsDeleting(true);
+    try {
+      if (type === "single" && id) {
+        await employeeService.delete(id);
+        toast.success("Employee deleted successfully!");
+
+        const newSelected = new Set(selectedEmployees);
+        newSelected.delete(index);
+        setSelectedEmployees(newSelected);
+      } else if (type === "bulk") {
+        const selectedIds = Array.from(selectedEmployees)
+          .map((idx) => employees[idx]?.[0])
+          .filter((id) => id);
+
+        for (const empId of selectedIds) {
+          if (empId) {
+            await employeeService.delete(empId);
+          }
+        }
+        toast.success(`${count} employee(s) deleted successfully!`);
+        setSelectedEmployees(new Set());
+      }
+
+      await fetchEmployees();
+    } catch (err) {
+      console.error("Delete error:", err);
+      toast.error("Failed to delete employee(s)");
+    } finally {
+      setIsDeleting(false);
+      setConfirmDialog({
+        isOpen: false,
+        type: "",
+        id: null,
+        index: null,
+        count: 0,
+      });
+    }
+  };
+
+  const handleCancelDelete = () => {
+    setConfirmDialog({
+      isOpen: false,
+      type: "",
+      id: null,
+      index: null,
+      count: 0,
+    });
+  };
+
+  const handleSingleDelete = (employeeId, index) => {
+    showConfirmDialog("single", employeeId, index);
+  };
+
   const handleBulkDelete = async () => {
     if (selectedEmployees.size === 0) {
       toast.warning("Please select at least one employee to delete");
       return;
     }
-
-    if (
-      !window.confirm(
-        `Are you sure you want to delete ${selectedEmployees.size} employee(s)?`,
-      )
-    ) {
-      return;
-    }
-
-    setIsDeleting(true);
-    try {
-      // Get UUIDs from first column (index 0)
-      const selectedIds = Array.from(selectedEmployees)
-        .map((index) => employees[index]?.[0])
-        .filter((id) => id); // Remove undefined/null
-
-      console.log("Deleting IDs:", selectedIds);
-
-      // Delete each employee by UUID
-      for (const id of selectedIds) {
-        if (id) {
-          await employeeService.delete(id);
-        }
-      }
-
-      toast.success(
-        `${selectedEmployees.size} employee(s) deleted successfully!`,
-      );
-      setSelectedEmployees(new Set());
-      await fetchEmployees();
-    } catch (err) {
-      console.error("Delete error:", err);
-      toast.error("Failed to delete selected employees");
-    } finally {
-      setIsDeleting(false);
-    }
+    showConfirmDialog("bulk");
   };
 
-  // Updated handleSingleDelete - using UUID
-  const handleSingleDelete = async (employeeId, index) => {
-    if (!window.confirm("Are you sure you want to delete this employee?")) {
-      return;
-    }
-
-    try {
-      console.log("Deleting employee with ID:", employeeId);
-      await employeeService.delete(employeeId);
-      toast.success("Employee deleted successfully!");
-
-      const newSelected = new Set(selectedEmployees);
-      newSelected.delete(index);
-      setSelectedEmployees(newSelected);
-
-      await fetchEmployees();
-    } catch (err) {
-      console.error("Delete error:", err);
-      toast.error("Failed to delete employee");
-    }
-  };
-
-  // Updated handleEdit - using UUID
   const handleEdit = (employeeId) => {
     setEditingEmployee(employeeId);
-
     navigate(`/employee-form/${employeeId}`);
   };
 
-  // Updated handleExportExcel - include ID column
+  // Export functions - respect selection
+  const getExportData = () => {
+    if (selectedEmployees.size > 0) {
+      // Only export selected employees
+      return employees.filter((_, index) => selectedEmployees.has(index));
+    }
+    // Export all filtered data
+    return filteredData;
+  };
+
   const handleExportExcel = () => {
-    if (filteredData.length === 0) {
+    const exportData = getExportData();
+    if (exportData.length === 0) {
       toast.warning("No data to export");
       return;
     }
@@ -285,14 +354,12 @@ const EmployeeList = () => {
       });
       const generationDateTime = `${formattedDate} ${formattedTime}`;
 
-      // Use displayHeaders (without ID)
-      const displayHeaders = headers.slice(1); // Skip ID column
+      const displayHeaders = headers.slice(1);
 
-      const excelData = filteredData.map((row, index) => {
+      const excelData = exportData.map((row, index) => {
         const obj = { "S.No": index + 1 };
-        // Map headers excluding ID (start from index 1)
         displayHeaders.forEach((h, i) => {
-          obj[h.label] = row[i + 1] || "N/A"; // i+1 because first column is ID
+          obj[h.label] = row[i + 1] || "N/A";
         });
         return obj;
       });
@@ -338,21 +405,23 @@ const EmployeeList = () => {
     }
   };
 
-  // Updated handleExportPDF - include ID column
   const handleExportPDF = () => {
-    if (!filteredData || filteredData.length === 0) {
+    const exportData = getExportData();
+    if (!exportData || exportData.length === 0) {
       toast.warning("No data to export!");
       return;
     }
 
     try {
-      const displayListName = "Employee List Report";
+      const displayListName = selectedEmployees.size > 0 
+        ? "Selected Employees Report" 
+        : "Employee List Report";
 
-      // Check for long content (using actual data indices, not including ID)
-      const hasLongContent = filteredData.some(
+      const hasLongContent = exportData.some(
         (row) =>
-          (row[5] && row[5].length > 25) || // Name is at index 5
-          (row[2] && row[2].length > 15), // UAN is at index 2
+          (row[2] && row[2].length > 25) || // Name
+          (row[3] && row[3].length > 25) || // Father's Name
+          (row[5] && row[5].length > 20), // Depot
       );
 
       const dynamicOrientation = hasLongContent ? "landscape" : "portrait";
@@ -363,7 +432,7 @@ const EmployeeList = () => {
         hour: "2-digit",
         minute: "2-digit",
       });
-      const totalRecords = filteredData.length;
+      const totalRecords = exportData.length;
 
       doc.setFont("helvetica", "bold");
       doc.setFontSize(16);
@@ -386,32 +455,30 @@ const EmployeeList = () => {
       doc.setDrawColor(220, 220, 220);
       doc.line(14, 25, rightMargin, 25);
 
-      // Use displayHeaders (without ID)
       const displayHeaders = headers.slice(1);
       const tableColumn = ["S.No", ...displayHeaders.map((h) => h.label)];
 
-      // Prepare table rows - exclude ID column (index 0)
-      const tableRows = filteredData.map((row, index) => [
+      const tableRows = exportData.map((row, index) => [
         index + 1,
-        ...row.slice(1).map((val) => val || "N/A"), // Skip ID at index 0
+        ...row.slice(1).map((val) => val || "N/A"),
       ]);
 
       let dynamicFontSize = dynamicOrientation === "portrait" ? 6.5 : 7.5;
       let maxNameLength = 0;
-      let maxUANLength = 0;
+      let maxFatherLength = 0;
 
-      filteredData.forEach((row) => {
-        if (row[5] && row[5].length > maxNameLength)
-          maxNameLength = row[5].length; // Name is at index 5
-        if (row[2] && row[2].length > maxUANLength)
-          maxUANLength = row[2].length; // UAN is at index 2
+      exportData.forEach((row) => {
+        if (row[2] && row[2].length > maxNameLength)
+          maxNameLength = row[2].length;
+        if (row[3] && row[3].length > maxFatherLength)
+          maxFatherLength = row[3].length;
       });
 
-      if (maxNameLength > 30 || maxUANLength > 35) {
+      if (maxNameLength > 30 || maxFatherLength > 30) {
         dynamicFontSize = 5.5;
-      } else if (maxNameLength > 20 || maxUANLength > 25) {
+      } else if (maxNameLength > 20 || maxFatherLength > 20) {
         dynamicFontSize = 6;
-      } else if (maxNameLength > 15 || maxUANLength > 20) {
+      } else if (maxNameLength > 15 || maxFatherLength > 15) {
         dynamicFontSize = 6.5;
       }
 
@@ -442,14 +509,18 @@ const EmployeeList = () => {
         tableWidth: "auto",
         columnStyles: {
           0: { halign: "center", cellWidth: dynamicFontSize < 6 ? 7 : 9 },
-          1: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 }, // EPF
-          2: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 }, // UAN
-          3: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 }, // PPO
-          4: { cellWidth: "auto" }, // Name
-          5: { cellWidth: "auto" }, // Father
-          6: { cellWidth: "auto" }, // Designation
-          7: { halign: "center", cellWidth: dynamicFontSize < 6 ? 18 : 22 }, // Living Date
-          8: { halign: "center", cellWidth: dynamicFontSize < 6 ? 16 : 20 }, // Exit Date
+          1: { halign: "center", cellWidth: dynamicFontSize < 6 ? 12 : 15 },
+          2: { cellWidth: "auto" },
+          3: { cellWidth: "auto" },
+          4: { cellWidth: "auto" },
+          5: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 },
+          6: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 },
+          7: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 },
+          8: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 },
+          9: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 },
+          10: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 },
+          11: { cellWidth: "auto" },
+          12: { cellWidth: "auto" },
         },
         margin: { left: 8, right: 8 },
       });
@@ -465,17 +536,33 @@ const EmployeeList = () => {
     }
   };
 
-  // Render Mobile Card View - Updated for UUID
+  // Render Mobile Card View with ALL fields
   const renderMobileCard = (row, idx) => {
     const originalIndex = getOriginalIndex(idx);
-    const employeeId = row[0]; // UUID at index 0
+    const employeeId = row[0];
     const isSelected = selectedEmployees.has(originalIndex);
+
+    // Map fields to data indices (index 0 is ID, so fields start from index 1)
+    const fieldDataMap = {
+      formNo: 1,
+      name: 2,
+      fatherName: 3,
+      designation: 4,
+      depotName: 5,
+      exitDate: 6,
+      lastBasicPay: 7,
+      exgratiaAmount: 8,
+      gratuityAmount: 9,
+      leaveEncashmentAmount: 10,
+      nominee: 11,
+      relation: 12,
+    };
 
     return (
       <div
         key={idx}
-        className={`bg-white rounded-xl shadow-md border p-4 mb-3 transition-all ${
-          isSelected ? "border-blue-500 bg-blue-50/30" : "border-gray-200"
+        className={`bg-white rounded-xl shadow-sm border p-4 mb-3 transition-all ${
+          isSelected ? "border-blue-500 bg-blue-50/50" : "border-gray-200 hover:border-blue-300"
         }`}
       >
         <div className="flex items-center justify-between mb-3 pb-2 border-b border-gray-100">
@@ -485,61 +572,67 @@ const EmployeeList = () => {
               className="text-gray-500 hover:text-blue-600 transition-colors"
             >
               {isSelected ? (
-                <CheckSquare size={20} className="text-blue-600" />
+                <CheckSquare size={22} className="text-blue-600" />
               ) : (
-                <Square size={20} />
+                <Square size={22} />
               )}
             </button>
-            <span className="text-xs font-medium text-gray-400">
-              #{originalIndex + 1}
-            </span>
-            <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
-              ID: {employeeId ? employeeId.substring(0, 8) : "N/A"}
+            <span className="text-sm font-medium text-gray-400 bg-gray-100 px-2 py-1 rounded-full">
+              Sr.No.{originalIndex + 1}
             </span>
           </div>
           <div className="flex items-center gap-1">
             <button
               onClick={() => handleEdit(employeeId)}
-              className="p-1.5 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-all"
+              className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-all"
+              title="Edit"
             >
-              <Edit size={16} />
+              <Edit size={18} />
             </button>
             <button
               onClick={() => handleSingleDelete(employeeId, originalIndex)}
-              className="p-1.5 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-lg transition-all"
+              className="p-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-lg transition-all"
+              title="Delete"
             >
-              <Trash2 size={16} />
+              <Trash2 size={18} />
             </button>
           </div>
         </div>
 
-        {/* Card Fields - Skip ID (index 0), show from index 1 */}
-        <div className="space-y-2">
-          {cardFields.map((field, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-between gap-2 text-sm"
-            >
-              <div className="flex items-center gap-1.5 text-gray-500 flex-shrink-0">
-                <field.icon size={14} />
-                <span className="font-medium">{field.label}:</span>
+        <div className="space-y-2.5">
+          {mobileFields.map((field) => {
+            const dataIndex = fieldDataMap[field.key];
+            const value = row[dataIndex];
+            return (
+              <div
+                key={field.key}
+                className="flex items-center justify-between gap-2 text-base"
+              >
+                <div className="flex items-center gap-2 text-gray-600 flex-shrink-0">
+                  <field.icon size={16} />
+                  <span className="font-medium">{field.label}:</span>
+                </div>
+                <div className="text-gray-800 break-words text-right flex-1 text-base">
+                  {value ? (
+                    highlightText(value, searchTerm)
+                  ) : (
+                    <span className="text-gray-400">---</span>
+                  )}
+                </div>
               </div>
-              <div className="text-gray-700 break-words text-right flex-1">
-                {row[i + 1] || <span className="text-gray-400">---</span>}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     );
   };
 
-  // Render Desktop Table View - Updated for UUID
+  // Render Desktop Table View with highlight
   const renderTable = () => (
-    <div className="overflow-x-auto hidden md:block">
+    <div className="overflow-x-auto">
       <table className="w-full text-left border-collapse">
         <thead>
-          <tr className="bg-blue-700 text-white border-b border-gray-200">
+          <tr className="bg-gradient-to-r from-blue-700 to-blue-800 text-white border-b border-gray-200 sticky top-0 z-10">
             <th className="p-4 w-12">
               <button
                 onClick={handleSelectAll}
@@ -555,25 +648,25 @@ const EmployeeList = () => {
                 )}
               </button>
             </th>
-            <th className="p-4 text-sm font-semibold w-16">Sr.N.</th>
+            <th className="p-4 text-base font-semibold w-16">Sr.No.</th>
             {headers.slice(1).map((h) => (
               <th
                 key={h.key}
                 onClick={() => handleSort(h.key)}
-                className="p-4 text-sm font-semibold cursor-pointer hover:bg-blue-600 transition-colors"
+                className="p-4 text-base font-semibold cursor-pointer hover:bg-blue-600 transition-colors whitespace-nowrap select-none"
               >
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2">
                   {h.label}
                   <span className="transition-colors">
                     {sortConfig.key === h.key &&
                       (sortConfig.direction === "asc" ? (
-                        <ChevronUp size={14} />
+                        <ChevronUp size={16} />
                       ) : (
-                        <ChevronDown size={14} />
+                        <ChevronDown size={16} />
                       ))}
                     {sortConfig.key !== h.key && (
                       <ChevronUp
-                        size={14}
+                        size={16}
                         className="opacity-0 group-hover:opacity-50"
                       />
                     )}
@@ -581,239 +674,353 @@ const EmployeeList = () => {
                 </div>
               </th>
             ))}
-            <th className="p-4 text-sm font-semibold text-center w-24">
+            <th className="p-4 text-base font-semibold text-center w-28">
               Actions
             </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200">
-          {paginatedData.map((row, idx) => {
-            const originalIndex = getOriginalIndex(idx);
-            const employeeId = row[0]; // UUID at index 0
-            const isSelected = selectedEmployees.has(originalIndex);
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {paginatedData.length > 0 ? (
+            paginatedData.map((row, idx) => {
+              const originalIndex = getOriginalIndex(idx);
+              const employeeId = row[0];
+              const isSelected = selectedEmployees.has(originalIndex);
 
-            return (
-              <tr
-                key={idx}
-                className={`hover:bg-blue-50/40 transition-colors duration-150 ${
-                  isSelected ? "bg-blue-50" : ""
-                }`}
-              >
-                <td className="p-4">
-                  <button
-                    onClick={() => handleSelectEmployee(idx)}
-                    className="text-gray-500 hover:text-blue-600 transition-colors"
-                  >
-                    {isSelected ? (
-                      <CheckSquare size={20} className="text-blue-600" />
-                    ) : (
-                      <Square size={20} />
-                    )}
-                  </button>
-                </td>
-                <td className="p-4 text-sm font-medium">
-                  {(currentPage - 1) * itemsPerPage + idx + 1}
-                </td>
-
-                {/* Display data from index 1 to 8 (skip ID) */}
-                {row.slice(1, 9).map((val, i) => (
-                  <td key={i} className="p-4 text-sm whitespace-nowrap">
-                    {val || <span className="text-gray-400">-</span>}
+              return (
+                <tr
+                  key={idx}
+                  className={`hover:bg-blue-50/60 transition-colors duration-150 ${
+                    isSelected ? "bg-blue-50/80" : ""
+                  } ${idx % 2 === 0 ? "bg-white" : "bg-gray-50/30"}`}
+                >
+                  <td className="p-4">
+                    <button
+                      onClick={() => handleSelectEmployee(idx)}
+                      className="text-gray-500 hover:text-blue-600 transition-colors"
+                    >
+                      {isSelected ? (
+                        <CheckSquare size={20} className="text-blue-600" />
+                      ) : (
+                        <Square size={20} />
+                      )}
+                    </button>
                   </td>
-                ))}
-                <td className="p-4 text-center">
-                  <div className="flex items-center justify-center gap-2">
-                    <button
-                      onClick={() => handleEdit(employeeId)}
-                      className="p-1.5 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-all"
-                    >
-                      <Edit size={18} />
-                    </button>
-                    <button
-                      onClick={() =>
-                        handleSingleDelete(employeeId, originalIndex)
-                      }
-                      className="p-1.5 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-lg transition-all"
-                    >
-                      <Trash2 size={18} />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            );
-          })}
+                  <td className="p-4 text-base font-medium text-gray-500">
+                    {(currentPage - 1) * (itemsPerPage === "All" ? displayData.length : itemsPerPage) + idx + 1}
+                  </td>
+                  {row.slice(1, 13).map((val, i) => (
+                    <td key={i} className="p-4 text-base text-gray-700 max-w-xs truncate">
+                      {val ? highlightText(val, searchTerm) : <span className="text-gray-400">-</span>}
+                    </td>
+                  ))}
+                  <td className="p-4 text-center">
+                    <div className="flex items-center justify-center gap-2">
+                      <button
+                        onClick={() => handleEdit(employeeId)}
+                        className="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-all"
+                        title="Edit"
+                      >
+                        <Edit size={18} />
+                      </button>
+                      <button
+                        onClick={() =>
+                          handleSingleDelete(employeeId, originalIndex)
+                        }
+                        className="p-2 text-red-600 hover:text-red-800 hover:bg-red-50 rounded-lg transition-all"
+                        title="Delete"
+                      >
+                        <Trash2 size={18} />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })
+          ) : (
+            <tr>
+              <td colSpan={headers.length + 2} className="p-10 text-center text-gray-500">
+                <div className="flex flex-col items-center gap-3">
+                  <Search size={40} className="text-gray-300" />
+                  <p className="text-base font-medium">No records found</p>
+                  <p className="text-sm text-gray-400">Try adjusting your search or filters</p>
+                </div>
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
   );
 
   return (
-    <div className="min-h-screen sm:p-1 md:p-4">
-      <div className="w-full mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-2 sm:p-4">
+      <div className="w-full mx-auto ">
         {/* Header Section */}
-        <div className="mb-6 md:mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
-              Employee Records
-            </h1>
-            <p className="text-gray-500 text-xs sm:text-sm mt-1">
-              Manage and track company employees
-            </p>
-          </div>
+        <div className=" bg-white rounded-xl shadow-sm p-4 sm:p-6 border border-gray-200">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+            <div>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                Employee Records
+              </h1>
+              <p className="text-sm sm:text-base text-gray-500 mt-1">
+                Manage and track all employee information
+              </p>
+              {selectedEmployees.size > 0 && (
+                <p className="text-sm text-blue-600 font-medium mt-2 bg-blue-50 px-3 py-1.5 rounded inline-block">
+                  {selectedEmployees.size} employee(s) selected
+                </p>
+              )}
+            </div>
 
-          {/* Action Buttons */}
-          <div className="flex gap-2 w-full sm:w-auto flex-wrap">
-            {selectedEmployees.size > 0 && (
+            <div className="flex gap-2 w-full sm:w-auto flex-wrap">
+              {selectedEmployees.size > 0 && (
+                <button
+                  onClick={handleBulkDelete}
+                  disabled={isDeleting}
+                  className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base font-medium shadow-sm"
+                >
+                  {isDeleting ? (
+                    <Loader2 size={18} className="animate-spin" />
+                  ) : (
+                    <Trash2 size={18} />
+                  )}
+                  <span>Delete ({selectedEmployees.size})</span>
+                </button>
+              )}
               <button
-                onClick={handleBulkDelete}
-                disabled={isDeleting}
-                className="flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 bg-red-600 text-white rounded-lg sm:rounded-xl hover:bg-red-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-xs sm:text-sm font-medium shadow-sm hover:shadow-md"
+                onClick={handleExportExcel}
+                disabled={filteredData.length === 0}
+                className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base font-medium shadow-sm"
               >
-                {isDeleting ? (
-                  <Loader2 size={16} className="animate-spin" />
-                ) : (
-                  <Trash2 size={16} />
-                )}
-                <span className="hidden xs:inline">Delete</span>
-                <span className="xs:hidden">{selectedEmployees.size}</span>
+                <FileSpreadsheet size={18} />
+                <span>Excel</span>
               </button>
-            )}
-            <button
-              onClick={handleExportExcel}
-              disabled={filteredData.length === 0}
-              className="flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 bg-emerald-600 text-white rounded-lg sm:rounded-xl hover:bg-emerald-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-xs sm:text-sm font-medium shadow-sm hover:shadow-md"
-            >
-              <FileSpreadsheet size={16} />
-              <span className="hidden xs:inline">Excel</span>
-            </button>
-            <button
-              onClick={handleExportPDF}
-              disabled={filteredData.length === 0}
-              className="flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 bg-rose-600 text-white rounded-lg sm:rounded-xl hover:bg-rose-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-xs sm:text-sm font-medium shadow-sm hover:shadow-md"
-            >
-              <File size={16} />
-              <span className="hidden xs:inline">PDF</span>
-            </button>
+              <button
+                onClick={handleExportPDF}
+                disabled={filteredData.length === 0}
+                className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 bg-rose-600 text-white rounded-lg hover:bg-rose-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base font-medium shadow-sm"
+              >
+                <File size={18} />
+                <span>PDF</span>
+              </button>
+            </div>
           </div>
-        </div>
 
-        {/* Error banner */}
-        {error && (
-          <div className="mb-4 md:mb-6 flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs sm:text-sm">
-            <AlertCircle size={16} />
-            {error}
-          </div>
-        )}
+          {/* Error banner */}
+          {error && (
+            <div className="mt-4 flex items-center gap-2 px-4 py-3 rounded-lg bg-rose-50 border border-rose-200 text-rose-700 text-sm sm:text-base">
+              <AlertCircle size={18} />
+              {error}
+            </div>
+          )}
 
-        {/* Filters */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-4 md:mb-6">
-          <div className="relative flex-1">
-            <Search
-              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
-              size={16}
-            />
-            <input
-              type="text"
-              placeholder="Search employees..."
-              value={searchTerm}
-              className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 bg-white outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 shadow-sm text-xs sm:text-sm"
+          {/* Filters */}
+          <div className="mt-4 flex flex-col sm:flex-row gap-3">
+            <div className="relative flex-1">
+              <Search
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                size={18}
+              />
+              <input
+                type="text"
+                placeholder="Search employees..."
+                value={searchTerm}
+                className="w-full pl-11 sm:pl-12 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white transition-all duration-200 text-base"
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setCurrentPage(1);
+                  setSelectedEmployees(new Set());
+                }}
+              />
+            </div>
+            <select
+              value={filterField}
+              className="px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white transition-all duration-200 text-base min-w-[140px] sm:min-w-[160px]"
               onChange={(e) => {
-                setSearchTerm(e.target.value);
+                setFilterField(e.target.value);
                 setCurrentPage(1);
                 setSelectedEmployees(new Set());
               }}
-            />
+            >
+              <option value="all">All Fields</option>
+              {headers.slice(1).map((h) => (
+                <option key={h.key} value={h.key}>
+                  {h.label}
+                </option>
+              ))}
+            </select>
           </div>
-          <select
-            value={filterField}
-            className="px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 bg-white outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 shadow-sm text-xs sm:text-sm min-w-[120px] sm:min-w-[140px]"
-            onChange={(e) => {
-              setFilterField(e.target.value);
-              setCurrentPage(1);
-              setSelectedEmployees(new Set());
-            }}
-          >
-            <option value="all">All Fields</option>
-            {headers.map((h) => (
-              <option key={h.key} value={h.key}>
-                {h.label}
-              </option>
-            ))}
-          </select>
         </div>
 
         {/* Main Content Container */}
-        <div className="rounded-xl sm:rounded-2xl shadow-lg border border-gray-200/80 overflow-hidden">
+        <div className="rounded-xl shadow-lg border border-gray-200 overflow-hidden bg-white">
+          {/* Top Bar with Pagination Controls */}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 p-4 sm:p-5 bg-gray-50/80 border-b border-gray-200">
+            <div className="text-sm sm:text-base text-gray-600 order-2 sm:order-1">
+              Showing {displayData.length > 0 ? (currentPage - 1) * (itemsPerPage === "All" ? displayData.length : itemsPerPage) + 1 : 0} -{" "}
+              {Math.min(
+                currentPage * (itemsPerPage === "All" ? displayData.length : itemsPerPage),
+                displayData.length
+              )} of {displayData.length} entries
+              {selectedEmployees.size > 0 && (
+                <span className="ml-3 text-blue-600 font-medium bg-blue-50 px-3 py-1 rounded">
+                  {selectedEmployees.size} selected
+                </span>
+              )}
+            </div>
+            <div className="flex items-center gap-3 order-1 sm:order-2 flex-wrap justify-center">
+              {/* Items per page dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setShowItemsDropdown(!showItemsDropdown)}
+                  className="flex items-center gap-2 px-4 py-2 text-sm sm:text-base bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 shadow-sm"
+                >
+                  <Eye size={16} className="text-gray-500" />
+                  <span className="font-medium">{itemsPerPage}</span>
+                  <ChevronDown size={16} className={`text-gray-500 transition-transform ${showItemsDropdown ? "rotate-180" : ""}`} />
+                </button>
+                {showItemsDropdown && (
+                  <div className="absolute right-0 mt-1 w-36 bg-white border border-gray-200 rounded-lg shadow-lg z-20 overflow-hidden">
+                    {itemsPerPageOptions.map((option) => (
+                      <button
+                        key={option}
+                        onClick={() => {
+                          setItemsPerPage(option);
+                          setShowItemsDropdown(false);
+                          setCurrentPage(1);
+                        }}
+                        className={`w-full text-left px-4 py-2.5 text-sm hover:bg-blue-50 transition-colors ${
+                          itemsPerPage === option 
+                            ? "bg-blue-50 text-blue-600 font-medium" 
+                            : "text-gray-700"
+                        }`}
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Pagination buttons */}
+              {totalPages > 1 && (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+                    disabled={currentPage === 1}
+                    className="flex items-center gap-2 px-4 py-2 text-sm sm:text-base bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
+                  >
+                    <ChevronLeft size={16} />
+                    <span>Prev</span>
+                  </button>
+                  <span className="text-sm sm:text-base font-medium text-gray-700 px-3">
+                    {currentPage} / {totalPages}
+                  </span>
+                  <button
+                    onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+                    disabled={currentPage === totalPages}
+                    className="flex items-center gap-2 px-4 py-2 text-sm sm:text-base bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
+                  >
+                    <span>Next</span>
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+
           {loading ? (
-            <div className="p-1 sm:p-1 flex flex-col items-center justify-center gap-3">
-              <Loader2 className="animate-spin text-blue-500" size={32} />
-              <p className="text-gray-500 text-xs sm:text-sm font-medium">
+            <div className="p-16 flex flex-col items-center justify-center gap-4">
+              <Loader2 className="animate-spin text-blue-500" size={48} />
+              <p className="text-gray-500 text-base font-medium">
                 Loading employees...
               </p>
             </div>
           ) : (
             <>
               {/* Desktop Table - Hidden on Mobile */}
-              {renderTable()}
+              <div className="hidden md:block">
+                {renderTable()}
+              </div>
 
-              {/* Mobile Cards - Visible only on Mobile */}
-              <div className="md:hidden p-1 sm:p-2">
+              {/* Mobile Cards - Visible only on Mobile with ALL fields */}
+              <div className="md:hidden p-3">
                 {paginatedData.length > 0 ? (
                   paginatedData.map((row, idx) => renderMobileCard(row, idx))
                 ) : (
-                  <div className="text-center py-8">
-                    <p className="text-gray-400 text-sm font-medium">
+                  <div className="text-center py-12">
+                    <Search size={48} className="text-gray-300 mx-auto mb-4" />
+                    <p className="text-gray-400 text-base font-medium">
                       No employees found
                     </p>
-                    <p className="text-gray-300 text-xs mt-1">
+                    <p className="text-gray-300 text-sm mt-1">
                       Try adjusting your search or filters
                     </p>
                   </div>
                 )}
               </div>
-
-              {/* Pagination */}
-              {totalPages > 1 && (
-                <div className="p-3 sm:p-4 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-3 bg-gray-50/50">
-                  <div className="text-xs sm:text-sm text-gray-500 order-2 sm:order-1 text-center sm:text-left">
-                    Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
-                    {Math.min(currentPage * itemsPerPage, sortedData.length)} of{" "}
-                    {sortedData.length} entries
-                    {selectedEmployees.size > 0 && (
-                      <span className="ml-2 text-blue-600 font-medium">
-                        ({selectedEmployees.size} selected)
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-2 sm:gap-3 order-1 sm:order-2">
-                    <button
-                      onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-                      disabled={currentPage === 1}
-                      className="flex items-center gap-1 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
-                    >
-                      <ChevronLeft size={14} />
-                      <span className="hidden xs:inline">Prev</span>
-                    </button>
-                    <span className="text-xs sm:text-sm font-medium text-gray-700">
-                      Page {currentPage} of {totalPages}
-                    </span>
-                    <button
-                      onClick={() =>
-                        setCurrentPage((p) => Math.min(p + 1, totalPages))
-                      }
-                      disabled={currentPage === totalPages}
-                      className="flex items-center gap-1 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
-                    >
-                      <span className="hidden xs:inline">Next</span>
-                      <ChevronRight size={14} />
-                    </button>
-                  </div>
-                </div>
-              )}
             </>
           )}
         </div>
       </div>
+
+      {/* Confirmation Dialog */}
+      {confirmDialog.isOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-6 animate-in zoom-in duration-200">
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center">
+                <Trash2 className="w-8 h-8 text-red-600" />
+              </div>
+            </div>
+            <h3 className="text-xl font-bold text-center text-gray-900 mb-2">
+              Are you sure?
+            </h3>
+            <p className="text-center text-gray-600 mb-6 text-base">
+              {confirmDialog.type === "bulk" ? (
+                <>
+                  You are about to delete{" "}
+                  <span className="font-bold text-red-600">
+                    {confirmDialog.count}
+                  </span>{" "}
+                  employee(s). This action cannot be undone.
+                </>
+              ) : (
+                <>
+                  You are about to delete this employee. This action cannot be
+                  undone.
+                </>
+              )}
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={handleCancelDelete}
+                className="flex-1 py-3 px-4 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-colors font-medium text-base"
+                disabled={isDeleting}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleConfirmDelete}
+                disabled={isDeleting}
+                className="flex-1 py-3 px-4 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-colors font-medium text-base flex items-center justify-center gap-2"
+              >
+                {isDeleting ? (
+                  <>
+                    <Loader2 className="animate-spin" size={18} />
+                    Deleting...
+                  </>
+                ) : (
+                  <>
+                    <Trash2 size={18} />
+                    Delete
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

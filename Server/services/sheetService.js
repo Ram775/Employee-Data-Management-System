@@ -34,19 +34,23 @@ async function addEmployeeToSheet(data) {
   // Data with ID as first column (Column A)
   const rowData = [
     uniqueId, // Column A: ID (generated)
-    data.epfNo || "", // Column B: EPF NO
-    data.uan || "", // Column C: UAN
-    data.ppoNo || "", // Column D: PPO NO
+    data.formNo || "", // Column B: EPF NO
     data.name || "", // Column E: Employee Name
     data.fatherName || "", // Column F: Father's Name
     data.designation || "", // Column G: Designation
-    data.livingDate || "", // Column H: Living Date
+    data.depotName || "", // Column G: Depot Name
     data.exitDate || "", // Column I: Exit Date
+    data.lastBasicPay || "", // Column I: Exit Date
+    data.exgratiaAmount || "", // Column I: Exit Date
+    data.gratuityAmount || "", // Column I: Exit Date
+    data.leaveEncashmentAmount || "", // Column I: Exit Date
+    data.nominee || "", // Column G: Depot Name
+    data.relation || "", // Column G: Depot Name
   ];
 
   await googleSheets.spreadsheets.values.update({
     spreadsheetId: process.env.GOOGLE_SHEET_ID,
-    range: `Sheet1!A${nextRow}:I${nextRow}`, // A to I columns
+    range: `Sheet1!A${nextRow}:M${nextRow}`, // A to M columns
     valueInputOption: "USER_ENTERED",
     requestBody: {
       values: [rowData],
@@ -56,7 +60,7 @@ async function addEmployeeToSheet(data) {
   return {
     success: true,
     id: uniqueId,
-    message: "Data added to Sheet successfully!",
+    message: "Employee created successfully.",
   };
 }
 
@@ -67,7 +71,7 @@ async function getAllEmployees() {
 
   const getRows = await googleSheets.spreadsheets.values.get({
     spreadsheetId: process.env.GOOGLE_SHEET_ID,
-    range: "Sheet1!A:I", // A to I columns (ID + 8 fields)
+    range: "Sheet1!A:M", // A to M columns (ID + 11 fields)
   });
 
   const rows = getRows.data.values || [];
@@ -99,19 +103,23 @@ async function updateEmployeeById(id, data) {
   // Update the row (keep ID same)
   const rowData = [
     id, // Column A: ID (keep same)
-    data.epfNo || "", // Column B: EPF NO
-    data.uan || "", // Column C: UAN
-    data.ppoNo || "", // Column D: PPO NO
+    data.formNo || "", // Column B: EPF NO
     data.name || "", // Column E: Employee Name
     data.fatherName || "", // Column F: Father's Name
     data.designation || "", // Column G: Designation
-    data.livingDate || "", // Column H: Living Date
+    data.depotName || "", // Column G: Depot Name
     data.exitDate || "", // Column I: Exit Date
+    data.lastBasicPay || "", // Column I: Exit Date
+    data.exgratiaAmount || "", // Column I: Exit Date
+    data.gratuityAmount || "", // Column I: Exit Date
+    data.leaveEncashmentAmount || "", // Column I: Exit Date
+    data.nominee || "", // Column G: Depot Name
+    data.relation || "", // Column G: Depot Name
   ];
 
   await googleSheets.spreadsheets.values.update({
     spreadsheetId: process.env.GOOGLE_SHEET_ID,
-    range: `Sheet1!A${rowNumber}:I${rowNumber}`,
+    range: `Sheet1!A${rowNumber}:M${rowNumber}`,
     valueInputOption: "USER_ENTERED",
     requestBody: { values: [rowData] },
   });

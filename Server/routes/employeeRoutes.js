@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const admin = require("../middleware/auth");
 const {
   addEmployeeToSheet,
   getAllEmployees,
@@ -15,7 +16,7 @@ const auth = new google.auth.GoogleAuth({
 });
 
 // POST: Add Employee (with auto-generated ID)
-router.post("/add-employee", async (req, res) => {
+router.post("/add-employee", admin, async (req, res) => {
   try {
     const result = await addEmployeeToSheet(req.body);
     res.status(200).json({
@@ -33,7 +34,7 @@ router.post("/add-employee", async (req, res) => {
 });
 
 // GET: All Employees
-router.get("/get-employees", async (req, res) => {
+router.get("/get-employees", admin, async (req, res) => {
   try {
     const employees = await getAllEmployees();
     res.status(200).json({
@@ -50,7 +51,7 @@ router.get("/get-employees", async (req, res) => {
 });
 
 // PUT: Update Employee by ID
-router.put("/update-employee/:id", async (req, res) => {
+router.put("/update-employee/:id",admin, async (req, res) => {
   try {
     const { id } = req.params;
     const result = await updateEmployeeById(id, req.body);
@@ -68,7 +69,7 @@ router.put("/update-employee/:id", async (req, res) => {
 });
 
 // DELETE: Delete Employee by ID
-router.delete("/delete-employee/:id", async (req, res) => {
+router.delete("/delete-employee/:id", admin, async (req, res) => {
   try {
     const { id } = req.params;
     const result = await deleteEmployeeById(id);
@@ -86,7 +87,7 @@ router.delete("/delete-employee/:id", async (req, res) => {
 });
 
 // GET: Employee Count
-router.get("/employee-count", async (req, res) => {
+router.get("/employee-count", admin, async (req, res) => {
   try {
     const employees = await getAllEmployees();
     const count = employees.length;

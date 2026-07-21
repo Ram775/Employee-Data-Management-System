@@ -18,95 +18,102 @@ async function sendOTP(email, otp) {
     });
 
     const html = `
- <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      </head>
-      <body style="margin:0;padding:0;background-color:#f4f7fc;font-family:'Segoe UI',Arial,sans-serif;">
-        <table cellpadding="0" cellspacing="0" width="100%" style="background-color:#f4f7fc;padding:20px 0;">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification</title>
+</head>
+<body style="margin:0;padding:0;background-color:#eef1f8;font-family:'Segoe UI',Roboto,Arial,sans-serif;">
+  <table cellpadding="0" cellspacing="0" width="100%" style="background-color:#eef1f8;padding:40px 0;">
+    <tr>
+      <td align="center">
+
+        <!-- Main Container -->
+        <table cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;background-color:#ffffff;border-radius:20px;box-shadow:0 10px 40px rgba(26,35,126,0.12);overflow:hidden;">
+
+          <!-- Header with mesh gradient -->
           <tr>
-            <td align="center">
-              <!-- Main Container -->
-              <table cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;background-color:#ffffff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);overflow:hidden;">
-                
-                <!-- Header -->
+            <td style="background:linear-gradient(135deg,#3949ab 0%,#1a237e 45%,#0d1b5e 100%);padding:44px 40px 40px;text-align:center;position:relative;">
+              <table cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="background:linear-gradient(135deg,#1a237e,#0d47a1);padding:30px 40px;text-align:center;">
-                    <h1 style="margin:0;color:#ffffff;font-size:28px;font-weight:600;letter-spacing:1px;">Employee Management</h1>
-                    <p style="margin:8px 0 0;color:#90caf9;font-size:14px;">Secure Authentication System</p>
-                  </td>
-                </tr>
-
-                <!-- Body -->
-                <tr>
-                  <td style="padding:40px 40px 30px;">
-                    <p style="margin:0 0 8px;color:#333333;font-size:16px;line-height:1.6;">Hello,</p>
-                    <p style="margin:0 0 24px;color:#555555;font-size:16px;line-height:1.6;">
-                      You have requested to log in to the <strong>Employee Management System</strong>. 
-                      Please use the One-Time Password (OTP) below to complete your authentication.
-                    </p>
-
-                    <!-- OTP Box -->
-                    <table cellpadding="0" cellspacing="0" width="100%" style="background-color:#f8faff;border:2px dashed #1a237e;border-radius:8px;padding:20px 0;margin:10px 0 24px;">
+                  <td align="center">
+                    <!-- Logo badge -->
+                    <table cellpadding="0" cellspacing="0" style="margin:0 auto 20px;">
                       <tr>
-                        <td align="center">
-                          <p style="margin:0 0 6px;color:#666666;font-size:14px;letter-spacing:2px;">YOUR ONE-TIME PASSWORD</p>
-                          <div style="font-size:40px;font-weight:700;color:#1a237e;letter-spacing:8px;padding:8px 0;font-family:'Courier New',monospace;">
-                            ${otp}
-                          </div>
+                        <td style="width:56px;height:56px;background:rgba(255,255,255,0.15);border-radius:16px;text-align:center;vertical-align:middle;border:1px solid rgba(255,255,255,0.25);">
+                          <span style="font-size:26px;line-height:56px;">🔐</span>
                         </td>
                       </tr>
                     </table>
-
-                    <!-- Important Details -->
-                    <table cellpadding="0" cellspacing="0" width="100%" style="margin:10px 0 20px;">
-                      <tr>
-                        <td style="padding:6px 0;">
-                          <span style="color:#1a237e;font-weight:600;">⏱️ Expires in:</span>
-                          <span style="color:#d32f2f;font-weight:600;">5 minutes</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding:6px 0;">
-                          <span style="color:#1a237e;font-weight:600;">🔒 Security:</span>
-                          <span style="color:#555555;">Do not share this OTP with anyone</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding:6px 0;">
-                          <span style="color:#1a237e;font-weight:600;">📧 Requested for:</span>
-                          <span style="color:#555555;">${email}</span>
-                        </td>
-                      </tr>
-                    </table>
-
-                    <p style="margin:20px 0 0;color:#777777;font-size:14px;line-height:1.6;border-top:1px solid #e0e0e0;padding-top:20px;">
-                      If you did not request this OTP, please ignore this email or contact our 
-                      <a href="#" style="color:#1a237e;text-decoration:none;font-weight:600;">support team</a> immediately.
-                    </p>
+                    <h1 style="margin:0;color:#ffffff;font-size:26px;font-weight:700;letter-spacing:0.3px;">Employee Management System</h1>
+                    <p style="margin:10px 0 0;color:#b3c1f7;font-size:14px;letter-spacing:0.5px;">Secure Authentication System</p>
                   </td>
                 </tr>
-
-                <!-- Footer -->
-                <tr>
-                  <td style="background-color:#f8faff;padding:20px 40px;text-align:center;border-top:1px solid #e8edf5;">
-                    <p style="margin:0 0 6px;color:#888888;font-size:13px;">
-                      &copy; 2026 Employee Management System. All rights reserved.
-                    </p>
-                    <p style="margin:0;color:#aaaaaa;font-size:12px;">
-                      This is an automated message, please do not reply to this email.
-                    </p>
-                  </td>
-                </tr>
-
               </table>
             </td>
           </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:44px 40px 32px;">
+              
+
+              <!-- OTP Box -->
+              <table cellpadding="0" cellspacing="0" width="100%" style="background:linear-gradient(135deg,#f4f7ff,#eef1ff);border-radius:16px;padding:2px;margin:0 0 28px;">
+                <tr>
+                  <td style="border:1.5px dashed #3949ab;border-radius:16px;padding:26px 0;text-align:center;">
+                    <p style="margin:0 0 10px;color:#5c6270;font-size:12px;letter-spacing:3px;font-weight:700;text-transform:uppercase;">Your One-Time Password</p>
+                    <div style="font-size:42px;font-weight:800;color:#1a237e;letter-spacing:10px;font-family:'SF Mono','Consolas','Roboto Mono',monospace;padding:4px 0 8px;">
+                      ${otp}
+                    </div>
+                    <p style="margin:6px 0 0;color:#d32f2f;font-size:12.5px;font-weight:600;">⏱ Expires in 5 minutes</p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Info cards -->
+              <table cellpadding="0" cellspacing="0" width="100%" style="margin:0 0 8px;">
+                <tr>
+                  <td style="background-color:#f8faff;border-radius:12px;padding:16px 18px;border-left:3px solid #3949ab;">
+                    <p style="margin:0;color:#1a237e;font-size:13.5px;font-weight:700;">🔒 Security Notice</p>
+                    <p style="margin:4px 0 0;color:#6b7280;font-size:13.5px;line-height:1.5;">Never share this OTP with anyone, including our support staff.</p>
+                  </td>
+                </tr>
+              </table>
+              <table cellpadding="0" cellspacing="0" width="100%" style="margin:12px 0 0;">
+                <tr>
+                  <td style="background-color:#f8faff;border-radius:12px;padding:16px 18px;border-left:3px solid #7986cb;">
+                    <p style="margin:0;color:#1a237e;font-size:13.5px;font-weight:700;">📧 Requested for</p>
+                    <p style="margin:4px 0 0;color:#6b7280;font-size:13.5px;line-height:1.5;">${email}</p>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:28px 0 0;color:#9aa0ac;font-size:13px;line-height:1.6;border-top:1px solid #eef0f4;padding-top:20px;">
+                If you did not request this OTP, please ignore this email or contact our
+                <a href="#" style="color:#1a237e;text-decoration:none;font-weight:600;">support team</a> immediately.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color:#f8faff;padding:24px 40px;text-align:center;border-top:1px solid #eef0f4;">
+              <p style="margin:0 0 6px;color:#8a8f9a;font-size:12.5px;">&copy; 2026 Employee Management System. All rights reserved.</p>
+              <p style="margin:0;color:#aeb4bf;font-size:11.5px;">This is an automated message, please do not reply to this email.</p>
+            </td>
+          </tr>
+
         </table>
-      </body>
-      </html>
+
+        <p style="margin:20px 0 0;color:#9aa0ac;font-size:12px;">Sent with 💙 by Employee Management System</p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
 `;
 
     const messageParts = [
