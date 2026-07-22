@@ -11,6 +11,8 @@ const forgotPasswordOtpRoute = require("./routes/verifyForgotOtp");
 const resetPasswordRoute = require("./routes/resetPassword");
 const profileRoute = require("./routes/profile");
 const adminRegister = require("./routes/adminRegister");
+const healthRoutes = require("./routes/healthRoutes")
+
 
 const app = express();
 // app.use(
@@ -54,6 +56,7 @@ app.use("/api/employees", employeeRoutes);
 app.use("/api/auth", forgotPasswordRoute);
 app.use("/api/auth", forgotPasswordOtpRoute);
 app.use("/api/auth", resetPasswordRoute);
+app.use("/api/health", healthRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
