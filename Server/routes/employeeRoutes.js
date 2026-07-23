@@ -36,7 +36,9 @@ router.post("/add-employee", admin, async (req, res) => {
 // GET: All Employees
 router.get("/get-employees", admin, async (req, res) => {
   try {
-    const employees = await getAllEmployees();
+    const data = await getAllEmployees();
+    const employees = data.reverse();
+
     res.status(200).json({
       success: true,
       data: employees,
@@ -51,7 +53,7 @@ router.get("/get-employees", admin, async (req, res) => {
 });
 
 // PUT: Update Employee by ID
-router.put("/update-employee/:id",admin, async (req, res) => {
+router.put("/update-employee/:id", admin, async (req, res) => {
   try {
     const { id } = req.params;
     const result = await updateEmployeeById(id, req.body);

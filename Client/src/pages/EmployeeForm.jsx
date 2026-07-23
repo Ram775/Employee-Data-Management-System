@@ -187,8 +187,16 @@ const EmployeeForm = () => {
       }
     } catch (err) {
       console.error("Fetch error:", err);
-      setError("Failed to load data");
-      toast.error("Failed to load employee data");
+      setError(
+        err?.response?.error ||
+          err?.response?.data?.error ||
+          "Failed to load data",
+      );
+      toast.error(
+        err?.response?.error ||
+          err?.response?.data?.error ||
+          "Failed to load employee data",
+      );
     } finally {
       setLoading(false);
     }

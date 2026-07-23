@@ -158,7 +158,7 @@ const EmployeeList = () => {
         return normalizedRow;
       });
 
-      setEmployees(employeeData.reverse());
+      setEmployees(employeeData);
     } catch (err) {
       console.error("Fetch error:", err);
       setError("Failed to load data.");
