@@ -125,7 +125,7 @@ async function updateEmployeeById(id, data) {
 
   await googleSheets.spreadsheets.values.update({
     spreadsheetId: process.env.GOOGLE_SHEET_ID,
-    range: `Sheet1!A${rowNumber}:M${rowNumber}`,
+    range: `Sheet1!A${rowNumber}:P${rowNumber}`,
     valueInputOption: "USER_ENTERED",
     requestBody: { values: [rowData] },
   });
