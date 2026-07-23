@@ -93,38 +93,79 @@ const EmployeeForm = () => {
 
       if (employee) {
         console.log("Fetched employee data:", employee);
-        
+        console.log("Employee ID:", employee[0]);
+        console.log("Form No:", employee[1]);
+        console.log("Name:", employee[2]);
+        console.log("Father Name:", employee[3]);
+        console.log("Designation:", employee[4]);
+        console.log("Depot:", employee[5]);
+        console.log("Exit Date:", employee[6]);
+        console.log("Last Basic Pay:", employee[7]);
+        console.log("Exgratia:", employee[8]);
+        console.log("Gratuity:", employee[9]);
+        console.log("Leave Encashment:", employee[10]);
+        console.log("Nominee:", employee[11]);
+        console.log("Relation:", employee[12]);
+        console.log("Bank Account:", employee[13]);
+        console.log("IFSC:", employee[14]);
+        console.log("VRS:", employee[15]);
+
         // Normalize dropdown values to match options
         const depotValue = employee[5] || "";
         const vrsValue = employee[15] || "";
         const relationValue = employee[12] || "";
 
         // Find matching depot option (case insensitive)
-        const matchedDepot = depotOptions.find(
-          option => option.toLowerCase() === depotValue.toLowerCase().trim()
-        ) || depotValue;
+        const matchedDepot =
+          depotOptions.find(
+            (option) =>
+              option.toLowerCase() === depotValue.toLowerCase().trim(),
+          ) || depotValue;
 
         // Find matching VRS option (case insensitive)
-        const matchedVrs = vrsOptions.find(
-          option => option.toLowerCase() === vrsValue.toLowerCase().trim()
-        ) || vrsValue;
+        const matchedVrs =
+          vrsOptions.find(
+            (option) => option.toLowerCase() === vrsValue.toLowerCase().trim(),
+          ) || vrsValue;
 
         // Find matching Relation option (case insensitive)
-        const matchedRelation = relationOptions.find(
-          option => option.toLowerCase() === relationValue.toLowerCase().trim()
-        ) || relationValue;
+        const matchedRelation =
+          relationOptions.find(
+            (option) =>
+              option.toLowerCase() === relationValue.toLowerCase().trim(),
+          ) || relationValue;
 
         // Format date from YYYY-MM-DD to DD/MM/YYYY for display
         let exitDateValue = employee[6] || "";
         if (exitDateValue) {
           // Check if date is in YYYY-MM-DD format
           if (exitDateValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
-            const parts = exitDateValue.split('-');
+            const parts = exitDateValue.split("-");
             exitDateValue = `${parts[2]}/${parts[1]}/${parts[0]}`;
           }
         }
 
+        // Set all form data including nominee and relation
         setFormData({
+          formNo: employee[1] || "",
+          name: employee[2] || "",
+          fatherName: employee[3] || "",
+          designation: employee[4] || "",
+          depotName: matchedDepot,
+          exitDate: exitDateValue,
+          lastBasicPay: employee[7] || "",
+          exgratiaAmount: employee[8] || "",
+          gratuityAmount: employee[9] || "",
+          leaveEncashmentAmount: employee[10] || "",
+          nominee: employee[11] || "", // Make sure nominee is set
+          relation: matchedRelation,
+          bankAccountNumber: employee[13] || "",
+          ifscCode: employee[14] || "",
+          vrs: matchedVrs,
+        });
+
+        // Log form data after setting
+        console.log("Set form data:", {
           formNo: employee[1] || "",
           name: employee[2] || "",
           fatherName: employee[3] || "",
@@ -161,9 +202,9 @@ const EmployeeForm = () => {
       return dateStr;
     }
     // Convert from DD/MM/YYYY to YYYY-MM-DD
-    const parts = dateStr.split('/');
+    const parts = dateStr.split("/");
     if (parts.length === 3) {
-      return `${parts[2]}-${parts[1].padStart(2, '0')}-${parts[0].padStart(2, '0')}`;
+      return `${parts[2]}-${parts[1].padStart(2, "0")}-${parts[0].padStart(2, "0")}`;
     }
     return dateStr;
   };
@@ -269,17 +310,27 @@ const EmployeeForm = () => {
     // For exitDate, allow only DD/MM/YYYY format with automatic slashes
     if (name === "exitDate") {
       // Remove non-numeric characters
-      let cleaned = value.replace(/[^0-9]/g, '');
-      
+      let cleaned = value.replace(/[^0-9]/g, "");
+
       // Auto-format as DD/MM/YYYY
       if (cleaned.length > 2 && cleaned.length <= 4) {
-        cleaned = cleaned.slice(0, 2) + '/' + cleaned.slice(2);
+        cleaned = cleaned.slice(0, 2) + "/" + cleaned.slice(2);
       } else if (cleaned.length > 4 && cleaned.length <= 6) {
-        cleaned = cleaned.slice(0, 2) + '/' + cleaned.slice(2, 4) + '/' + cleaned.slice(4);
+        cleaned =
+          cleaned.slice(0, 2) +
+          "/" +
+          cleaned.slice(2, 4) +
+          "/" +
+          cleaned.slice(4);
       } else if (cleaned.length > 6) {
-        cleaned = cleaned.slice(0, 2) + '/' + cleaned.slice(2, 4) + '/' + cleaned.slice(4, 8);
+        cleaned =
+          cleaned.slice(0, 2) +
+          "/" +
+          cleaned.slice(2, 4) +
+          "/" +
+          cleaned.slice(4, 8);
       }
-      
+
       setFormData({ ...formData, [name]: cleaned });
     } else {
       setFormData({ ...formData, [name]: value });
@@ -524,7 +575,7 @@ const EmployeeForm = () => {
                   <field.icon className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                   <input
                     name={field.name}
-                    value={formData[field.name]}
+                    value={formData[field.name] || ""}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     placeholder={field.placeholder}
@@ -553,7 +604,7 @@ const EmployeeForm = () => {
                 <MapPin className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                 <select
                   name="depotName"
-                  value={formData.depotName}
+                  value={formData.depotName || ""}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`w-full pl-10 pr-4 py-2.5 border-2 rounded-lg outline-none appearance-none bg-white transition-colors ${
@@ -588,7 +639,7 @@ const EmployeeForm = () => {
                 <input
                   type="text"
                   name="exitDate"
-                  value={formData.exitDate}
+                  value={formData.exitDate || ""}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="DD/MM/YYYY"
@@ -617,7 +668,7 @@ const EmployeeForm = () => {
                 <AlertTriangle className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                 <select
                   name="vrs"
-                  value={formData.vrs}
+                  value={formData.vrs || ""}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`w-full pl-10 pr-4 py-2.5 border-2 rounded-lg outline-none appearance-none bg-white transition-colors ${
@@ -651,7 +702,7 @@ const EmployeeForm = () => {
                 <Heart className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                 <select
                   name="relation"
-                  value={formData.relation}
+                  value={formData.relation || ""}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`w-full pl-10 pr-4 py-2.5 border-2 rounded-lg outline-none appearance-none bg-white transition-colors ${
@@ -686,7 +737,7 @@ const EmployeeForm = () => {
                   <field.icon className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                   <input
                     name={field.name}
-                    value={formData[field.name]}
+                    value={formData[field.name] || ""}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     placeholder={field.placeholder}
