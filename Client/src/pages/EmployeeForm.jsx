@@ -74,7 +74,7 @@ const EmployeeForm = () => {
   const vrsOptions = ["VRS", "Retirement", "Dismiss"];
 
   // Relation options
-  const relationOptions = ["Husband", "Wife", "Son", "Daughter"];
+  const relationOptions = ["Husband", "Wife", "Son", "Daughter", "Other"];
 
   useEffect(() => {
     if (isEditMode) {
