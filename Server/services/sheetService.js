@@ -46,11 +46,14 @@ async function addEmployeeToSheet(data) {
     data.leaveEncashmentAmount || "", // Column I: Exit Date
     data.nominee || "", // Column G: Depot Name
     data.relation || "", // Column G: Depot Name
+    data.bankAccountNumber || "", // Column G: Depot Name
+    data.ifscCode || "", // Column G: Depot Name
+    data.vrs || "", // Column G: Depot Name
   ];
 
   await googleSheets.spreadsheets.values.update({
     spreadsheetId: process.env.GOOGLE_SHEET_ID,
-    range: `Sheet1!A${nextRow}:M${nextRow}`, // A to M columns
+    range: `Sheet1!A${nextRow}:P${nextRow}`, // A to M columns
     valueInputOption: "USER_ENTERED",
     requestBody: {
       values: [rowData],
@@ -71,7 +74,7 @@ async function getAllEmployees() {
 
   const getRows = await googleSheets.spreadsheets.values.get({
     spreadsheetId: process.env.GOOGLE_SHEET_ID,
-    range: "Sheet1!A:M", // A to M columns (ID + 11 fields)
+    range: "Sheet1!A:P", // A to P columns (ID + 11 fields)
   });
 
   const rows = getRows.data.values || [];
@@ -115,6 +118,9 @@ async function updateEmployeeById(id, data) {
     data.leaveEncashmentAmount || "", // Column I: Exit Date
     data.nominee || "", // Column G: Depot Name
     data.relation || "", // Column G: Depot Name
+    data.bankAccountNumber || "", // Column G: Depot Name
+    data.ifscCode || "", // Column G: Depot Name
+    data.vrs || "", // Column G: Depot Name
   ];
 
   await googleSheets.spreadsheets.values.update({

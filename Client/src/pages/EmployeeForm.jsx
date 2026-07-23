@@ -19,6 +19,9 @@ import {
   Award,
   DollarSign,
   Heart,
+  CreditCard,
+  Building,
+  AlertTriangle,
 } from "lucide-react";
 import employeeService from "../services/employeeService";
 import { useNavigate, useParams } from "react-router-dom";
@@ -42,6 +45,9 @@ const EmployeeForm = () => {
     leaveEncashmentAmount: "",
     nominee: "",
     relation: "",
+    bankAccountNumber: "",
+    ifscCode: "",
+    vrs: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -64,6 +70,12 @@ const EmployeeForm = () => {
     "Sagar",
   ];
 
+  // VRS/Retirement/Dismiss options
+  const vrsOptions = ["VRS", "Retirement", "Dismiss"];
+
+  // Relation options
+  const relationOptions = ["Husband", "Wife", "Son", "Daughter"];
+
   useEffect(() => {
     if (isEditMode) {
       fetchEmployeeData();
@@ -80,29 +92,80 @@ const EmployeeForm = () => {
       const employee = employees.find((emp) => emp[0] === id);
 
       if (employee) {
+        console.log("Fetched employee data:", employee);
+        
+        // Normalize dropdown values to match options
+        const depotValue = employee[5] || "";
+        const vrsValue = employee[15] || "";
+        const relationValue = employee[12] || "";
+
+        // Find matching depot option (case insensitive)
+        const matchedDepot = depotOptions.find(
+          option => option.toLowerCase() === depotValue.toLowerCase().trim()
+        ) || depotValue;
+
+        // Find matching VRS option (case insensitive)
+        const matchedVrs = vrsOptions.find(
+          option => option.toLowerCase() === vrsValue.toLowerCase().trim()
+        ) || vrsValue;
+
+        // Find matching Relation option (case insensitive)
+        const matchedRelation = relationOptions.find(
+          option => option.toLowerCase() === relationValue.toLowerCase().trim()
+        ) || relationValue;
+
+        // Format date from YYYY-MM-DD to DD/MM/YYYY for display
+        let exitDateValue = employee[6] || "";
+        if (exitDateValue) {
+          // Check if date is in YYYY-MM-DD format
+          if (exitDateValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
+            const parts = exitDateValue.split('-');
+            exitDateValue = `${parts[2]}/${parts[1]}/${parts[0]}`;
+          }
+        }
+
         setFormData({
           formNo: employee[1] || "",
           name: employee[2] || "",
           fatherName: employee[3] || "",
           designation: employee[4] || "",
-          depotName: employee[5] || "",
-          exitDate: employee[6] || "",
+          depotName: matchedDepot,
+          exitDate: exitDateValue,
           lastBasicPay: employee[7] || "",
           exgratiaAmount: employee[8] || "",
           gratuityAmount: employee[9] || "",
           leaveEncashmentAmount: employee[10] || "",
           nominee: employee[11] || "",
-          relation: employee[12] || "",
+          relation: matchedRelation,
+          bankAccountNumber: employee[13] || "",
+          ifscCode: employee[14] || "",
+          vrs: matchedVrs,
         });
       } else {
         setError("Employee not found");
       }
     } catch (err) {
+      console.error("Fetch error:", err);
       setError("Failed to load data");
       toast.error("Failed to load employee data");
     } finally {
       setLoading(false);
     }
+  };
+
+  // Format date from DD/MM/YYYY to YYYY-MM-DD for API
+  const formatDateForAPI = (dateStr) => {
+    if (!dateStr) return "";
+    // If already in YYYY-MM-DD format, return as is
+    if (dateStr.match(/^\d{4}-\d{2}-\d{2}$/)) {
+      return dateStr;
+    }
+    // Convert from DD/MM/YYYY to YYYY-MM-DD
+    const parts = dateStr.split('/');
+    if (parts.length === 3) {
+      return `${parts[2]}-${parts[1].padStart(2, '0')}-${parts[0].padStart(2, '0')}`;
+    }
+    return dateStr;
   };
 
   const validateField = (name, value) => {
@@ -116,6 +179,7 @@ const EmployeeForm = () => {
       "designation",
       "depotName",
       "exitDate",
+      "vrs",
     ];
     if (requiredFields.includes(name) && !value.trim()) {
       return `${
@@ -129,7 +193,9 @@ const EmployeeForm = () => {
                 ? "Designation"
                 : name === "depotName"
                   ? "Depot Name"
-                  : "Exit Date"
+                  : name === "exitDate"
+                    ? "Exit Date"
+                    : "VRS/Retirement/Dismiss"
       } is required`;
     }
 
@@ -164,14 +230,34 @@ const EmployeeForm = () => {
       error = `${name.replace(/([A-Z])/g, " $1").trim()} must be a valid number`;
     }
 
-    // Exit Date validation - must be a valid date
-    if (name === "exitDate" && value && isNaN(new Date(value).getTime())) {
-      error = "Please enter a valid date";
+    // Bank Account Number validation - only digits (optional)
+    if (name === "bankAccountNumber" && value) {
+      if (!/^\d+$/.test(value)) {
+        error = "Bank Account Number can only contain digits";
+      } else if (value.length < 9 || value.length > 18) {
+        error = "Bank Account Number should be between 9 to 18 digits";
+      }
     }
 
-    // Relation validation - letters and spaces only
-    if (name === "relation" && value && !/^[a-zA-Z\s]*$/.test(value)) {
-      error = "Relation can only contain letters and spaces";
+    // IFSC Code validation - alphanumeric (11 characters) (optional)
+    if (name === "ifscCode" && value) {
+      if (!/^[A-Za-z0-9]{11}$/.test(value)) {
+        error = "IFSC Code must be exactly 11 alphanumeric characters";
+      }
+    }
+
+    // Exit Date validation - DD/MM/YYYY format
+    if (name === "exitDate" && value) {
+      const dateRegex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+      if (!dateRegex.test(value)) {
+        error = "Please enter date in DD/MM/YYYY format";
+      } else {
+        const [, day, month, year] = value.match(dateRegex);
+        const dateObj = new Date(`${year}-${month}-${day}`);
+        if (isNaN(dateObj.getTime())) {
+          error = "Please enter a valid date";
+        }
+      }
     }
 
     return error;
@@ -180,8 +266,24 @@ const EmployeeForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Update form data
-    setFormData({ ...formData, [name]: value });
+    // For exitDate, allow only DD/MM/YYYY format with automatic slashes
+    if (name === "exitDate") {
+      // Remove non-numeric characters
+      let cleaned = value.replace(/[^0-9]/g, '');
+      
+      // Auto-format as DD/MM/YYYY
+      if (cleaned.length > 2 && cleaned.length <= 4) {
+        cleaned = cleaned.slice(0, 2) + '/' + cleaned.slice(2);
+      } else if (cleaned.length > 4 && cleaned.length <= 6) {
+        cleaned = cleaned.slice(0, 2) + '/' + cleaned.slice(2, 4) + '/' + cleaned.slice(4);
+      } else if (cleaned.length > 6) {
+        cleaned = cleaned.slice(0, 2) + '/' + cleaned.slice(2, 4) + '/' + cleaned.slice(4, 8);
+      }
+      
+      setFormData({ ...formData, [name]: cleaned });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
 
     // Clear error for this field
     if (errors[name]) {
@@ -211,6 +313,7 @@ const EmployeeForm = () => {
       "designation",
       "depotName",
       "exitDate",
+      "vrs",
     ];
     requiredFields.forEach((field) => {
       const error = validateField(field, formData[field]);
@@ -228,6 +331,8 @@ const EmployeeForm = () => {
       "leaveEncashmentAmount",
       "nominee",
       "relation",
+      "bankAccountNumber",
+      "ifscCode",
     ];
     optionalFields.forEach((field) => {
       if (formData[field]) {
@@ -251,13 +356,19 @@ const EmployeeForm = () => {
       return;
     }
 
+    // Prepare data for API - convert date to YYYY-MM-DD
+    const submitData = {
+      ...formData,
+      exitDate: formatDateForAPI(formData.exitDate),
+    };
+
     setIsSubmitting(true);
     try {
       if (isEditMode) {
-        await employeeService.update(id, formData);
+        await employeeService.update(id, submitData);
         toast.success("Employee updated successfully!");
       } else {
-        await employeeService.create(formData);
+        await employeeService.create(submitData);
         toast.success("Employee added successfully!");
       }
       navigate("/employee-list");
@@ -339,10 +450,17 @@ const EmployeeForm = () => {
       required: false,
     },
     {
-      label: "Relation",
-      name: "relation",
-      icon: Heart,
-      placeholder: "e.g., WIFE",
+      label: "Bank Account Number",
+      name: "bankAccountNumber",
+      icon: CreditCard,
+      placeholder: "e.g., 1112211113115",
+      required: false,
+    },
+    {
+      label: "IFSC Code",
+      name: "ifscCode",
+      icon: Building,
+      placeholder: "e.g., SBIN0000474",
       required: false,
     },
   ];
@@ -460,7 +578,7 @@ const EmployeeForm = () => {
               )}
             </div>
 
-            {/* Exit Date - Required */}
+            {/* Exit Date - Required with DD/MM/YYYY format */}
             <div className="space-y-1.5">
               <label className="block text-sm font-medium text-gray-700">
                 Exit Date <span className="text-red-500">*</span>
@@ -468,11 +586,13 @@ const EmployeeForm = () => {
               <div className="relative">
                 <Calendar className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
                 <input
-                  type="date"
+                  type="text"
                   name="exitDate"
                   value={formData.exitDate}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  placeholder="DD/MM/YYYY"
+                  maxLength={10}
                   className={`w-full pl-10 pr-4 py-2.5 border-2 rounded-lg outline-none transition-colors ${
                     errors.exitDate
                       ? "border-red-500 focus:ring-2 focus:ring-red-200"
@@ -484,6 +604,74 @@ const EmployeeForm = () => {
                 <p className="text-sm text-red-500 flex items-center gap-1 mt-1">
                   <AlertCircle size={14} />
                   {errors.exitDate}
+                </p>
+              )}
+            </div>
+
+            {/* VRS/Retirement/Dismiss Dropdown - Required */}
+            <div className="space-y-1.5">
+              <label className="block text-sm font-medium text-gray-700">
+                VRS/Retirement/Dismiss <span className="text-red-500">*</span>
+              </label>
+              <div className="relative">
+                <AlertTriangle className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+                <select
+                  name="vrs"
+                  value={formData.vrs}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`w-full pl-10 pr-4 py-2.5 border-2 rounded-lg outline-none appearance-none bg-white transition-colors ${
+                    errors.vrs
+                      ? "border-red-500 focus:ring-2 focus:ring-red-200"
+                      : "border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  }`}
+                >
+                  <option value="">Select Type</option>
+                  {vrsOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {errors.vrs && (
+                <p className="text-sm text-red-500 flex items-center gap-1 mt-1">
+                  <AlertCircle size={14} />
+                  {errors.vrs}
+                </p>
+              )}
+            </div>
+
+            {/* Relation Dropdown - Optional */}
+            <div className="space-y-1.5">
+              <label className="block text-sm font-medium text-gray-700">
+                Relation
+              </label>
+              <div className="relative">
+                <Heart className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+                <select
+                  name="relation"
+                  value={formData.relation}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`w-full pl-10 pr-4 py-2.5 border-2 rounded-lg outline-none appearance-none bg-white transition-colors ${
+                    errors.relation
+                      ? "border-red-500 focus:ring-2 focus:ring-red-200"
+                      : "border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  }`}
+                >
+                  <option value="">Select Relation</option>
+                  {relationOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {errors.relation && (
+                <p className="text-sm text-red-500 flex items-center gap-1 mt-1">
+                  <AlertCircle size={14} />
+                  {errors.relation}
                 </p>
               )}
             </div>

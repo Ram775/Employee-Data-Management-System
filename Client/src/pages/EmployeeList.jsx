@@ -27,6 +27,9 @@ import {
   Heart,
   Users,
   Eye,
+  CreditCard,
+  Building,
+  AlertTriangle,
 } from "lucide-react";
 import employeeService from "../services/employeeService";
 import * as XLSX from "xlsx";
@@ -62,7 +65,22 @@ const EmployeeList = () => {
   // Items per page options
   const itemsPerPageOptions = [10, 25, 50, 100, "All"];
 
-  // Updated headers with all new fields
+  // Function to format date from YYYY-MM-DD to DD/MM/YYYY
+  const formatDate = (dateStr) => {
+    if (!dateStr) return "";
+    // If already in DD/MM/YYYY format, return as is
+    if (dateStr.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
+      return dateStr;
+    }
+    // Convert from YYYY-MM-DD to DD/MM/YYYY
+    if (dateStr.match(/^\d{4}-\d{2}-\d{2}$/)) {
+      const parts = dateStr.split("-");
+      return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    }
+    return dateStr;
+  };
+
+  // Updated headers with all new fields (16 columns total)
   const headers = [
     { key: "id", label: "ID", icon: Key },
     { key: "formNo", label: "Form No.", icon: FileText },
@@ -81,9 +99,12 @@ const EmployeeList = () => {
     },
     { key: "nominee", label: "Nominee", icon: Users },
     { key: "relation", label: "Relation", icon: Heart },
+    { key: "bankAccountNumber", label: "Bank Account", icon: CreditCard },
+    { key: "ifscCode", label: "IFSC Code", icon: Building },
+    { key: "vrs", label: "VRS/Retirement", icon: AlertTriangle },
   ];
 
-  // ALL fields for mobile view (including ID and all others)
+  // ALL fields for mobile view
   const mobileFields = [
     { key: "formNo", label: "Form No.", icon: FileText },
     { key: "name", label: "Name", icon: User },
@@ -94,9 +115,16 @@ const EmployeeList = () => {
     { key: "lastBasicPay", label: "Basic Pay", icon: DollarSign },
     { key: "exgratiaAmount", label: "Exgratia", icon: Award },
     { key: "gratuityAmount", label: "Gratuity", icon: Award },
-    { key: "leaveEncashmentAmount", label: "Leave Encashment", icon: DollarSign },
+    {
+      key: "leaveEncashmentAmount",
+      label: "Leave Encashment",
+      icon: DollarSign,
+    },
     { key: "nominee", label: "Nominee", icon: Users },
     { key: "relation", label: "Relation", icon: Heart },
+    { key: "bankAccountNumber", label: "Bank Account", icon: CreditCard },
+    { key: "ifscCode", label: "IFSC Code", icon: Building },
+    { key: "vrs", label: "VRS/Retirement", icon: AlertTriangle },
   ];
 
   useEffect(() => {
@@ -121,16 +149,16 @@ const EmployeeList = () => {
         employeeData = res;
       }
 
-      // Normalize data - ensure all rows have 13 fields
+      // Normalize data - ensure all rows have 16 fields
       employeeData = employeeData.map((row) => {
         const normalizedRow = [...row];
-        while (normalizedRow.length < 13) {
+        while (normalizedRow.length < 16) {
           normalizedRow.push("");
         }
         return normalizedRow;
       });
 
-      setEmployees(employeeData);
+      setEmployees(employeeData.reverse());
     } catch (err) {
       console.error("Fetch error:", err);
       setError("Failed to load data.");
@@ -143,18 +171,21 @@ const EmployeeList = () => {
   // Function to highlight search term in text
   const highlightText = (text, searchTerm) => {
     if (!searchTerm.trim() || !text) return text;
-    
-    const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+
+    const regex = new RegExp(
+      `(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
+      "gi",
+    );
     const parts = String(text).split(regex);
-    
-    return parts.map((part, index) => 
+
+    return parts.map((part, index) =>
       regex.test(part) ? (
         <span key={index} className="bg-yellow-300 px-0.5 rounded font-medium">
           {part}
         </span>
       ) : (
         part
-      )
+      ),
     );
   };
 
@@ -204,7 +235,7 @@ const EmployeeList = () => {
     if (itemsPerPage === "All") return displayData;
     return displayData.slice(
       (currentPage - 1) * itemsPerPage,
-      currentPage * itemsPerPage
+      currentPage * itemsPerPage,
     );
   }, [displayData, currentPage, itemsPerPage]);
 
@@ -359,7 +390,12 @@ const EmployeeList = () => {
       const excelData = exportData.map((row, index) => {
         const obj = { "S.No": index + 1 };
         displayHeaders.forEach((h, i) => {
-          obj[h.label] = row[i + 1] || "N/A";
+          // Format date for exitDate field (index 6)
+          let value = row[i + 1] || "---";
+          if (h.key === "exitDate" && value !== "---") {
+            value = formatDate(value);
+          }
+          obj[h.label] = value;
         });
         return obj;
       });
@@ -413,15 +449,18 @@ const EmployeeList = () => {
     }
 
     try {
-      const displayListName = selectedEmployees.size > 0 
-        ? "Selected Employees Report" 
-        : "Employee List Report";
+      const displayListName =
+        selectedEmployees.size > 0
+          ? "Selected Employees Report"
+          : "Employee List Report";
 
       const hasLongContent = exportData.some(
         (row) =>
           (row[2] && row[2].length > 25) || // Name
           (row[3] && row[3].length > 25) || // Father's Name
-          (row[5] && row[5].length > 20), // Depot
+          (row[5] && row[5].length > 20) || // Depot
+          (row[13] && row[13].length > 15) || // Bank Account
+          (row[14] && row[14].length > 11), // IFSC Code
       );
 
       const dynamicOrientation = hasLongContent ? "landscape" : "portrait";
@@ -460,26 +499,40 @@ const EmployeeList = () => {
 
       const tableRows = exportData.map((row, index) => [
         index + 1,
-        ...row.slice(1).map((val) => val || "N/A"),
+        ...row.slice(1).map((val, i) => {
+          // Format date for exitDate field (index 6)
+          if (i === 5 && val) {
+            // exitDate is at index 6 in original, but in slice it's index 5
+            return formatDate(val) || "---";
+          }
+          return val || "---";
+        }),
       ]);
 
-      let dynamicFontSize = dynamicOrientation === "portrait" ? 6.5 : 7.5;
+      let dynamicFontSize = dynamicOrientation === "portrait" ? 6 : 7;
       let maxNameLength = 0;
       let maxFatherLength = 0;
+      let maxBankLength = 0;
 
       exportData.forEach((row) => {
         if (row[2] && row[2].length > maxNameLength)
           maxNameLength = row[2].length;
         if (row[3] && row[3].length > maxFatherLength)
           maxFatherLength = row[3].length;
+        if (row[13] && row[13].length > maxBankLength)
+          maxBankLength = row[13].length;
       });
 
-      if (maxNameLength > 30 || maxFatherLength > 30) {
+      if (maxNameLength > 30 || maxFatherLength > 30 || maxBankLength > 18) {
+        dynamicFontSize = 5;
+      } else if (
+        maxNameLength > 20 ||
+        maxFatherLength > 20 ||
+        maxBankLength > 14
+      ) {
         dynamicFontSize = 5.5;
-      } else if (maxNameLength > 20 || maxFatherLength > 20) {
-        dynamicFontSize = 6;
       } else if (maxNameLength > 15 || maxFatherLength > 15) {
-        dynamicFontSize = 6.5;
+        dynamicFontSize = 6;
       }
 
       autoTable(doc, {
@@ -521,6 +574,9 @@ const EmployeeList = () => {
           10: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 },
           11: { cellWidth: "auto" },
           12: { cellWidth: "auto" },
+          13: { halign: "center", cellWidth: dynamicFontSize < 6 ? 16 : 20 },
+          14: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 },
+          15: { halign: "center", cellWidth: dynamicFontSize < 6 ? 14 : 18 },
         },
         margin: { left: 8, right: 8 },
       });
@@ -556,13 +612,18 @@ const EmployeeList = () => {
       leaveEncashmentAmount: 10,
       nominee: 11,
       relation: 12,
+      bankAccountNumber: 13,
+      ifscCode: 14,
+      vrs: 15,
     };
 
     return (
       <div
         key={idx}
         className={`bg-white rounded-xl shadow-sm border p-4 mb-3 transition-all ${
-          isSelected ? "border-blue-500 bg-blue-50/50" : "border-gray-200 hover:border-blue-300"
+          isSelected
+            ? "border-blue-500 bg-blue-50/50"
+            : "border-gray-200 hover:border-blue-300"
         }`}
       >
         <div className="flex items-center justify-between mb-3 pb-2 border-b border-gray-100">
@@ -602,7 +663,11 @@ const EmployeeList = () => {
         <div className="space-y-2.5">
           {mobileFields.map((field) => {
             const dataIndex = fieldDataMap[field.key];
-            const value = row[dataIndex];
+            let value = row[dataIndex];
+            // Format date for exitDate field
+            if (field.key === "exitDate" && value) {
+              value = formatDate(value);
+            }
             return (
               <div
                 key={field.key}
@@ -706,13 +771,33 @@ const EmployeeList = () => {
                     </button>
                   </td>
                   <td className="p-4 text-base font-medium text-gray-500">
-                    {(currentPage - 1) * (itemsPerPage === "All" ? displayData.length : itemsPerPage) + idx + 1}
+                    {(currentPage - 1) *
+                      (itemsPerPage === "All"
+                        ? displayData.length
+                        : itemsPerPage) +
+                      idx +
+                      1}
                   </td>
-                  {row.slice(1, 13).map((val, i) => (
-                    <td key={i} className="p-4 text-base text-gray-700 max-w-xs truncate">
-                      {val ? highlightText(val, searchTerm) : <span className="text-gray-400">-</span>}
-                    </td>
-                  ))}
+                  {row.slice(1, 16).map((val, i) => {
+                    // Format date for exitDate field (index 5 in slice)
+                    let displayValue = val;
+                    if (i === 5 && val) {
+                      // exitDate is at index 6 in original, index 5 in slice
+                      displayValue = formatDate(val);
+                    }
+                    return (
+                      <td
+                        key={i}
+                        className="p-4 text-base text-gray-700 max-w-xs truncate"
+                      >
+                        {displayValue ? (
+                          highlightText(displayValue, searchTerm)
+                        ) : (
+                          <span className="text-gray-400">-</span>
+                        )}
+                      </td>
+                    );
+                  })}
                   <td className="p-4 text-center">
                     <div className="flex items-center justify-center gap-2">
                       <button
@@ -738,11 +823,16 @@ const EmployeeList = () => {
             })
           ) : (
             <tr>
-              <td colSpan={headers.length + 2} className="p-10 text-center text-gray-500">
+              <td
+                colSpan={headers.length + 2}
+                className="p-10 text-center text-gray-500"
+              >
                 <div className="flex flex-col items-center gap-3">
                   <Search size={40} className="text-gray-300" />
                   <p className="text-base font-medium">No records found</p>
-                  <p className="text-sm text-gray-400">Try adjusting your search or filters</p>
+                  <p className="text-sm text-gray-400">
+                    Try adjusting your search or filters
+                  </p>
                 </div>
               </td>
             </tr>
@@ -857,11 +947,21 @@ const EmployeeList = () => {
           {/* Top Bar with Pagination Controls */}
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 p-4 sm:p-5 bg-gray-50/80 border-b border-gray-200">
             <div className="text-sm sm:text-base text-gray-600 order-2 sm:order-1">
-              Showing {displayData.length > 0 ? (currentPage - 1) * (itemsPerPage === "All" ? displayData.length : itemsPerPage) + 1 : 0} -{" "}
+              Showing{" "}
+              {displayData.length > 0
+                ? (currentPage - 1) *
+                    (itemsPerPage === "All"
+                      ? displayData.length
+                      : itemsPerPage) +
+                  1
+                : 0}{" "}
+              -{" "}
               {Math.min(
-                currentPage * (itemsPerPage === "All" ? displayData.length : itemsPerPage),
-                displayData.length
-              )} of {displayData.length} entries
+                currentPage *
+                  (itemsPerPage === "All" ? displayData.length : itemsPerPage),
+                displayData.length,
+              )}{" "}
+              of {displayData.length} entries
               {selectedEmployees.size > 0 && (
                 <span className="ml-3 text-blue-600 font-medium bg-blue-50 px-3 py-1 rounded">
                   {selectedEmployees.size} selected
@@ -877,7 +977,10 @@ const EmployeeList = () => {
                 >
                   <Eye size={16} className="text-gray-500" />
                   <span className="font-medium">{itemsPerPage}</span>
-                  <ChevronDown size={16} className={`text-gray-500 transition-transform ${showItemsDropdown ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    size={16}
+                    className={`text-gray-500 transition-transform ${showItemsDropdown ? "rotate-180" : ""}`}
+                  />
                 </button>
                 {showItemsDropdown && (
                   <div className="absolute right-0 mt-1 w-36 bg-white border border-gray-200 rounded-lg shadow-lg z-20 overflow-hidden">
@@ -890,8 +993,8 @@ const EmployeeList = () => {
                           setCurrentPage(1);
                         }}
                         className={`w-full text-left px-4 py-2.5 text-sm hover:bg-blue-50 transition-colors ${
-                          itemsPerPage === option 
-                            ? "bg-blue-50 text-blue-600 font-medium" 
+                          itemsPerPage === option
+                            ? "bg-blue-50 text-blue-600 font-medium"
                             : "text-gray-700"
                         }`}
                       >
@@ -917,7 +1020,9 @@ const EmployeeList = () => {
                     {currentPage} / {totalPages}
                   </span>
                   <button
-                    onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+                    onClick={() =>
+                      setCurrentPage((p) => Math.min(p + 1, totalPages))
+                    }
                     disabled={currentPage === totalPages}
                     className="flex items-center gap-2 px-4 py-2 text-sm sm:text-base bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
                   >
@@ -939,9 +1044,7 @@ const EmployeeList = () => {
           ) : (
             <>
               {/* Desktop Table - Hidden on Mobile */}
-              <div className="hidden md:block">
-                {renderTable()}
-              </div>
+              <div className="hidden md:block">{renderTable()}</div>
 
               {/* Mobile Cards - Visible only on Mobile with ALL fields */}
               <div className="md:hidden p-3">
